@@ -5,3 +5,73 @@
     justify-content: center;
     align-items: center;
 }
+
+.container-fluid {
+    max-width: 1200px;
+}
+
+nav  {
+    & i {
+        color: #FB1B1B;
+        font-size: 1.5em;
+    }
+    & button {
+        padding: 0!important;
+        box-shadow: none!important;
+    }
+    & .bar {
+        display: block;
+        width: 25px;
+        height: 2.8px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background-color: white;
+    }
+    & .hamburger {
+        cursor: pointer;
+        display: block;
+        float: right;  
+        padding: 5px 10px;
+    }
+    & .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    & .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    & .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+
+
+
+/* Home page */
+
+header {
+    padding-top: 200px;
+  
+    & i {
+        width: 100%;
+        text-align: center;
+        position: relative;
+        bottom: 77%;
+        color: #FB1B1B;
+        font-size: 3em;
+    }
+}
+
+
+
+
+/*mobile styles*/
+@media only screen and (max-width: 700px) {
+    header {
+        padding-top: 140px;
+    
+        & h1 {
+        font-size: 1.4em;
+        }
+    }
+}
