@@ -1,0 +1,23 @@
+{
+  "name": "noroff-semester-projec-2",
+  "version": "1.0.0",
+  "description": "Online auction site",
+  "main": "index.js",
+  "scripts": {
+    "build": "sass src/scss:dist/css",
+    "start": "sass --watch src/scss:dist/css & live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gronnfrosk/Noroff-Semester-Projec-2.git"
+  },
+  "author": "Hanna Fjeldsaa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gronnfrosk/Noroff-Semester-Projec-2/issues"
+  },
+  "homepage": "https://github.com/Gronnfrosk/Noroff-Semester-Projec-2#readme",
+  "dependencies": {
+    "sass": "^1.62.0"
+  }
+}
