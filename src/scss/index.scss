@@ -1,18 +1,15 @@
-.test {
-    height: 500px;
-    color: green;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+.fa-bullseye-pointer {
+    color: #FB1B1B;
 }
 
-.container-fluid {
+.container-fluid, main, footer {
     max-width: 1200px;
+    margin: auto;
 }
 
 nav  {
     & i {
-        color: #FB1B1B;
         font-size: 1.5em;
     }
     & button {
@@ -44,6 +41,9 @@ nav  {
     }
 }
 
+.btn-outline-info {
+    color: black;
+}
 
 
 
@@ -56,14 +56,21 @@ header {
         width: 100%;
         text-align: center;
         position: relative;
-        bottom: 77%;
-        color: #FB1B1B;
+        bottom: 115px;
         font-size: 3em;
+    }
+    & .add-item {
+        position: relative;
+        top: -30px;
     }
 }
 
-
-
+main {
+    & .blue-container {
+        background-color: #EEF5FB;
+        height: 2000px;
+    }
+}
 
 /*mobile styles*/
 @media only screen and (max-width: 700px) {
@@ -72,6 +79,21 @@ header {
     
         & h1 {
         font-size: 1.4em;
+        }
+    }
+
+    main {
+        & h2 {
+            font-size: 1.15em;
+        }
+    }
+
+    footer {
+        justify-content: center;
+        flex-direction: column-reverse;
+
+        & .icon {
+        width: 100%;
         }
     }
 }

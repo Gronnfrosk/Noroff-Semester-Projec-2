@@ -64,15 +64,65 @@
 		</nav>
 		<header class="d-flex justify-content-center mx-4">
 			<div>
-				<h1>Welcome!</h1>
-				<h1>Join the online auction today</h1>
-				<i class="fa-sharp fa-solid fa-bullseye-pointer"></i>
+				<div>
+					<h1>Welcome!</h1>
+					<h1>Join the online auction today</h1>
+					<i class="fa-sharp fa-solid fa-bullseye-pointer"></i>
+				</div>
+
+				<div class="d-grid gap-2">
+					<button class="btn btn-info add-item" data-bs-toggle="modal" type="button" data-bs-target="#exampleModal">Add item for auction +</button>
+				</div>
+				<div class="modal fade" id="exampleModal" aria-labelledby="exampleModalToggleLabel" tabindex="-1" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h1 class="modal-title fs-5" id="exampleModalToggleLabel">Modal 1</h1>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">Show a second modal and hide this one with the button below.</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Close</button>
+								<button type="button" class="btn btn-info">Ad item for auction</button>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</header>
-		<!--
-		<div class="test">
-			<h1>Hello world!</h1>
-		</div>
-        -->
+		<main class="">
+			<h2 class="mx-5">Auction items</h2>
+			<div class="blue-container">
+				<div class="dropdown">
+					<button
+						class="btn btn-white bg-white dropdown-toggle border border-white float-end m-4"
+						type="button"
+						data-bs-toggle="dropdown"
+						aria-expanded="false"
+					>
+						Filter
+					</button>
+					<ul class="dropdown-menu border-0">
+						<li><a class="dropdown-item" href="#">Longest deadline</a></li>
+						<li><a class="dropdown-item" href="#">Shortest deadline</a></li>
+						<li><a class="dropdown-item" href="#">Active auction</a></li>
+						<li><a class="dropdown-item" href="#">Ended auction</a></li>
+					</ul>
+				</div>
+				<section class="card-container"></section>
+			</div>
+		</main>
+		<footer class="d-flex flex-wrap justify-content-between align-items-center pt-3">
+			<p class="col-md-4 mb-0 text-muted">&copy; 2023 AuctionPoint, Inc</p>
+			<a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+				<i class="fa-sharp fa-solid fa-bullseye-pointer mx-1"></i></i>
+			</a>
+			<ul class="nav col-md-4 justify-content-end">
+				<li class="nav-item"><a href="/injdex.html" class="nav-link px-2 text-muted">Home</a></li>
+				<li class="nav-item"><a href="/html/profile.html" class="nav-link px-2 text-muted">Profile</a></li>
+				<li class="nav-item"><a href="/html/login.html" class="nav-link px-2 text-muted" id="logout">logout</a></li>
+                <!--<li class="nav-item"><a href="/html/login.html" class="nav-link px-2 text-muted" id="login">login</a></li>-->
+			</ul>
+		</footer>
 	</body>
 </html>
