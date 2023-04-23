@@ -63,45 +63,109 @@
 			</div>
 		</nav>
 		<main class="signin-main form-signin w-100 m-auto text-center">
-				<form id="loginForm" class="needs-validation" novalidate>
-					<div>
-						<i class="fa-sharp fa-solid fa-bullseye-pointer mx-1"></i>
-						<h2 class="my-3 fw-normal">Login</h1>
+            <form id="loginForm" class="loginForm needs-validation" novalidate>
+                <div>
+                    <i class="fa-sharp fa-solid fa-bullseye-pointer mx-1"></i>
+                    <h2 class="my-3 fw-normal">Login</h1>
+                </div>
+                <div class="form-floating">
+                    <input
+                        type="email"
+                        name="email"
+                        class="form-control login-email"
+                        id="validationCustom01"
+                        placeholder="Email address"
+                        required
+                        pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
+                        title="Only @noroff.no and @stud.noroff.no emails are allowed to login."
+                    />
+                    <div class="invalid-feedback mb-3">Only @stud.noroff.no emails are allowed to login.</div>
+                    <label for="validationCustom01 form-label">Email address</label>
+                </div>
+                <div class="form-floating">
+                    <input
+                        type="password"
+                        name="password"
+                        autocomplete="on"
+                        class="form-control"
+                        id="validationCustom02"
+                        placeholder="Password"
+                        required
+                        title="Requires password of at least 8 characters."
+                    />
+                    <div class="invalid-feedback mb-3">Requires password of at least 8 characters.</div>
+                    <label for="validationCustom02 form-label">Password</label>
+                </div>
+                <button id="login" class="w-100 btn btn-lg btn-info mt-2" type="submit">Login</button>
+                <div class="Register my-3 ">
+                    <p class="mt-5 mb-2">If you don't have an account:</p>
+                    <a href="/html/register.html"><button class="btn btn-outline-info" type="button">Register here</button></a>
+                </div>
+            </form>
+            <form id="registerForm" class="hidden  registerForm needs-validation" novalidate>
+				<div>
+					<i class="fa-sharp fa-solid fa-bullseye-pointer mx-1"></i>
+                    <h2 class="my-3 fw-normal">Register</h1>
+				</div>
+				<div class="form-floating username">
+					<input
+						type="text"
+						name="name"
+						class="form-control"
+						id="validationCustom00"
+						placeholder="username"
+						required
+						pattern="^[\w]+$"
+						title="User name must only contain lower and upper case letters, numbers and underscore. Example: User_name123"
+					/>
+					<div class="invalid-feedback mb-3 float-left">
+						User name must only contain lower and upper case letters, numbers and underscore. <br />Example: User_name123
 					</div>
-					<div class="form-floating">
-						<input
-							type="email"
-							name="email"
-							class="form-control login-email"
-							id="validationCustom01"
-							placeholder="Email address"
-							required
-							pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
-							title="Only @noroff.no and @stud.noroff.no emails are allowed to login."
-						/>
-						<div class="invalid-feedback mb-3">Only @stud.noroff.no emails are allowed to login.</div>
-						<label for="validationCustom01 form-label">Email address</label>
-					</div>
-					<div class="form-floating">
-						<input
-							type="password"
-							name="password"
-							autocomplete="on"
-							class="form-control"
-							id="validationCustom02"
-							placeholder="Password"
-							required
-							title="Requires password of at least 8 characters."
-						/>
-						<div class="invalid-feedback mb-3">Requires password of at least 8 characters.</div>
-						<label for="validationCustom02 form-label">Password</label>
-					</div>
-					<button id="login" class="w-100 btn btn-lg btn-info mt-2" type="submit">Login</button>
-					<div class="Register my-3">
-						<p class="mt-5 mb-2">If you don't have an account:</p>
-						<a href="/html/register.html"><button class="btn btn-outline-info" type="button">Register here</button></a>
-					</div>
-				</form>
+					<label for="validationCustom01 form-label">Username</label>
+				</div>
+                <div class="form-floating">
+					<input
+						type="url"
+						class="form-control middle-input"
+						id="validationCustom01"
+						placeholder="Avatar URL"
+						required
+						pattern=""
+					/>
+					<div class="invalid-feedback mb-3">Only valid URL</div>
+					<label for="validationCustom01 form-label">Avatar URL</label>
+				</div>
+				<div class="form-floating">
+					<input
+						type="email"
+						name="email"
+						class="form-control middle-input"
+						id="validationCustom01"
+						placeholder="Email address"
+						required
+						pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
+						title="Only @noroff.no and @stud.noroff.no emails are allowed to register."
+					/>
+					<div class="invalid-feedback mb-3">Only @noroff.no and @stud.noroff.no emails are allowed to register.</div>
+					<label for="validationCustom01 form-label">Email address</label>
+				</div>
+				<div class="form-floating">
+					<input
+						type="password"
+						name="password"
+						class="form-control"
+						id="validationCustom02"
+						placeholder="Password"
+						autocomplete="off"
+						required
+						minlength="8"
+						title="Requires password of at least 8 characters."
+					/>
+					<div class="invalid-feedback mb-3">Requires password of at least 8 characters.</div>
+					<label for="validationCustom02 form-label">Password</label>
+				</div>
+                <button id="login" class="w-100 btn btn-lg btn-info mt-2 mb-4" type="submit">Create profile</button>
+			</form>
 		</main>
         <footer class="mb-1">
 			<p class=" mb-0 text-muted">&copy; 2023 AuctionPoint, Inc</p>

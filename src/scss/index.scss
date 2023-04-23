@@ -50,6 +50,9 @@ footer {
     font-size: 0.8em;
 }
 
+.hidden {
+    display: none;
+}
 
 /* Home page */
 
@@ -97,6 +100,9 @@ main {
         box-shadow: 0 5px 5px rgba(0, 0, 0, 0.37);
         
     }
+    & label {
+        font-size: 0.85em;
+    }
     & i {
         font-size: 2.5em;
     }
@@ -110,7 +116,7 @@ main {
         border-bottom-left-radius: 0;
     }
     
-    & .register-email {
+    & .middle-input {
         margin-bottom: -1px;
         border-radius: 0;
     }
@@ -119,7 +125,10 @@ main {
         margin-bottom: 10px;
         border-top-left-radius: 0;
         border-top-right-radius: 0;
-}
+    }
+    & .btn {
+        font-size: 1em;
+    }
 }
 
 .invalid-feedback {
@@ -158,7 +167,7 @@ main {
         padding: 15px;
         
         & form {
-            border: 20px solid white;
+            border: 25px solid white;
             box-shadow: 0 5px 5px rgba(0, 0, 0, 0.37);
             
         }}
