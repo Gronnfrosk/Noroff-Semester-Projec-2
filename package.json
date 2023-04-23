@@ -2,7 +2,7 @@
   "name": "noroff-semester-projec-2",
   "version": "1.0.0",
   "description": "Online auction site",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server"
