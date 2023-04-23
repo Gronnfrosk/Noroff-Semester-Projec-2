@@ -75,6 +75,22 @@ main {
     }
 }
 
+.card-container .cards {
+    position: relative;
+    left: 63px;
+}
+
+.cards {
+    width: 70%;
+}
+
+.box {
+    background-color: #212529;
+    width: 30%;
+    min-width: 190px;
+    height: 250px;
+}
+
 /* Signin page */
 .signin-body {
     display: flex;
@@ -131,6 +147,78 @@ main {
     text-align: left;
 }
 
+
+/* Profile page */
+
+.profile-top {
+    height: 450px;
+    & .blue {
+        height: 200px;
+        background-color: #EEF5FB;
+    }
+    & .profile-image {
+        width: 150px;
+        position: relative;
+        top: -75px;
+        background-color: white;
+        & .avatar {
+            width: 100%;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.37);
+        }
+        & .edit-btn {
+            position: relative;
+            top: -152px;
+            left: 152px;
+        }
+    }
+    
+    & .profile-info {
+        width: 300px;
+        position: relative;
+        top: -110px;
+        & h2, p {
+            margin: 0;
+        }
+        & .credit {
+            width: 60%;
+            background-color: #EEF5FB;
+            height: 35px;
+            padding-top: 5px;
+            text-align: center;
+            border-radius: 20px;
+        }
+    }
+}
+
+.auction-history {
+    & .active {
+        font-weight: bold;        
+    }
+    & .nav-link.active {
+            background-color: #EEF5FB;
+            border-bottom-color: #EEF5FB;
+        }
+    & .nav-item a {
+        color: #212529;
+    }
+    & .auction-container {
+        background-color: #EEF5FB;
+
+        & .cards {
+            width: 70%;
+        }
+        & .box {
+            background-color: #212529;
+            width: 30%;
+            height: 250px;
+        }
+    }
+}
+
+    
+
+
+
 /*mobile styles*/
 @media only screen and (max-width: 700px) {
     header {
@@ -156,6 +244,11 @@ main {
         }
     }
 
+    /* Home page */
+    .card-container .cards {
+        left: 0px;
+    }
+
     /* Signin page */
     .signin-main {
         margin-top: 200px;
@@ -166,5 +259,16 @@ main {
             border: 25px solid white;
             box-shadow: 0 5px 5px rgba(0, 0, 0, 0.37);
             
-        }}
+        }
+    }
+
+    /* Profile page */
+    .cards {
+        width: 90%;
+    }
+    .box {
+        min-width: 140px;
+        height: 210px;
+    }
+
 }

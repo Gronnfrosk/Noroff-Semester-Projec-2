@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="AuctionPoint is an online auction platform to members." />
+		<script src="https://kit.fontawesome.com/fecd9f1338.js" crossorigin="anonymous"></script>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+			crossorigin="anonymous"
+		/>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+			crossorigin="anonymous"
+		></script>
+		<link rel="stylesheet" href="../dist/css/index.css" />
+		<script type="module" src="/src/js/index.js" defer></script>
+		<title>AuctionPoint | Profile page</title>
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+			<div class="container-fluid">
+				<div>
+					<a class="navbar-brand fw-bold m-0" href="#">AuctionPoint</a>
+					<i class="fa-sharp fa-solid fa-bullseye-pointer mx-1"></i>
+				</div>
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<div class="hamburger">
+						<span class="bar"></span>
+						<span class="bar"></span>
+						<span class="bar"></span>
+					</div>
+				</button>
+				<div class="collapse navbar-collapse mx-2" id="navbarSupportedContent">
+					<ul class="nav navbar-nav me-auto mb-2 mb-lg-0">
+						<li class="nav-item">
+							<a class="nav-link" href="../index.html">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link text-white" href="/html/profile.html">Profile</a>
+						</li>
+						<li class="nav-item" id="logout">
+							<a class="nav-link logout-nav" href="/html/signin.html">Logout</a>
+						</li>
+					</ul>
+					<form class="d-flex search_form" role="search" id="search_form">
+						<input class="form-control me-2" type="search" placeholder="Search the auction" aria-label="Search" id="search_input" />
+					</form>
+				</div>
+			</div>
+		</nav>
+		<main class="home">
+			<section class="profile-top">
+				<div class="blue"></div>
+				<div class="profile-image mx-auto" id="avatar">
+					<img
+						src="https://archives.bulbagarden.net/media/upload/thumb/f/fb/0001Bulbasaur.png/600px-0001Bulbasaur.png"
+						alt="Image for the user profile"
+						class="pe-0 avatar"
+					/>
+					<button type="button" class="btn edit-btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-gear"></i></button>
+
+					<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal-dialog modal-dialog-centered">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h1 class="modal-title fs-5" id="exampleModalLabel">Edit avatar</h1>
+									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+								</div>
+								<div class="modal-body">
+									<div class="form-floating">
+										<input type="url" class="form-control middle-input" id="validationCustom01" placeholder="Avatar URL" required pattern="" />
+										<div class="invalid-feedback mb-3">Only valid URL</div>
+										<label for="validationCustom01 form-label">Avatar URL</label>
+									</div>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Close</button>
+									<button type="button" class="btn btn-info">Save changes</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="profile-info mx-auto mt-3">
+					<div class="name text-center"><h2>Gronnfrosk</h2></div>
+					<div class="email text-center"><p>gronnfrosk@stud.noroff.no</p></div>
+					<div class="credit mx-auto text-center mt-2"><p class="">Total Credit - 1000</p></div>
+				</div>
+			</section>
+			<section class="auction-history">
+				<ul class="nav nav-tabs mx-3">
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" href="#">My auction</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">My bids</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Owned</a>
+					</li>
+				</ul>
+				<div class="blue auction-container d-flex flex-column pb-5">
+                    <div class="mx-auto my-4">
+                        <button class="btn btn-info add-item px-5" data-bs-toggle="modal" type="button" data-bs-target="#addItemModal">Add item for auction +</button>
+                    </div>
+                    <div class="modal fade" id="addItemModal" aria-labelledby="exampleModalToggleLabel" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Modal 1</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">Show a second modal and hide this one with the button below.</div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-info">Add item for auction</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cards mx-auto d-flex flex-wrap justify-content-center gap-3">
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                </div>
+			</section>
+		</main>
+        <footer class="home d-flex flex-wrap justify-content-between align-items-center pt-3">
+			<p class="col-md-4 mb-0 text-muted p-2">&copy; 2023 AuctionPoint, Inc</p>
+			<a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+				<i class="fa-sharp fa-solid fa-bullseye-pointer mx-1"></i></i>
+			</a>
+			<ul class="nav col-md-4 justify-content-end">
+				<div class="d-flex member-nav flex-row">
+					<li class="nav-item"><a href="/injdex.html" class="nav-link px-2 text-muted">Home</a></li>
+					<li class="nav-item"><a href="/html/profile.html" class="nav-link px-2 text-muted">Profile</a></li>
+					<li class="nav-item"><a href="/html/login.html" class="nav-link px-2 text-muted" id="logout">logout</a></li>
+				</div>
+				<div class="none-member-nav d-none">
+					<li class="nav-item"><a href="/injdex.html" class="nav-link px-2 text-muted">Home</a></li>
+                	<li class="nav-item"><a href="/html/login.html" class="nav-link px-2 text-muted" id="login">login</a></li>
+				</div>
+			</ul>
+		</footer>
+	</body>
+</html>
