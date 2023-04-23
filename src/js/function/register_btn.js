@@ -4,7 +4,7 @@ const login = document.querySelector("#loginForm");
 
 export function registerForm() {
 	registerBtn.addEventListener("click", () => {
-		register.classList.remove("hidden");
-		login.classList.add("hidden");
+		register.classList.remove("d-none");
+		login.classList.add("d-none");
 	});
 }
