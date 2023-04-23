@@ -3,7 +3,7 @@
     color: #FB1B1B;
 }
 
-.container-fluid, main, footer {
+.container-fluid, .home{
     max-width: 1200px;
     margin: auto;
 }
@@ -22,7 +22,7 @@ nav  {
         height: 2.8px;
         margin: 5px auto;
         transition: all 0.3s ease-in-out;
-        background-color: white;
+        background-color: rgb(192, 191, 191);
     }
     & .hamburger {
         cursor: pointer;
@@ -43,8 +43,12 @@ nav  {
 
 .btn-outline-info {
     color: black;
+    border-width: 3px;
 }
 
+footer {
+    font-size: 0.8em;
+}
 
 
 /* Home page */
@@ -72,6 +76,56 @@ main {
     }
 }
 
+/* Signin page */
+.signin-body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 55px;
+    height: 100vh
+}
+
+.signin-main {
+    margin-top: 200px;
+    max-width: 500px;
+    padding: 15px;
+    
+    & form {
+        border: 40px solid white;
+        border-left-width: 100px;
+        border-right-width: 100px;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.37);
+        
+    }
+    & i {
+        font-size: 2.5em;
+    }
+    & .form-floating:focus-within {
+        z-index: 2;
+    }
+    
+    & input[type="text"], .login-email {
+        margin-bottom: -1px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    
+    & .register-email {
+        margin-bottom: -1px;
+        border-radius: 0;
+    }
+
+    & input[type="password"] {
+        margin-bottom: 10px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+}
+}
+
+.invalid-feedback {
+    text-align: left;
+}
+
 /*mobile styles*/
 @media only screen and (max-width: 700px) {
     header {
@@ -96,4 +150,16 @@ main {
         width: 100%;
         }
     }
+
+    /* Signin page */
+    .signin-main {
+        margin-top: 200px;
+        max-width: 330px;
+        padding: 15px;
+        
+        & form {
+            border: 20px solid white;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.37);
+            
+        }}
 }
