@@ -163,27 +163,26 @@ main {
         position: relative;
         top: -75px;
         background-color: white;
-        
-        & .profile-avatar {
-            height: 150px;
-            display: flex;
-            align-items: center;
-            background-color: #EEF5FB;
-            border-bottom-left-radius: 50%;
-            border-bottom-right-radius: 50%;
-        }
-        & .avatar {
-            background-color: white;
-            width: 100%;
-            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.37);
-        }
-        & .edit-btn {
-            position: relative;
-            top: -152px;
-            left: 152px;
-        }
     }
     
+    & .profile-avatar {
+        height: 150px;
+        display: flex;
+        align-items: center;
+        background-color: #EEF5FB;
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
+    }
+    & .avatar {
+        background-color: white;
+        width: 100%;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.37);
+    }
+    & .edit-btn {
+        position: relative;
+        top: -152px;
+        left: 152px;
+    }
     & .profile-info {
         width: 300px;
         position: relative;
