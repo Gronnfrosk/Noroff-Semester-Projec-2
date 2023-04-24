@@ -71,7 +71,6 @@
 						class="pe-0 avatar"
 					/>
 					<button type="button" class="btn edit-btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-gear"></i></button>
-
 					<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 						<div class="modal-dialog modal-dialog-centered">
 							<div class="modal-content">
@@ -131,7 +130,23 @@
                             </div>
                         </div>
                     </div>
-                    <div class="cards mx-auto d-flex flex-wrap justify-content-center gap-3">
+                    <div class="cards mx-auto d-flex flex-wrap justify-content-center gap-3" id="my-auction">
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                    <div class="cards mx-auto d-flex flex-wrap justify-content-center gap-3 d-none" id="my-bids">
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                    <div class="cards mx-auto d-flex flex-wrap justify-content-center gap-3 d-none" id="owned">
                         <div class="box"></div>
                         <div class="box"></div>
                         <div class="box"></div>
@@ -148,7 +163,7 @@
 				<i class="fa-sharp fa-solid fa-bullseye-pointer mx-1"></i></i>
 			</a>
 			<ul class="nav col-md-4 justify-content-end">
-				<div class="d-flex member-nav flex-row">
+				<div class="d-flex member-nav flex-row gap-4">
 					<li class="nav-item"><a href="/injdex.html" class="nav-link px-2 text-muted">Home</a></li>
 					<li class="nav-item"><a href="/html/profile.html" class="nav-link px-2 text-muted">Profile</a></li>
 					<li class="nav-item"><a href="/html/login.html" class="nav-link px-2 text-muted" id="logout">logout</a></li>
