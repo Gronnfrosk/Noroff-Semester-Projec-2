@@ -1,7 +1,418 @@
-.test {
-    height: 500px;
-    color: green;
+
+.fa-bullseye-pointer {
+    color: #FB1B1B;
+}
+
+.container-fluid, .home{
+    max-width: 1200px;
+    margin: auto;
+}
+
+nav  {
+    & i {
+        font-size: 1.5em;
+    }
+    & button {
+        padding: 0!important;
+        box-shadow: none!important;
+    }
+    & .bar {
+        display: block;
+        width: 25px;
+        height: 2.8px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background-color: rgb(192, 191, 191);
+    }
+    & .hamburger {
+        cursor: pointer;
+        display: block;
+        float: right;  
+        padding: 5px 10px;
+    }
+    & .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    & .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    & .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+.btn-outline-info {
+    color: black;
+    border-width: 3px;
+}
+
+.edit-btn {
+    font-size: 1.25em;
+}
+
+footer {
+    font-size: 0.8em;
+}
+
+/* Home page */
+
+header {
+    padding-top: 200px;
+  
+    & i {
+        width: 100%;
+        text-align: center;
+        position: relative;
+        bottom: 115px;
+        font-size: 3em;
+    }
+    & .add-item {
+        position: relative;
+        top: -30px;
+    }
+}
+
+main {
+    & .blue-container {
+        background-color: #EEF5FB;
+    }
+}
+
+.card-container .cards {
+    position: relative;
+    left: 63px;
+}
+
+.cards {
+    width: 70%;
+}
+
+.box {
+    background-color: #212529;
+    width: 30%;
+    min-width: 190px;
+    height: 250px;
+}
+
+/* Signin page */
+.signin-body {
     display: flex;
-    justify-content: center;
     align-items: center;
+    flex-direction: column;
+    padding-top: 55px;
+    height: 100vh
+}
+
+.signin-main {
+    margin-top: 200px;
+    max-width: 500px;
+    padding: 15px;
+    
+    & form {
+        border: 40px solid white;
+        border-left-width: 100px;
+        border-right-width: 100px;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.37);
+        
+    }
+    & label {
+        font-size: 0.85em;
+    }
+    & i {
+        font-size: 2.5em;
+    }
+    & .form-floating:focus-within {
+        z-index: 2;
+    }
+    
+    & input[type="text"], .login-email {
+        margin-bottom: -1px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    
+    & .middle-input {
+        margin-bottom: -1px;
+        border-radius: 0;
+    }
+
+    & input[type="password"] {
+        margin-bottom: 10px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+    & .btn {
+        font-size: 1em;
+    }
+}
+
+.invalid-feedback {
+    text-align: left;
+}
+
+
+/* Profile page */
+.profile-top {
+    height: 450px;
+    & .blue {
+        height: 200px;
+        background-color: #EEF5FB;
+    }
+    & .profile-image {
+        width: 150px;
+        position: relative;
+        top: -75px;
+        background-color: white;
+        & .avatar {
+            width: 100%;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.37);
+        }
+        & .edit-btn {
+            position: relative;
+            top: -152px;
+            left: 152px;
+        }
+    }
+    
+    & .profile-info {
+        width: 300px;
+        position: relative;
+        top: -110px;
+        & h2, p {
+            margin: 0;
+        }
+        & .credit {
+            width: 60%;
+            background-color: #EEF5FB;
+            height: 35px;
+            padding-top: 5px;
+            text-align: center;
+            border-radius: 20px;
+        }
+    }
+}
+
+.auction-history {
+    & .active {
+        font-weight: bold;        
+    }
+    & .nav-link.active {
+            background-color: #EEF5FB;
+            border-bottom-color: #EEF5FB;
+        }
+    & .nav-item a {
+        color: #212529;
+    }
+    & .auction-container {
+        background-color: #EEF5FB;
+    }
+}
+
+/* Specific page */
+.specific {
+    max-width: 900px;
+
+    & p {
+        margin: 0;
+    }
+
+    & h2 {
+        font-size: 1.3em;
+        margin-bottom: 0;
+        margin-left: 0;
+    }
+
+    & h3 {
+        font-size: 1.15em;
+    }
+}
+
+.details-image {
+    margin-top: 100px;
+    width: 70%;
+    margin: 100px auto 0px auto;
+
+    & .edit-edit {
+        display: flex;
+        justify-content: end;
+        position: relative;
+        left: 45px;
+        bottom: 407px;
+    }
+    & .edit-btn {
+        height: fit-content;
+    }
+}
+
+.details {
+    display: flex;
+    justify-content: space-between;
+    max-width: 900px;
+    margin: auto;
+    padding: 0 50px;
+
+    & .details-one {
+        max-width: 600px;
+        margin-right: 40px;
+    }
+    & .details-two {
+        text-align: end;
+        width: 100px; 
+          
+          & p {
+              width: 100px;
+          } 
+      }
+}
+
+.details-bid {
+    max-width: 450px;
+    padding: 25px 0 0 50px;
+
+    & .bid-input {
+        width: 90%;
+
+        & button {
+            width: 100%;
+        }
+    }
+    & input[type="text"] {
+        text-align: center;
+    }
+    & label {
+        padding-top: 39px;
+        text-align: center;
+    }
+    & img {
+        width: 60px;
+    }
+    & .recent-bid {
+        position: relative;
+        bottom: 10px;
+    }
+    & .bid-log p {
+        margin-bottom: 0;
+        margin-left: 25px;
+    }
+}
+
+
+/*mobile styles*/
+@media only screen and (max-width: 700px) {
+
+    p {
+        font-size: 1em;
+    }
+
+    header {
+        padding-top: 140px;
+    
+        & h1 {
+        font-size: 1.4em;
+        }
+    }
+
+    main {
+        & h2 {
+            font-size: 1.15em;
+        }
+    }
+
+    .cards {
+        width: 90%;
+    }
+    .box {
+        min-width: 140px;
+        height: 210px;
+    }
+
+    footer {
+        justify-content: center;
+        flex-direction: column-reverse;
+
+        & .icon {
+        width: 100%;
+        }
+    }
+
+    /* Home page */
+    header {
+        & .gap-2 {
+            position: absolute;
+            right: 25px;
+            top: 278px;
+        }
+        & .add-item {
+            width: 140px;
+            font-size: 0.7em;
+        }
+    }
+    
+    .home h2 {
+        margin-left: 25px;
+    }
+
+    .card-container .cards {
+        left: 0px;
+    }
+
+    /* Signin page */
+    .signin-main {
+        margin-top: 200px;
+        max-width: 330px;
+        padding: 15px;
+        
+        & form {
+            border: 25px solid white;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.37);
+            
+        }
+    }
+
+    /* Profile page */
+    
+
+    /* Specific page */
+    .specific h2 {
+        margin: 0;
+    }
+
+    .details-image, .details, .details-bid {
+        width: 90%;
+        margin: auto;
+    }
+    
+    .details-image {
+        flex-direction: column;
+        margin-bottom: 0;
+
+        & .carousel {
+            margin-top: 100px;
+        }
+        & .edit-edit {
+            left: 0px;
+            bottom: 0px;
+        }
+    }
+
+    .details {
+        flex-direction: column;
+        margin: auto;
+        padding: 0;
+
+        & .details-two {
+            display: contents;
+            & p {
+                width: 100%;
+            } 
+        }
+    }
+    
+    .details-bid {
+        padding: 0;
+        
+        & .bid-input {
+            width: 100%;
+        }
+    }
 }

@@ -4,6 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="AuctionPoint is an online auction platform to members." />
 		<script src="https://kit.fontawesome.com/fecd9f1338.js" crossorigin="anonymous"></script>
 		<link
 			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
@@ -23,7 +24,10 @@
 	<body>
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
 			<div class="container-fluid">
-				<a class="navbar-brand fw-bold" href="#">AuctionPoint</a>
+				<div>
+					<a class="navbar-brand fw-bold m-0" href="#">AuctionPoint</a>
+					<i class="fa-sharp fa-solid fa-bullseye-pointer mx-1"></i>
+				</div>
 				<button
 					class="navbar-toggler"
 					type="button"
@@ -33,29 +37,114 @@
 					aria-expanded="false"
 					aria-label="Toggle navigation"
 				>
-					<span class="navbar-toggler-icon"></span>
+					<div class="hamburger">
+						<span class="bar"></span>
+						<span class="bar"></span>
+						<span class="bar"></span>
+					</div>
 				</button>
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<div class="collapse navbar-collapse mx-2" id="navbarSupportedContent">
 					<ul class="nav navbar-nav me-auto mb-2 mb-lg-0">
-						<li class="nav-item">
-							<a class="nav-link" href="">Home</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="/html/profile.html">Profile</a>
-						</li>
-						<li class="nav-item" id="logout">
-							<a class="nav-link logout-nav" href="/html/signin.html">Logout</a>
-							<!--<a class="nav-link login-nav" href="/html/signin.html">Login</a> -->
-						</li>
+						<div class="member-nav nav navbar-nav me-auto mb-2 mb-lg-0">
+							<li class="nav-item">
+								<a class="nav-link text-white" href="">Home</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="/html/profile.html">Profile</a>
+							</li>
+							<li class="nav-item" id="logout">
+								<a class="nav-link logout-nav" href="/html/signin.html">Logout</a>
+							</li>
+						</div>
+						<div class="none-member-nav nav navbar-nav me-auto mb-2 mb-lg-0 d-none">
+							<li class="nav-item">
+								<a class="nav-link text-white" href="">Home</a>
+							</li>
+							<li class="nav-item" id="logout">
+								<a class="nav-link login-nav" href="/html/signin.html">Login</a>
+							</li>
+						</div>
 					</ul>
 					<form class="d-flex search_form" role="search" id="search_form">
-						<input class="form-control me-2" type="search" placeholder="Search for post title or id" aria-label="Search" id="search_input" />
+						<input class="form-control me-2" type="search" placeholder="Search the auction" aria-label="Search" id="search_input" />
 					</form>
 				</div>
 			</div>
 		</nav>
-		<div class="test">
-			<h1>Hello world!</h1>
-		</div>
+		<header class="d-flex justify-content-center mx-4">
+			<div>
+				<div>
+					<h1>Welcome!</h1>
+					<h1>Join the online auction today</h1>
+					<i class="fa-sharp fa-solid fa-bullseye-pointer"></i>
+				</div>
+				<div class="d-grid gap-2">
+					<button class="btn btn-info add-item" data-bs-toggle="modal" type="button" data-bs-target="#exampleModal">Add item for auction +</button>
+				</div>
+				<div class="modal fade" id="exampleModal" aria-labelledby="exampleModalToggleLabel" tabindex="-1" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h1 class="modal-title fs-5" id="exampleModalToggleLabel">Modal 1</h1>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">Show a second modal and hide this one with the button below.</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Close</button>
+								<button type="button" class="btn btn-info">Add item for auction</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<main class="home">
+			<h2 class="mx-5">Auction items</h2>
+			<div class="blue-container pb-5">
+				<div class="dropdown">
+					<button
+						class="btn btn-white bg-white dropdown-toggle border border-white float-end m-4"
+						type="button"
+						data-bs-toggle="dropdown"
+						aria-expanded="false"
+					>
+						Filter
+					</button>
+					<ul class="dropdown-menu border-0">
+						<li><a class="dropdown-item" href="#">Longest deadline</a></li>
+						<li><a class="dropdown-item" href="#">Shortest deadline</a></li>
+						<li><a class="dropdown-item" href="#">Active auction</a></li>
+						<li><a class="dropdown-item" href="#">Ended auction</a></li>
+					</ul>
+				</div>
+				<section class="card-container pt-5">
+					<div class="cards mx-auto d-flex flex-wrap justify-content-center gap-3 pt-4">
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+				</section>
+			</div>
+		</main>
+		<footer class="home d-flex flex-wrap justify-content-between align-items-center pt-3">
+			<p class="col-md-4 mb-0 text-muted p-2">&copy; 2023 AuctionPoint, Inc</p>
+			<a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+				<i class="fa-sharp fa-solid fa-bullseye-pointer mx-1"></i></i>
+			</a>
+			<ul class="nav col-md-4 justify-content-end">
+				<div class="d-flex member-nav flex-row gap-4">
+					<li class="nav-item"><a href="/injdex.html" class="nav-link px-2 text-muted">Home</a></li>
+					<li class="nav-item"><a href="/html/profile.html" class="nav-link px-2 text-muted">Profile</a></li>
+					<li class="nav-item"><a href="/html/login.html" class="nav-link px-2 text-muted" id="logout">logout</a></li>
+				</div>
+				<div class="none-member-nav d-none">
+					<li class="nav-item"><a href="/injdex.html" class="nav-link px-2 text-muted">Home</a></li>
+                	<li class="nav-item"><a href="/html/login.html" class="nav-link px-2 text-muted" id="login">login</a></li>
+				</div>
+			</ul>
+		</footer>
 	</body>
 </html>
