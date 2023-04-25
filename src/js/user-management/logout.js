@@ -15,7 +15,7 @@ export function logout() {
 			button.addEventListener("click", () => {
 				localStorage.removeItem("token");
 				localStorage.removeItem("profile");
-				if (path === "/Noroff-Semester-Project-2/") {
+				if (path !== "/Noroff-Semester-Project-2/") {
 					window.location.href = "https://gronnfrosk.github.io/Noroff-Semester-Project-2";
 				}
 			});
