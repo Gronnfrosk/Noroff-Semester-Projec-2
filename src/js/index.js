@@ -15,4 +15,4 @@ if (path == "/Noroff-Semester-Project-2/html/signin.html") {
 	console.log("Hello register site");
 }
 
-console.log("Hello main index");
+console.log("Hello main index javascript");
