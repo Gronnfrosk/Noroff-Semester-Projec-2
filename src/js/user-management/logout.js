@@ -10,18 +10,19 @@ const path = location.pathname;
 export function logout() {
 	console.log("Hello from logout");
 
-	function listenerLogout(button) {
-		if (button) {
-			button.addEventListener("click", () => {
-				localStorage.removeItem("token");
-				localStorage.removeItem("profile");
-				if (path !== "/Noroff-Semester-Project-2/") {
-					window.location.href = "https://gronnfrosk.github.io/Noroff-Semester-Project-2";
-				}
-			});
+	logoutButton.addEventListener("click", () => {
+		localStorage.removeItem("token");
+		localStorage.removeItem("profile");
+		if (location.pathname !== "/Noroff-Semester-Project-2/") {
+			window.location.href = "https://gronnfrosk.github.io/Noroff-Semester-Project-2";
 		}
-	}
+	});
 
-	listenerLogout(logoutButton);
-	listenerLogout(logoutButtonFooter);
+	logoutButtonFooter.addEventListener("click", () => {
+		localStorage.removeItem("token");
+		localStorage.removeItem("profile");
+		if (location.pathname !== "/Noroff-Semester-Project-2/") {
+			window.location.href = "https://gronnfrosk.github.io/Noroff-Semester-Project-2";
+		}
+	});
 }
