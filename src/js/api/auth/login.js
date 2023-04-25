@@ -28,7 +28,7 @@ export async function login(profile) {
 
 	if (response.ok) {
 		alert("Welcome to GreenFrog! You are now logged in.");
-		window.location.href = "https://gronnfrosk.github.io/Noroff-Semester-Projec-2";
+		window.location.href = "https://gronnfrosk.github.io/Noroff-Semester-Project-2";
 	} else {
 		alert("Error! The combination of user name and password may be incorrect or user is not registered at GreenFrog.");
 	}

@@ -21,7 +21,7 @@ export async function register(profile) {
 	const result = await response.json();
 	if (response.ok) {
 		alert("Welcome to GreenFrog! You are a member and can now login to your profile.");
-		window.location.href = "https://gronnfrosk.github.io/Noroff-Semester-Projec-2/html/signin.html";
+		window.location.href = "https://gronnfrosk.github.io/Noroff-Semester-Project-2/html/signin.html";
 	} else {
 		alert("Error! Your account was not register.");
 	}
