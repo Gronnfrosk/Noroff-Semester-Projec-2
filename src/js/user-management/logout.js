@@ -1,5 +1,6 @@
 const logoutButton = document.querySelector("#logout");
 const logoutButtonFooter = document.querySelector("#logoutFooter");
+const path = location.pathname;
 
 /**
  * This function initiate when logout button is clicked and the user logs out by removing JSON Web Tokens.
@@ -7,24 +8,20 @@ const logoutButtonFooter = document.querySelector("#logoutFooter");
  */
 
 export function logout() {
-	if (logoutButton) {
-		logoutButton.addEventListener("click", () => {
-			localStorage.removeItem("token");
-			localStorage.removeItem("profile");
-			if (location.pathname === "/Noroff-Semester-Project-2/html/") {
-				window.location.href = "https://gronnfrosk.github.io/Noroff-Semester-Project-2";
-			}
-		});
+	function listenerLogout(button) {
+		if (button) {
+			button.addEventListener("click", () => {
+				localStorage.removeItem("token");
+				localStorage.removeItem("profile");
+				if (path === "/Noroff-Semester-Project-2/") {
+					window.location.href = "https://gronnfrosk.github.io/Noroff-Semester-Project-2";
+				}
+			});
+		}
 	}
 
-	if (logoutButtonFooter) {
-		logoutButtonFooter.addEventListener("click", () => {
-			localStorage.removeItem("token");
-			localStorage.removeItem("profile");
-			if (location.pathname === "/Noroff-Semester-Project-2/html/") {
-				window.location.href = "https://gronnfrosk.github.io/Noroff-Semester-Project-2";
-			}
-		});
-	}
+	listenerLogout(logoutButton);
+	listenerLogout(logoutButtonFooter);
+
 	console.log("Hello from logout");
 }
