@@ -15,13 +15,10 @@ export function setRegisterFormListener() {
 			event.preventDefault();
 			const form = event.target;
 			const data = new FormData(form);
-			const email = data.get("email");
-			const name = data.get("name");
-			const password = data.get("password");
-			const avatar = data.get("avatar");
+			const profile = Object.fromEntries(data.entries());
 
 			// send it to the API
-			register(name, email, password, avatar);
+			register(profile);
 		});
 	}
 }

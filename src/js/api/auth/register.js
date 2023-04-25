@@ -9,13 +9,13 @@ const method = "post";
  * @param {String} registerURL This is the url needed for "POST" request.
  * @param {String} method The HTTP request method "POST".
  */
-export async function register(name, email, password, avatar) {
+export async function register(profile) {
 	const registerURL = API_AUCTION_URL + action;
 
 	const response = await fetch(registerURL, {
 		headers: { "Content-type": "application/json" },
 		method,
-		body: JSON.stringify(name, email, password, avatar),
+		body: JSON.stringify(profile),
 	});
 
 	if (response.ok) {
