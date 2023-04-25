@@ -15,25 +15,16 @@ if (path === "/Noroff-Semester-Project-2/html/signin.html" || path === "/html/si
 } else if (path === "/Noroff-Semester-Project-2/html/register.html" || path === "/html/register.html") {
 	user.setRegisterFormListener();
 	console.log("Hello register site");
-} else if (
-	path === "/Noroff-Semester-Project-2/" ||
-	path === "/Noroff-Semester-Project-2/html/profile.html" ||
-	path === "/Noroff-Semester-Project-2/html/specific_auction_item.html" ||
-	path === "/index.html" ||
-	path === "/html/profile.html" ||
-	path === "/specific_auction_item.html"
-) {
-	console.log("Hello home, profile and specific page");
-	global.checkUserNav();
-	user.logout();
-} else if (
-	path === "/Noroff-Semester-Project-2/html/profile.html" ||
-	path === "/Noroff-Semester-Project-2/html/specific_auction_item.html" ||
-	path === "/html/profile.html" ||
-	path === "/specific_auction_item.html"
-) {
+} else if (path === "/Noroff-Semester-Project-2/html/profile.html" || path === "/html/profile.html") {
 	checkUser();
+	user.logout();
+	console.log("Hello profile page");
+} else if (path === "/Noroff-Semester-Project-2/html/specific_auction_item.html" || path === "/html/specific_auction_item.html") {
+	checkUser();
+	user.logout();
+	console.log("Hello specific page");
 } else if (path === "/Noroff-Semester-Project-2/" || path === "/index.html") {
+	user.logout();
 	global.checkUserNav();
 	console.log("Hello home page");
 }

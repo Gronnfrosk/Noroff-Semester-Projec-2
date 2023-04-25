@@ -7,6 +7,7 @@ import { load } from "../localstorage/save_load_remove.js";
  * @param {string} userToken This is the localStorage key with user profile data value.
  */
 export function checkUser() {
+	console.log("user test");
 	const token = load("token");
 	const userToken = load("profile");
 
