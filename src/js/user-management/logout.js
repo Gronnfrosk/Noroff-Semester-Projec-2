@@ -12,7 +12,7 @@ export function logout() {
 			localStorage.removeItem("token");
 			localStorage.removeItem("profile");
 			if (location.pathname !== "/Noroff-Semester-Project-2/index.html") {
-				window.location.href = "/Noroff-Semester-Project-2/index.html";
+				window.location.href = "https://gronnfrosk.github.io/Noroff-Semester-Project-2";
 			}
 		});
 	}
@@ -22,8 +22,9 @@ export function logout() {
 			localStorage.removeItem("token");
 			localStorage.removeItem("profile");
 			if (location.pathname !== "/Noroff-Semester-Project-2/index.html") {
-				window.location.href = "/Noroff-Semester-Project-2/index.html";
+				window.location.href = "https://gronnfrosk.github.io/Noroff-Semester-Project-2";
 			}
 		});
 	}
+	console.log("Hello from logout");
 }
