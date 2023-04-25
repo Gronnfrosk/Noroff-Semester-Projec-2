@@ -7,10 +7,10 @@ global.inputValidation();
 
 const path = location.pathname;
 
-if (path === "https://gronnfrosk.github.io/Noroff-Semester-Projec-2/html/signin.html") {
+if (path === "/Noroff-Semester-Projec-2/html/signin.html") {
 	user.setLoginFormListener();
 	console.log("Hello login site");
-} else if (path === "https://gronnfrosk.github.io/Noroff-Semester-Projec-2/html/register.html") {
+} else if (path === "/Noroff-Semester-Projec-2/html/register.html") {
 	user.setRegisterFormListener();
 	console.log("Hello register site");
 }
