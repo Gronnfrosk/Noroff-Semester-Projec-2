@@ -7,9 +7,9 @@ global.inputValidation();
 
 const path = location.pathname;
 
-if (path === "/html/signin.html") {
+if (path === "https://gronnfrosk.github.io/Noroff-Semester-Projec-2/html/signin.html") {
 	user.setLoginFormListener();
-} else if (path === "/html/register.html") {
+} else if (path === "https://gronnfrosk.github.io/Noroff-Semester-Projec-2/html/register.html") {
 	user.setRegisterFormListener();
 }
 
