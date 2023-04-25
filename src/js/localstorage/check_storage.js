@@ -1,4 +1,4 @@
-import { load } from "../../localstorage/save_load_remove.js";
+import { load } from "../localstorage/save_load_remove.js";
 
 /**
  * This function stops none users to visit home page or profile page
@@ -6,21 +6,20 @@ import { load } from "../../localstorage/save_load_remove.js";
  * @param {string} token This is the localStorage key with access token value.
  * @param {string} userToken This is the localStorage key with user profile data value.
  */
-export function checkUserNav() {
+export function checkUserToken() {
 	const token = load("token");
 	const userToken = load("profile");
 
 	if (!token && !userToken) {
-		console.log("No token in storage");
-		const userNav = document.querySelectorAll("#nav-user");
-		const navNew = document.querySelectorAll("#login");
+		window.location.href = "https://gronnfrosk.github.io/Noroff-Semester-Project-2";
+	}
+}
 
-		userNav.forEach((element) => {
-			element.classList.add("d-none");
-		});
+export function checkUserTokenLogin() {
+	const token = load("token");
+	const userToken = load("profile");
 
-		navNew.forEach((element) => {
-			element.classList.remove("d-none");
-		});
+	if (token && userToken) {
+		window.location.href = "https://gronnfrosk.github.io/Noroff-Semester-Project-2";
 	}
 }
