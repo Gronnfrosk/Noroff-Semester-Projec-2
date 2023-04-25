@@ -7,10 +7,10 @@ global.inputValidation();
 
 const path = location.pathname;
 
-if (path === "/Noroff-Semester-Project-2/html/signin.html") {
+if (path == "/Noroff-Semester-Project-2/html/signin.html") {
 	user.setLoginFormListener();
 	console.log("Hello login site");
-} else if (path === "/Noroff-Semester-Project-2/html/register.html") {
+} else if (path == "/Noroff-Semester-Project-2/html/register.html") {
 	user.setRegisterFormListener();
 	console.log("Hello register site");
 }
