@@ -3,7 +3,7 @@ import * as user from "./user-management/index.js";
 
 global.navHamburger();
 global.inputValidation();
-user.logout();
+
 //global.navUser();
 
 const path = location.pathname;
@@ -14,8 +14,13 @@ if (path === "/Noroff-Semester-Project-2/html/signin.html") {
 } else if (path === "/Noroff-Semester-Project-2/html/register.html") {
 	user.setRegisterFormListener();
 	console.log("Hello register site");
-} else if (path === "/Noroff-Semester-Project-2/") {
-	console.log("Hello home page");
+} else if (
+	path === "/Noroff-Semester-Project-2/" ||
+	path === "/Noroff-Semester-Project-2/html/profile.html" ||
+	path === "/Noroff-Semester-Project-2/html/specific_auction_item.html"
+) {
+	console.log("Hello home, profile and specific page");
+	user.logout();
 }
 
 console.log("Hello main index javascript");
