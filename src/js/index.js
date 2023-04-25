@@ -1,13 +1,12 @@
-import * as global from "./global-modules/index.js";
+import { checkUserNav } from "./global-modules/index.js";
+import { globalFunctions } from "./global-modules/index.js";
 import * as user from "./user-management/index.js";
 import * as checkToken from "./localstorage/check_storage.js";
-
-global.navHamburger();
-global.inputValidation();
-
-//global.navUser();
+import { displayProfile } from "./profile/profile_info.js";
 
 const path = location.pathname;
+
+globalFunctions();
 
 if (path === "/Noroff-Semester-Project-2/html/signin.html" || path === "/html/signin.html") {
 	user.setLoginFormListener();
@@ -20,6 +19,7 @@ if (path === "/Noroff-Semester-Project-2/html/signin.html" || path === "/html/si
 } else if (path === "/Noroff-Semester-Project-2/html/profile.html" || path === "/html/profile.html") {
 	checkToken.checkUserToken();
 	user.logout();
+	displayProfile();
 	console.log("Hello profile page");
 } else if (path === "/Noroff-Semester-Project-2/html/specific_auction_item.html" || path === "/html/specific_auction_item.html") {
 	checkToken.checkUserToken();
@@ -27,7 +27,7 @@ if (path === "/Noroff-Semester-Project-2/html/signin.html" || path === "/html/si
 	console.log("Hello specific page");
 } else if (path === "/Noroff-Semester-Project-2/" || path === "/index.html") {
 	user.logout();
-	global.checkUserNav();
+	checkUserNav();
 	console.log("Hello home page");
 }
 
