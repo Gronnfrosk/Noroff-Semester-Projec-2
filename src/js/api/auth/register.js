@@ -9,21 +9,19 @@ const method = "post";
  * @param {String} registerURL This is the url needed for "POST" request.
  * @param {String} method The HTTP request method "POST".
  */
-export async function register(profile) {
+export async function register(name, email, password, avatar) {
 	const registerURL = API_AUCTION_URL + action;
 
 	const response = await fetch(registerURL, {
 		headers: { "Content-type": "application/json" },
 		method,
-		body: JSON.stringify(profile),
+		body: JSON.stringify(name, email, password, avatar),
 	});
 
-	const result = await response.json();
 	if (response.ok) {
 		alert("Account successfully created. You may now proceed to login.");
 		window.location.href = "https://gronnfrosk.github.io/Noroff-Semester-Project-2/html/signin.html";
 	} else {
 		alert("Error! Your account was not register.");
 	}
-	return result;
 }

@@ -9,17 +9,19 @@ import { register } from "../api/auth/register.js";
  */
 export function setRegisterFormListener() {
 	const form = document.querySelector("#registerForm");
-	console.log(form);
 
 	if (form) {
 		form.addEventListener("submit", (event) => {
 			event.preventDefault();
 			const form = event.target;
-			const formData = new FormData(form);
-			const profile = Object.fromEntries(formData.entries());
+			const data = new FormData(form);
+			const email = data.get("email");
+			const name = data.get("name");
+			const password = data.get("password");
+			const avatar = data.get("avatar");
 
 			// send it to the API
-			register(profile);
+			register(name, email, password, avatar);
 		});
 	}
 }
