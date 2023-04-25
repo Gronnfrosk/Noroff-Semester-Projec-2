@@ -27,9 +27,9 @@ export async function login(profile) {
 	storage.save("profile", user);
 
 	if (response.ok) {
-		alert("Welcome to GreenFrog! You are now logged in.");
+		alert("You are now logged in at AuctionPoint.");
 		window.location.href = "https://gronnfrosk.github.io/Noroff-Semester-Project-2";
 	} else {
-		alert("Error! The combination of user name and password may be incorrect or user is not registered at GreenFrog.");
+		alert("Error! You have entered an invalid username or password.");
 	}
 }
