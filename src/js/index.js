@@ -9,7 +9,10 @@ global.inputValidation();
 
 const path = location.pathname;
 
-if (path === "/Noroff-Semester-Project-2/html/signin.html") {
+if (path === "/Noroff-Semester-Project-2/" || "/index.html") {
+	global.checkUserNav();
+	console.log("Hello home page");
+} else if (path === "/Noroff-Semester-Project-2/html/signin.html") {
 	user.setLoginFormListener();
 	console.log("Hello login site");
 } else if (path === "/Noroff-Semester-Project-2/html/register.html") {
@@ -22,6 +25,7 @@ if (path === "/Noroff-Semester-Project-2/html/signin.html") {
 ) {
 	console.log("Hello home, profile and specific page");
 	user.logout();
+} else if (path === "/Noroff-Semester-Project-2/html/profile.html" || path === "/Noroff-Semester-Project-2/html/specific_auction_item.html") {
 	checkUser();
 }
 
