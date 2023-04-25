@@ -8,6 +8,8 @@ const path = location.pathname;
  */
 
 export function logout() {
+	console.log("Hello from logout");
+
 	function listenerLogout(button) {
 		if (button) {
 			button.addEventListener("click", () => {
@@ -22,6 +24,4 @@ export function logout() {
 
 	listenerLogout(logoutButton);
 	listenerLogout(logoutButtonFooter);
-
-	console.log("Hello from logout");
 }
