@@ -69,8 +69,8 @@
                         id="validationCustom01"
                         placeholder="Email address"
                         required
-                        pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
-                        title="Only @noroff.no and @stud.noroff.no emails are allowed to login."
+                        pattern="^[\w\-.]+@stud\.noroff\.no$"
+                        title="Only @stud.noroff.no emails are allowed to login."
                     />
                     <div class="invalid-feedback mb-3">Only @stud.noroff.no emails are allowed to login.</div>
                     <label for="validationCustom01 form-label">Email address</label>
@@ -83,6 +83,7 @@
                         class="form-control"
                         id="validationCustom02"
                         placeholder="Password"
+						pattern=".{8,}"
                         required
                         title="Requires password of at least 8 characters."
                     />
