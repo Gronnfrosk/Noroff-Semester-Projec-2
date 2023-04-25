@@ -1,5 +1,5 @@
 import { API_AUCTION_URL } from "../constants.js";
-import * as storage from "../../localstorage/save-load-remove.js";
+import { save } from "../../localstorage/save_load_remove.js";
 
 const action = "/auth/login";
 const method = "post";
@@ -23,8 +23,8 @@ export async function login(profile) {
 
 	const { accessToken, ...user } = await response.json();
 
-	storage.save("token", accessToken);
-	storage.save("profile", user);
+	save("token", accessToken);
+	save("profile", user);
 
 	if (response.ok) {
 		alert("You are now logged in at AuctionPoint.");

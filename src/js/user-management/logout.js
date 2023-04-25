@@ -1,3 +1,4 @@
+import { remove } from "../localstorage/save_load_remove.js";
 const logoutButton = document.querySelector("#logout");
 const logoutButtonFooter = document.querySelector("#logoutFooter");
 
@@ -8,17 +9,16 @@ const logoutButtonFooter = document.querySelector("#logoutFooter");
 
 export function logout() {
 	console.log("Hello from logout");
-	logoutButton.addEventListener("click", () => {
-		event.preventDefault();
-		localStorage.removeItem("token");
-		localStorage.removeItem("profile");
-		window.location.href = "https://gronnfrosk.github.io/Noroff-Semester-Project-2";
-	});
 
-	logoutButtonFooter.addEventListener("click", () => {
-		event.preventDefault();
-		localStorage.removeItem("token");
-		localStorage.removeItem("profile");
-		window.location.href = "https://gronnfrosk.github.io/Noroff-Semester-Project-2";
-	});
+	function logoutButtons(button) {
+		button.addEventListener("click", () => {
+			event.preventDefault();
+			remove("token");
+			remove("profile");
+			window.location.href = "https://gronnfrosk.github.io/Noroff-Semester-Project-2";
+		});
+	}
+
+	logoutButtons(logoutButton);
+	logoutButtons(logoutButtonFooter);
 }
