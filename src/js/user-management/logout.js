@@ -1,6 +1,5 @@
 import { remove } from "../localstorage/save_load_remove.js";
-const logoutButton = document.querySelector("#logout");
-const logoutButtonFooter = document.querySelector("#logoutFooter");
+const logoutButtons = document.querySelectorAll("#logout");
 
 /**
  * This function initiate when logout button is clicked and the user logs out by removing JSON Web Tokens.
@@ -10,7 +9,7 @@ const logoutButtonFooter = document.querySelector("#logoutFooter");
 export function logout() {
 	console.log("Hello from logout");
 
-	function logoutButtons(button) {
+	logoutButtons.forEach((button) => {
 		if (button !== undefined)
 			button.addEventListener("click", () => {
 				event.preventDefault();
@@ -18,8 +17,5 @@ export function logout() {
 				remove("profile");
 				window.location.href = "https://gronnfrosk.github.io/Noroff-Semester-Project-2";
 			});
-	}
-
-	logoutButtons(logoutButton);
-	logoutButtons(logoutButtonFooter);
+	});
 }
