@@ -3,7 +3,7 @@ import * as user from "./user-management/index.js";
 
 global.navHamburger();
 global.inputValidation();
-//user.logout();
+user.logout();
 //global.navUser();
 
 const path = location.pathname;
