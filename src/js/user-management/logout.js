@@ -11,12 +11,13 @@ export function logout() {
 	console.log("Hello from logout");
 
 	function logoutButtons(button) {
-		button.addEventListener("click", () => {
-			event.preventDefault();
-			remove("token");
-			remove("profile");
-			window.location.href = "https://gronnfrosk.github.io/Noroff-Semester-Project-2";
-		});
+		if (button !== undefined)
+			button.addEventListener("click", () => {
+				event.preventDefault();
+				remove("token");
+				remove("profile");
+				window.location.href = "https://gronnfrosk.github.io/Noroff-Semester-Project-2";
+			});
 	}
 
 	logoutButtons(logoutButton);
