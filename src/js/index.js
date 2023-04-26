@@ -3,6 +3,7 @@ import { globalFunctions } from "./global-modules/index.js";
 import * as user from "./user-management/index.js";
 import * as checkToken from "./localstorage/check_storage.js";
 import { displayProfile } from "./profile/profile_info.js";
+import { editAvatarListener } from "./profile/edit_avatar.js";
 
 const path = location.pathname;
 
@@ -20,6 +21,7 @@ if (path === "/Noroff-Semester-Project-2/html/signin.html" || path === "/html/si
 	checkToken.checkUserToken();
 	user.logout();
 	displayProfile();
+	editAvatarListener();
 	console.log("Hello profile page");
 } else if (path === "/Noroff-Semester-Project-2/html/specific_auction_item.html" || path === "/html/specific_auction_item.html") {
 	checkToken.checkUserToken();

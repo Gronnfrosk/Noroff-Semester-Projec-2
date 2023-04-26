@@ -10,5 +10,7 @@ export function displayCredits() {
 	const credit = document.querySelector("#nav-credit");
 	const profile = load("profile");
 
-	credit.innerHTML += `<p class="text-white fw-semibold d-flex align-items-center m-0 pe-3">Total Credit - ${profile.credits}</p>`;
+	if (profile && credit) {
+		credit.innerHTML += `<p class="text-white fw-semibold d-flex align-items-center m-0 pe-3">Total Credit - ${profile.credits}</p>`;
+	}
 }
