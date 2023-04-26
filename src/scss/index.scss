@@ -12,6 +12,16 @@ nav  {
     & i {
         font-size: 1.5em;
     }
+    & .nav-credit {
+        display: flex;
+        height: 40px;
+        align-items: center;
+        & p {
+        margin-bottom: 10px;
+        justify-content: end;
+        padding-right: 0;
+        }
+    }
     & button {
         padding: 0!important;
         box-shadow: none!important;
@@ -153,7 +163,7 @@ main {
 
 /* Profile page */
 .profile-top {
-    height: 450px;
+    height: 440px;
     & .blue {
         height: 200px;
         background-color: #EEF5FB;
@@ -197,6 +207,7 @@ main {
             padding-top: 5px;
             text-align: center;
             border-radius: 20px;
+            box-shadow: 0 3px 3px rgba(0, 0, 0, 0.103);
         }
     }
 }
@@ -318,6 +329,24 @@ main {
     
         & h1 {
         font-size: 1.4em;
+        }
+    }
+
+    nav  {
+        & i {
+            font-size: 1.5em;
+        }
+        & form {
+            margin-bottom: 15px;
+        }
+        & .nav-credit {
+            height: 0;
+            justify-content: flex-end;
+            & p {
+                margin-bottom: 10px;
+                position: relative;
+                bottom: 28px;
+            }
         }
     }
 

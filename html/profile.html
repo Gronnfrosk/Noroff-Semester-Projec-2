@@ -55,6 +55,7 @@
 							<a class="nav-link logout-nav" href="">Logout</a>
 						</li>
 					</ul>
+					<div class="nav-credit" id="nav-credit"></div>
 					<form class="d-flex search_form" role="search" id="search_form">
 						<input class="form-control me-2" type="search" placeholder="Search the auction" aria-label="Search" id="search_input" />
 					</form>
@@ -64,13 +65,8 @@
 		<main class="home">
 			<section class="profile-top">
 				<div class="blue"></div>
-				<div class="profile-image mx-auto" id="avatar">
-					<div class="profile-avatar">
-					<img
-						src="https://archives.bulbagarden.net/media/upload/thumb/f/fb/0001Bulbasaur.png/600px-0001Bulbasaur.png"
-						alt="Image for the user profile"
-						class="pe-0 avatar"
-					/>
+				<div class="profile-image mx-auto" >
+					<div class="profile-avatar" id="avatar">
 					</div>
 					<button type="button" class="btn edit-btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-gear"></i></button>
 					<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -81,27 +77,34 @@
 									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 								</div>
 								<div class="modal-body">
+									<form id="avatar-edit" class="needs-validation" novalidate>
 									<div class="form-floating">
-										<input type="url" class="form-control middle-input" id="validationCustom01" placeholder="Avatar URL" required pattern="" />
-										<div class="invalid-feedback mb-3">Only valid URL</div>
-										<label for="validationCustom01 form-label">Avatar URL</label>
+										<input
+											type="url"
+											class="form-control media-input"
+											id="validationCustom00.5"
+											placeholder="Avatar URL"
+											required
+											name="avatar"
+										/>
+										<div class="invalid-feedback mb-3">Only valid URL<br />- Example: http://www.example.com</div>
+										<label for="validationCustom00.5 form-label">Avatar URL </label>
 									</div>
 								</div>
 								<div class="modal-footer">
 									<button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Close</button>
-									<button type="button" class="btn btn-info">Save changes</button>
+									<button type="submit" class="btn btn-info">Save changes</button>	
 								</div>
+								</form>
+								
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="profile-info mx-auto mt-3">
-					<div class="name text-center"><h2>Gronnfrosk</h2></div>
-					<div class="email text-center"><p>gronnfrosk@stud.noroff.no</p></div>
-					<div class="credit mx-auto text-center mt-2"><p class="">Total Credit - 1000</p></div>
+				<div class="p-3 rounded-3 border-opacity-25" id="profile-detail">	
 				</div>
 			</section>
-			<section class="auction-history">
+			<section class="auction-history mt-2">
 				<ul class="nav nav-tabs mx-3">
 					<li class="nav-item">
 						<a class="nav-link active" aria-current="page" href="#">My auction</a>
