@@ -14,8 +14,8 @@ export function displayProfile() {
 	profileAvatar.innerHTML += `<img src="${profile.avatar}" alt="Image for the user: ${profile.name}" class="pe-0 avatar">`;
 
 	profileContainer.innerHTML += `<div class="profile-info mx-auto">
-    <div class="name text-center"><h2>Gronnfrosk</h2></div>
-    <div class="email text-center"><p>gronnfrosk@stud.noroff.no</p></div>
+    <div class="name text-center"><h2>${profile.name}</h2></div>
+    <div class="email text-center"><p>${profile.email}</p></div>
     <div class="credit mx-auto text-center mt-2"><p class="">Total Credit - ${profile.credits}</p></div>
 </div>`;
 }
