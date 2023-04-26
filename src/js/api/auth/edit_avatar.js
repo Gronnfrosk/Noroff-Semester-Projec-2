@@ -27,7 +27,9 @@ export async function editAvatar(media) {
 
 		if (response.ok) {
 			key.save("profile", user);
-			window.location.href = "https://gronnfrosk.github.io/Noroff-Semester-Project-2/html/profile.html";
+			setTimeout(() => {
+				window.location.href = "/html/profile.html";
+			}, 500);
 		} else {
 			alert("Error! Your avatar was not changed.");
 		}
