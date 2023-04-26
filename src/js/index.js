@@ -34,3 +34,4 @@ if (path === "/Noroff-Semester-Project-2/html/signin.html" || path === "/html/si
 }
 
 console.log("Hello main index javascript");
+console.log("profile js launch on pages");
