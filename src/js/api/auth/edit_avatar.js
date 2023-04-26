@@ -3,10 +3,6 @@ import * as key from "../../localstorage/save_load_remove.js";
 
 const auth = key.load("token");
 const profile = key.load("profile");
-const userName = profile.name;
-
-const method = "put";
-const action = "/profiles/" + userName + "/media";
 
 /**
  * This async function sends an API "POST" request and informs if successful or not.
@@ -15,20 +11,25 @@ const action = "/profiles/" + userName + "/media";
  * @param {String} method The HTTP request method "POST".
  */
 export async function editAvatar(media) {
-	const avatarURL = API_AUCTION_URL + action;
+	if (profile) {
+		const userName = profile.name;
+		const method = "put";
+		const action = "/profiles/" + userName + "/media";
+		const avatarURL = API_AUCTION_URL + action;
 
-	const response = await fetch(avatarURL, {
-		headers: { "Content-type": "application/json", Authorization: `Bearer ${auth}` },
-		method,
-		body: JSON.stringify({ avatar: media }),
-	});
+		const response = await fetch(avatarURL, {
+			headers: { "Content-type": "application/json", Authorization: `Bearer ${auth}` },
+			method,
+			body: JSON.stringify({ avatar: media }),
+		});
 
-	const { accessToken, ...user } = await response.json();
+		const { accessToken, ...user } = await response.json();
 
-	if (response.ok) {
-		key.save("profile", user);
-		window.location.href = "https://gronnfrosk.github.io/Noroff-Semester-Project-2/html/profile.html";
-	} else {
-		alert("Error! Your avatar was not changed.");
+		if (response.ok) {
+			key.save("profile", user);
+			window.location.href = "https://gronnfrosk.github.io/Noroff-Semester-Project-2/html/profile.html";
+		} else {
+			alert("Error! Your avatar was not changed.");
+		}
 	}
 }
