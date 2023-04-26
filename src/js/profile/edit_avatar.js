@@ -9,19 +9,14 @@ import { editAvatar } from "../api/auth/edit_avatar.js";
  */
 export function editAvatarListener() {
 	const form = document.querySelector("#avatar-edit");
-	console.log("Hello avatar edit");
 
 	if (form) {
 		form.addEventListener("submit", (event) => {
 			const mediaInput = document.querySelector(".media-input");
 			event.preventDefault();
-			//const form = event.target;
-			//const data = new FormData(form);
-			//const avatar = Object.fromEntries(data.entries());
 
 			// send it to the API
 			editAvatar(mediaInput.value);
-			console.log(mediaInput.value);
 		});
 	}
 }
