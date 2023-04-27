@@ -88,39 +88,62 @@ main {
     }
 }
 
-.card-container .cards {
-    position: relative;
-    left: 63px;
-    width: 70%;
-
-    & .box {
-        width: 230px;
-        height: 325px;
+.card-container {
+    text-align: center;
     
+    & .gap-5 {
+        gap: 4rem!important;
     }
-    & .listing {
-        height: 340px;
+    & .cards {
+        position: relative;
+        left: 63px;
+        width: 70%;
+
+        & .box {
+            width: 230px;
+            height: 325px;
+        
+        }
+        & .listing {
+            height: 340px;
+        }
+        & .no-img {
+            position: relative;
+            top: 115px;
+            text-align: center;
+            height: 0;
+        }
+        & .listing-image {
+            display: flex;
+            justify-content: center;
+            height: 235px;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.37);
+            overflow: hidden;
+            background-color: #fff;
+        }
+        & img { 
+            transform: scale(1.3);
+            transition: all .5s;
+            height: 115%;
+        }
+        & img:hover {
+            transform: scale(1.5);
+        }
+        & .listing-info {
+            text-align: left;
+        }
+        & .profile-info p {
+            margin: 0;
+        } 
+        & h4 {
+            margin: 0;
+            font-size: 1.3em;
+        }
     }
-    & .listing-image {
-        display: flex;
-        justify-content: center;
-        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.37);
-        overflow: hidden;
-    }
-    & img { 
-        transform: scale(1.3);
-        transition: all .5s;
-        height: 115%;
-    }
-    & img:hover {
-        transform: scale(1.5);
-    }
-    & .profile-info p {
-        margin: 0;
-    } 
-    & h4 {
-        margin: 0;
-        font-size: 1.3em;
+    & button {
+        width: 50%!important;
+        margin-top: 48px;
+        
     }
 }
 
@@ -432,6 +455,9 @@ main {
         & .box {
             width: 154px;
             height: 250px;
+        }
+        & .no-img {
+            top: 60px;
         }
         & .listing {
             height: 250px;
