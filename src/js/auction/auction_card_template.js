@@ -1,20 +1,21 @@
 const auctionCard = document.querySelector("#card-container");
 const moreLoadBtn = document.querySelector("#moreBtn");
-let loadCards = 3;
+var loadCards = 20;
 
 export async function showCards(items) {
 	items.sort(function (a, b) {
 		return new Date(b.endsAt) - new Date(a.endsAt);
 	});
 
-	for (let i = 0; i < loadCards; i++) {
-		function loadItem(item) {
-			const { id, title, description, tags, media, created, updated, endsAt, _count } = item;
-			const { bids } = _count;
-			const deadline = new Date(endsAt);
-			const dateFormat = deadline.toLocaleDateString("en-GB");
+	function displayCard() {
+		for (let i = 0; i < loadCards; i++) {
+			function loadItem(item) {
+				const { id, title, description, tags, media, created, updated, endsAt, _count } = item;
+				const { bids } = _count;
+				const deadline = new Date(endsAt);
+				const dateFormat = deadline.toLocaleDateString("en-GB");
 
-			auctionCard.innerHTML += `
+				auctionCard.innerHTML += `
 		        <div class="box" id="${id}">
 		            <div class="listing d-flex flex-column">
 		                <div class="no-img">No image</div>
@@ -35,14 +36,20 @@ export async function showCards(items) {
 		                </div>
 		            </div>
 		        </div>`;
+			}
+			loadItem(items[i]);
 		}
-		loadItem(items[i]);
 	}
+	displayCard();
+
 	moreLoadBtn.addEventListener("click", (event) => {
 		auctionCard.innerHTML = "";
-		const deadlineFilter = items.sort((a, b) => a.deadline - b.deadline).reverse();
-		showCards(items);
-		loadCards += 3;
+		loadCards += 20;
+		displayCard();
+		console.log(loadCards);
+		if (loadCards === 100) {
+			moreLoadBtn.classList.add("d-none");
+		}
 	});
 }
 
