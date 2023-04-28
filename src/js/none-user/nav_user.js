@@ -1,4 +1,4 @@
-import { load } from "../../localstorage/save_load_remove.js";
+import { load } from "../localstorage/save_load_remove.js";
 
 /**
  * This function stops none users to visit home page or profile page
@@ -14,6 +14,7 @@ export function checkUserNav() {
 		console.log("No token in storage");
 		const userNav = document.querySelectorAll("#nav-user");
 		const navNew = document.querySelectorAll("#login");
+		const addItem = document.querySelector(".add-btn");
 
 		userNav.forEach((element) => {
 			element.classList.add("d-none");
@@ -22,5 +23,7 @@ export function checkUserNav() {
 		navNew.forEach((element) => {
 			element.classList.remove("d-none");
 		});
+
+		addItem.classList.add("d-none");
 	}
 }

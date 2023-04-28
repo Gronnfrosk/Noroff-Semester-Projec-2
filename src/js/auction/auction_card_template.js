@@ -42,7 +42,7 @@ export async function showCards(items) {
 		        <div class="box" id="${id}">
 		            <div class="listing d-flex flex-column">
 		                <div class="listing-image">
-		                <p class="d-flex align-items-center">No image available</p>
+		                <p class="d-flex align-items-center border border-5 border-danger p-3 m-3 rounded-circle border-opacity-10 fw-bolder">No image available</p>
 		                </div>
 		                <div class="profile-info mx-auto w-100 mt-2">
 		                    <div class="deadline text-end">
