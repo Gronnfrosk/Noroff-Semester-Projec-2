@@ -32,6 +32,7 @@ if (path === "/Noroff-Semester-Project-2/html/signin.html" || path === "/html/si
 	user.logout();
 	checkUserNav();
 	getAuctionItems();
+
 	console.log("Hello home page");
 }
 

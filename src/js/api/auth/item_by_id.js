@@ -1,5 +1,5 @@
 import { API_AUCTION_LISTING_URL } from "../constants.js";
-import { showCard } from "../../auction/auction_card_template.js";
+import { showCards } from "../../auction/auction_card_template.js";
 
 const action = "?_bids=true";
 const method = "get";
@@ -12,7 +12,7 @@ export async function getAuctionItems() {
 
 	const items = await response.json();
 
-	showCard(items);
+	showCards(items);
 }
 
 export async function getBidInfoCard(id) {
@@ -21,17 +21,10 @@ export async function getBidInfoCard(id) {
 	}
 	const getCardURL = API_AUCTION_LISTING_URL + id + action;
 
-	const responseId = await fetch(getCardURL, {
+	const response = await fetch(getCardURL, {
 		headers: { "Content-type": "application/json" },
 		method,
 	});
 
-	const { _id, title, description, tags, media, created, updated, endsAt, seller, bids, _count } = await responseId.json();
-
-	//const { name, email, avatar } = seller;
-	const { id_, amount, bidderName, _crated } = bids;
-
-	if (id_ !== undefined) {
-		console.log(bids[0]);
-	}
+	return await response.json();
 }
