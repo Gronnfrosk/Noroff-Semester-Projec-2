@@ -3,15 +3,16 @@ const moreLoadBtn = document.querySelector("#moreBtn");
 let loadCards = 3;
 
 export async function showCards(items) {
+	items.sort(function (a, b) {
+		return new Date(b.endsAt) - new Date(a.endsAt);
+	});
+
 	for (let i = 0; i < loadCards; i++) {
 		function loadItem(item) {
 			const { id, title, description, tags, media, created, updated, endsAt, _count } = item;
 			const { bids } = _count;
 			const deadline = new Date(endsAt);
 			const dateFormat = deadline.toLocaleDateString("en-GB");
-
-			//const biddingData = getBidInfoCard(id);
-			//console.log(biddingData);
 
 			auctionCard.innerHTML += `
 		        <div class="box" id="${id}">
@@ -22,7 +23,7 @@ export async function showCards(items) {
 		                </div>
 		                <div class="profile-info mx-auto w-100 mt-2">
 		                    <div class="deadline text-end">
-		                        <p><i class="fa-regular fa-clock"></i>${dateFormat}</p>
+		                        <p><i class="fa-regular fa-clock"></i> ${dateFormat}</p>
 		                    </div>
 		                    <div class="listing-info">
 								<h4>${title}</h4>
@@ -39,7 +40,7 @@ export async function showCards(items) {
 	}
 	moreLoadBtn.addEventListener("click", (event) => {
 		auctionCard.innerHTML = "";
-
+		const deadlineFilter = items.sort((a, b) => a.deadline - b.deadline).reverse();
 		showCards(items);
 		loadCards += 3;
 	});
