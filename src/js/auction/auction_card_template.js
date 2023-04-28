@@ -10,15 +10,16 @@ export async function showCards(items) {
 	function displayCard() {
 		for (let i = 0; i < loadCards; i++) {
 			function loadItem(item) {
-				const { id, title, description, tags, media, created, updated, endsAt, _count } = item;
-				const { bids } = _count;
-				const deadline = new Date(endsAt);
-				const dateFormat = deadline.toLocaleDateString("en-GB");
+				if (item) {
+					const { id, title, description, tags, media, created, updated, endsAt, _count } = item;
+					const { bids } = _count;
+					const deadline = new Date(endsAt);
+					const dateFormat = deadline.toLocaleDateString("en-GB");
 
-				auctionCard.innerHTML += `
+					if (media[0]) {
+						auctionCard.innerHTML += `
 		        <div class="box" id="${id}">
 		            <div class="listing d-flex flex-column">
-		                <div class="no-img">No image</div>
 		                <div class="listing-image">
 		                <img src="${media[0]}" alt="Auction item" class="fs-6 mx-auto text-center">
 		                </div>
@@ -36,6 +37,29 @@ export async function showCards(items) {
 		                </div>
 		            </div>
 		        </div>`;
+					} else {
+						auctionCard.innerHTML += `
+		        <div class="box" id="${id}">
+		            <div class="listing d-flex flex-column">
+		                <div class="listing-image">
+		                <p class="d-flex align-items-center">No image available</p>
+		                </div>
+		                <div class="profile-info mx-auto w-100 mt-2">
+		                    <div class="deadline text-end">
+		                        <p><i class="fa-regular fa-clock"></i> ${dateFormat}</p>
+		                    </div>
+		                    <div class="listing-info">
+								<h4>${title}</h4>
+		                        <div class="bid-info text-center gap-1 ">
+									<div class="btn btn-dark btn-sm py-0 px-2">${bids}</div>
+									<p>Total number of bids</p>
+								</div>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>`;
+					}
+				}
 			}
 			loadItem(items[i]);
 		}

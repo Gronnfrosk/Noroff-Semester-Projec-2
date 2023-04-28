@@ -4,7 +4,7 @@ import * as user from "./user-management/index.js";
 import * as checkToken from "./localstorage/check_storage.js";
 import { displayProfile } from "./profile/profile_info.js";
 import { editAvatarListener } from "./profile/edit_avatar.js";
-import { getAuctionItems } from "./api/auth/item_by_id.js";
+import { getAuctionItems } from "./api/HTTP-methods/getItem.js";
 
 const path = location.pathname;
 

@@ -1,5 +1,6 @@
 import { API_AUCTION_LISTING_URL } from "../constants.js";
 import { showCards } from "../../auction/auction_card_template.js";
+import { searchItems } from "../../auction/search.js";
 
 const action = "?_bids=true";
 const method = "get";
@@ -12,6 +13,7 @@ export async function getAuctionItems() {
 
 	const items = await response.json();
 
+	searchItems(items);
 	showCards(items);
 }
 
