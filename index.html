@@ -78,21 +78,71 @@
 					<button class="btn btn-info add-item add-desktop" data-bs-toggle="modal" type="button" data-bs-target="#exampleModal">Add item for auction +</button>
 					<button class="btn btn-info add-item add-phone d-none" data-bs-toggle="modal" type="button" data-bs-target="#exampleModal">Add item +</button>
 				</div>
-				<div class="modal fade" id="exampleModal" aria-labelledby="exampleModalToggleLabel" tabindex="-1" aria-hidden="true">
-					<div class="modal-dialog modal-dialog-centered">
-						<div class="modal-content">
-							<div class="modal-header">
-								<h1 class="modal-title fs-5" id="exampleModalToggleLabel">Modal 1</h1>
-								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-							</div>
-							<div class="modal-body">Show a second modal and hide this one with the button below.</div>
-							<div class="modal-footer">
-								<button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Close</button>
-								<button type="button" class="btn btn-info">Add item for auction</button>
+					<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal-dialog modal-dialog-centered">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h1 class="modal-title fs-5" id="exampleModalLabel">Add auction item</h1>
+									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+								</div>
+								<div class="modal-body">
+									<form id="add-item-form" class="needs-validation add-item-form" novalidate>
+									<div class="form-floating">
+										<input
+											type="text"
+											class="form-control title-input"
+											id="validationCustom00"
+											placeholder="Title of auction item"
+											required
+											name="title"
+										/>
+										<div class="invalid-feedback mb-3">Auction item must have a title</div>
+										<label for="validationCustom00.5 form-label">Title </label>
+									</div>
+									<div class="form-floating">
+										<textarea
+											class="form-control description-input"
+											id="validationCustom01"
+											placeholder="Description of auction item"
+											required
+											name="description"
+										></textarea>
+										<div class="invalid-feedback mb-3">Auction item must have a description</div>
+										<label for="validationCustom00.5 form-label">Description </label>
+									</div>
+									<div class="form-floating">
+										<input
+											type="url"
+											class="form-control media-input"
+											id="validationCustom02"
+											placeholder="Avatar URL"
+											required
+											name="avatar"
+										/>
+										<div class="invalid-feedback mb-3">Only valid URL<br />- Example: http://www.example.com</div>
+										<label for="validationCustom00.5 form-label">Media URL </label>
+									</div>
+									<div class="form-floating">
+										<input
+											type="date"
+											class="form-control date-input"
+											id="validationCustom03"
+											placeholder="Title of auction item"
+											required
+											name="title"
+										/>
+										<div class="invalid-feedback mb-3">Deadline must show when the biddings end</div>
+										<label for="validationCustom00.5 form-label">Deadline</label>
+									</div>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Close</button>
+									<button type="submit" class="btn btn-info" data-bs-target="#exampleModal" data-bs-toggle="modal">Start item auction</button>	
+								</div>
+								</form>
 							</div>
 						</div>
 					</div>
-				</div>
 			</div>
 		</header>
 		<main class="home">

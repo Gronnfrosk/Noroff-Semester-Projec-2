@@ -1,5 +1,9 @@
 import { load } from "../../localstorage/save_load_remove.js";
 
+const userNav = document.querySelectorAll("#nav-user");
+const navNew = document.querySelectorAll("#login");
+const addItem = document.querySelector(".add-btn");
+
 /**
  * This function stops none users to visit home page or profile page
  * @param {Element} deleteBtn This is the html location of the element button.
@@ -12,9 +16,6 @@ export function checkUser() {
 
 	if (!token && !userToken) {
 		console.log("No token in storage");
-		const userNav = document.querySelectorAll("#nav-user");
-		const navNew = document.querySelectorAll("#login");
-		const addItem = document.querySelector(".add-btn");
 
 		userNav.forEach((element) => {
 			element.classList.add("d-none");
