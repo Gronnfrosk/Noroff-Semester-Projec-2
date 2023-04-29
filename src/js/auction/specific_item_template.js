@@ -28,6 +28,7 @@ export async function specificAuctionItem(item) {
 	const min = deadline.getMinutes();
 	const clockFormat = hr + ":" + min;
 	const start = Date.now();
+	console.log(start);
 	const elapsed = deadline - start;
 
 	if (media[0]) {
@@ -95,11 +96,15 @@ export async function specificAuctionItem(item) {
                     </div>`;
 
 	if (elapsed < 0) {
-		const clockIcon = document.querySelector(".fa-clock");
-		const calenderIcon = document.querySelector(".fa-calendar-days");
+		const clockIcon = document.querySelectorAll(".fa-clock");
+		const calenderIcon = document.querySelectorAll(".fa-calendar-days");
 
-		clockIcon.classList.add("text-danger");
-		calenderIcon.classList.add("text-danger");
+		clockIcon.forEach((element) => {
+			element.classList.add("text-danger");
+		});
+		calenderIcon.forEach((element) => {
+			element.classList.add("text-danger");
+		});
 	}
 
 	if (!bids[0]) {

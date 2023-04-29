@@ -3,10 +3,41 @@ const moreLoadBtn = document.querySelector("#moreBtn");
 var loadCards = 20;
 
 export async function showCards(items) {
-	items.sort(function (a, b) {
-		return new Date(b.endsAt) - new Date(a.endsAt);
-	});
-	items.reverse();
+	const params = new URLSearchParams(window.location.search);
+	const filterParam = params.get("filter");
+
+	if (filterParam === null || filterParam === "" || filterParam === "old") {
+		//Newest;
+		items.sort(function (a, b) {
+			return new Date(b.created) - new Date(a.created);
+		});
+
+		// Oldest
+		if (filterParam === "old") {
+			items.reverse();
+		}
+	}
+
+	if (filterParam === "short" || filterParam === "long") {
+		// deadline longest
+		items.sort(function (a, b) {
+			return new Date(b.endsAt) - new Date(a.endsAt);
+		});
+
+		// deadline closest
+		if (filterParam === "short") {
+			items.reverse();
+		}
+	}
+
+	if (filterParam === "bids") {
+		// Most bids
+		items.sort(function (a, b) {
+			return b._count.bids - a._count.bids;
+		});
+	}
+
+	console.log(items);
 
 	function displayCard() {
 		for (let i = 0; i < loadCards; i++) {
@@ -84,23 +115,8 @@ export async function showCards(items) {
 		auctionCard.innerHTML = "";
 		loadCards += 20;
 		displayCard();
-		console.log(loadCards);
 		if (loadCards === 100) {
 			moreLoadBtn.classList.add("d-none");
 		}
 	});
 }
-
-//const cardId = document.querySelectorAll(".box")[i].id;
-//const bidInfo = document.querySelectorAll(".bid-info")[i];
-//const { idbid, titleBid, descriptionBid, tagsBid, mediaBid, createdBid, updatedBid, endsAtBid, seller, bids, _countBid } = await getBidInfoCard(cardId);
-//
-//console.log(await getBidInfoCard(cardId));
-//if (bids[i] === undefined) {
-//	bidInfo.innerHTML = "";
-//	bidInfo.innerHTML += `<div class=""><p>0</div>`;
-//} else {
-//	bidInfo.innerHTML = "";
-//	const bidDetails = bids.sort((a, b) => a.amount - b.amount).reverse();
-//	bidInfo.innerHTML += `<div class="" id="${bids[0].amount}"><p>${bids[0].amount} credit - ${bids[0].bidderName}</p></div>`;
-//}
