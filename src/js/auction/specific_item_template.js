@@ -33,7 +33,7 @@ export async function specificAuctionItem(item) {
 
 	if (media.length > 0) {
 		for (let i = 0; i < media.length; i++) {
-			mediaButton.innerHTML += `<button class="mediaIndicator" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="${i}" aria-label="Slide ${
+			mediaButton.innerHTML += `<button class="mediaIndicator bg-dark" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="${i}" aria-label="Slide ${
 				i + 1
 			}"></button>`;
 			mediaPlace.innerHTML += `
@@ -45,7 +45,6 @@ export async function specificAuctionItem(item) {
 			`;
 		}
 	} else {
-		console.log("HEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEFG");
 		mediaPlace.innerHTML += `
 		<div class="carousel-item active h-100 border border">
 			<div class="image h-50 justify-content-center align-items-center h-100">
