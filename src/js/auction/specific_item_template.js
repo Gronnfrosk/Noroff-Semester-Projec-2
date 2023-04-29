@@ -64,8 +64,8 @@ export async function specificAuctionItem(item) {
                     <h1>${title}</h1>
                     <p>${description}</p>
                     `;
-
-	containerTwo.innerHTML += `
+	if (clockFormat.length > 4) {
+		containerTwo.innerHTML += `
 					<div class="deadline">
 						<p><b>Deadline</b></p>
 						<p class="text-start">
@@ -73,6 +73,15 @@ export async function specificAuctionItem(item) {
 						<p><i class="fa-regular fa-calendar-days"></i> ${dateFormat} </p>
 					</div>
 					`;
+	} else {
+		containerTwo.innerHTML += `
+					<div class="deadline">
+						<p><b>Deadline</b></p>
+						<p class="text-start">
+						<p><i class="fa-regular fa-calendar-days"></i> ${dateFormat} </p>
+					</div>
+					`;
+	}
 
 	containerThree.innerHTML += `
                     <h2>Highest bid:</h2>

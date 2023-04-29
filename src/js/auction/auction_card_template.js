@@ -16,6 +16,8 @@ export async function showCards(items) {
 					const { bids } = _count;
 					const deadline = new Date(endsAt);
 					const dateFormat = deadline.toLocaleDateString("en-GB");
+					const start = Date.now();
+					const elapsed = deadline - start;
 
 					if (media[0]) {
 						auctionCard.innerHTML += `
@@ -63,6 +65,13 @@ export async function showCards(items) {
 		                </div>
 		            </div>
 		        </div>`;
+					}
+					if (elapsed < 0) {
+						const clockIcon = document.querySelectorAll(".fa-clock");
+
+						clockIcon.forEach((element) => {
+							element.classList.add("text-danger");
+						});
 					}
 				}
 			}

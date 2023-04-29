@@ -359,8 +359,12 @@ main {
         padding-top: 39px;
         text-align: center;
     }
-    & img {
-        width: 60px;
+    & a {
+        text-decoration: none;
+        color: black;
+    }
+    & a:hover {
+        font-weight: bold;
     }
     & .bid-log p {
         margin-bottom: 0;
