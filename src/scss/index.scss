@@ -1,3 +1,6 @@
+body {
+    height: 100%;
+}
 
 .fa-bullseye-pointer {
     color: #FB1B1B;
@@ -101,6 +104,10 @@ main {
 
         & .box {
             width: 230px;
+        }
+        & a {
+            text-decoration: none;
+            color: black;
         }
         & .no-img {
             position: relative;
@@ -283,25 +290,37 @@ main {
 
     & h2 {
         font-size: 1.3em;
-        margin-bottom: 0;
+        margin-bottom: 5px;
         margin-left: 0;
     }
 
     & h3 {
+        margin-top: 10px;
+        margin-bottom: 3px;
         font-size: 1.15em;
     }
 }
 
 .details-image {
     margin-top: 100px;
-    width: 70%;
+    max-width: 800px;
+    height: 400px;
     margin: 100px auto 0px auto;
 
+    & .carousel-item .image{
+        display: flex;
+        
+        & img {
+            max-height: 400px;
+            max-width: 100%;
+            margin: auto;
+        }
+    }
     & .edit-edit {
         display: flex;
         justify-content: end;
         position: relative;
-        left: 45px;
+        z-index: 2;
         bottom: 407px;
     }
     & .edit-btn {
@@ -313,26 +332,18 @@ main {
     display: flex;
     justify-content: space-between;
     max-width: 900px;
-    margin: auto;
+    margin: 50px auto 0 auto;
     padding: 0 50px;
 
     & .details-one {
         max-width: 600px;
         margin-right: 40px;
     }
-    & .details-two {
-        text-align: end;
-        width: 100px; 
-          
-          & p {
-              width: 100px;
-          } 
-      }
 }
 
 .details-bid {
     max-width: 450px;
-    padding: 25px 0 0 50px;
+    margin: 0 auto;
 
     & .bid-input {
         width: 90%;
@@ -350,10 +361,6 @@ main {
     }
     & img {
         width: 60px;
-    }
-    & .recent-bid {
-        position: relative;
-        bottom: 10px;
     }
     & .bid-log p {
         margin-bottom: 0;
@@ -517,12 +524,11 @@ main {
         margin: auto;
         padding: 0;
 
-        & .details-two {
-            display: contents;
-            & p {
-                width: 100%;
-            } 
+        & .deadline {
+            width: fit-content;
+            float: right;
         }
+
     }
     
     .details-bid {

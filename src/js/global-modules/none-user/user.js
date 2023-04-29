@@ -1,4 +1,4 @@
-import { load } from "../localstorage/save_load_remove.js";
+import { load } from "../../localstorage/save_load_remove.js";
 
 /**
  * This function stops none users to visit home page or profile page
@@ -6,7 +6,7 @@ import { load } from "../localstorage/save_load_remove.js";
  * @param {string} token This is the localStorage key with access token value.
  * @param {string} userToken This is the localStorage key with user profile data value.
  */
-export function checkUserNav() {
+export function checkUser() {
 	const token = load("token");
 	const userToken = load("profile");
 
@@ -24,6 +24,8 @@ export function checkUserNav() {
 			element.classList.remove("d-none");
 		});
 
-		addItem.classList.add("d-none");
+		if (addItem) {
+			addItem.classList.add("d-none");
+		}
 	}
 }

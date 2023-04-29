@@ -1,4 +1,4 @@
-import { API_AUCTION_LISTING_URL } from "../constants.js";
+import { API_AUCTION_LISTING_URL, API_AUCTION_LISTING_URL_ACTIVE } from "../constants.js";
 import { showCards } from "../../auction/auction_card_template.js";
 import { searchItems } from "../../auction/search.js";
 
@@ -6,7 +6,7 @@ const action = "?_bids=true";
 const method = "get";
 
 export async function getAuctionItems() {
-	const response = await fetch(API_AUCTION_LISTING_URL, {
+	const response = await fetch(API_AUCTION_LISTING_URL_ACTIVE, {
 		headers: { "Content-type": "application/json" },
 		method,
 	});
@@ -17,7 +17,7 @@ export async function getAuctionItems() {
 	showCards(items);
 }
 
-export async function getBidInfoCard(id) {
+export async function getItem(id) {
 	if (!id) {
 		throw new Error("Get requires an ID!");
 	}

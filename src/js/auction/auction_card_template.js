@@ -6,6 +6,7 @@ export async function showCards(items) {
 	items.sort(function (a, b) {
 		return new Date(b.endsAt) - new Date(a.endsAt);
 	});
+	items.reverse();
 
 	function displayCard() {
 		for (let i = 0; i < loadCards; i++) {
@@ -20,9 +21,11 @@ export async function showCards(items) {
 						auctionCard.innerHTML += `
 		        <div class="box" id="${id}">
 		            <div class="listing d-flex flex-column">
-		                <div class="listing-image">
-		                <img src="${media[0]}" alt="Auction item" class="fs-6 mx-auto text-center">
-		                </div>
+						<a href="/html/specific_auction_item.html?itemID=${id}">
+							<div class="listing-image">
+								<img src="${media[0]}" alt="Auction item" class="fs-6 mx-auto text-center">
+							</div>
+						</a>
 		                <div class="profile-info mx-auto w-100 mt-2">
 		                    <div class="deadline text-end">
 		                        <p><i class="fa-regular fa-clock"></i> ${dateFormat}</p>
@@ -41,9 +44,11 @@ export async function showCards(items) {
 						auctionCard.innerHTML += `
 		        <div class="box" id="${id}">
 		            <div class="listing d-flex flex-column">
-		                <div class="listing-image">
-		                <p class="d-flex align-items-center border border-5 border-danger p-3 m-3 rounded-circle border-opacity-10 fw-bolder">No image available</p>
-		                </div>
+						<a href="/html/specific_auction_item.html?itemID=${id}">
+							<div class="listing-image">
+								<p class="d-flex align-items-center border border-5 border-danger p-3 m-3 rounded-circle border-opacity-10 fw-bolder">No image available</p>
+							</div>
+						</a>
 		                <div class="profile-info mx-auto w-100 mt-2">
 		                    <div class="deadline text-end">
 		                        <p><i class="fa-regular fa-clock"></i> ${dateFormat}</p>
