@@ -37,8 +37,6 @@ export async function showCards(items) {
 		});
 	}
 
-	console.log(items);
-
 	function displayCard() {
 		for (let i = 0; i < loadCards; i++) {
 			function loadItem(item) {

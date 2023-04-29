@@ -28,43 +28,48 @@ export async function specificAuctionItem(item) {
 	const min = deadline.getMinutes();
 	const clockFormat = hr + ":" + min;
 	const start = Date.now();
-	console.log(start);
 	const elapsed = deadline - start;
+	console.log(media.length);
 
-	if (media[0]) {
-		mediaPlace.innerHTML += `
-				<div class="carousel-item active">
-					<div class="image">
-						<img src="${media[0]}" alt="Auction item ${title}" class="bd-placeholder-img bd-placeholder-img-lg d-block ">
-					</div>
-				</div>
-			`;
-
-		for (let i = 0; 1 < i < 4, i++; ) {
-			if (media[i]) {
-				mediaButton.innerHTML += `<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="${i}" aria-label="Slide ${i}"></button>`;
-				mediaPlace.innerHTML += `
+	if (media.length > 0) {
+		for (let i = 0; i < media.length; i++) {
+			mediaButton.innerHTML += `<button class="mediaIndicator" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="${i}" aria-label="Slide ${
+				i + 1
+			}"></button>`;
+			mediaPlace.innerHTML += `
 				<div class="carousel-item">
 					<div class="image">
-						<img src="${media[i]}" alt="Auction item ${title}" class="bd-placeholder-img bd-placeholder-img-lg d-block ">
+						<img src="${media[i]}" alt="Auction item ${title[i]}" class="bd-placeholder-img bd-placeholder-img-lg d-block">
 					</div>
 				</div>
 			`;
-			}
 		}
 	} else {
+		console.log("HEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEFG");
 		mediaPlace.innerHTML += `
 		<div class="carousel-item active h-100 border border">
 			<div class="image h-50 justify-content-center align-items-center h-100">
-			<p class="d-flex align-items-center border border-5 border-danger p-3 m-3 rounded-circle border-opacity-10 fw-bolder h-50">No image available</p>
+				<p class="d-flex align-items-center border border-5 border-danger p-3 m-3 rounded-circle border-opacity-10 fw-bolder h-50">No image available</p>
 			</div>
 		</div>
 		`;
 	}
+
+	//Carousel function
+	const active = document.querySelector(".mediaIndicator");
+	const activeOne = document.querySelector(".carousel-item");
+
+	console.log(active);
+	active.classList.add("active");
+	activeOne.classList.add("active");
+
+	//Basic item info
 	containerOne.innerHTML = `
                     <h1>${title}</h1>
                     <p>${description}</p>
                     `;
+
+	// Deadline time and date
 	if (clockFormat.length > 4) {
 		containerTwo.innerHTML += `
 					<div class="deadline">
@@ -83,18 +88,7 @@ export async function specificAuctionItem(item) {
 					</div>
 					`;
 	}
-
-	containerThree.innerHTML += `
-                    <h2>Highest bid:</h2>
-					<div class="highest">
-					</div>
-					<div>
-                    	<div class="ms-5">
-                        <h3>Bidding history</h3>
-                        <div class="bid-log">
-                        </div>
-                    </div>`;
-
+	// Deadline passed show red icon
 	if (elapsed < 0) {
 		const clockIcon = document.querySelectorAll(".fa-clock");
 		const calenderIcon = document.querySelectorAll(".fa-calendar-days");
@@ -106,6 +100,18 @@ export async function specificAuctionItem(item) {
 			element.classList.add("text-danger");
 		});
 	}
+
+	//Bid info
+	containerThree.innerHTML += `
+                    <h2>Highest bid:</h2>
+					<div class="highest">
+					</div>
+					<div>
+                    	<div class="ms-5">
+                        <h3>Bidding history</h3>
+                        <div class="bid-log">
+                        </div>
+                    </div>`;
 
 	if (!bids[0]) {
 		containerThree.innerHTML = "";
