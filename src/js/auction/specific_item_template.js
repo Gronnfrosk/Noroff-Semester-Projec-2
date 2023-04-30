@@ -3,6 +3,7 @@ import { getItem } from "../api/HTTP-methods/getItem.js";
 
 const mediaPlace = document.querySelector(".carousel-inner");
 const mediaButton = document.querySelector(".carousel-indicators");
+const nextPrevBtn = document.querySelectorAll(".slide-btn");
 const containerOne = document.querySelector(".details-one");
 const containerTwo = document.querySelector(".details-two");
 const containerThree = document.querySelector(".bid-history");
@@ -29,8 +30,8 @@ export async function specificAuctionItem(item) {
 	const clockFormat = hr + ":" + min;
 	const start = Date.now();
 	const elapsed = deadline - start;
-	console.log(media.length);
 
+	// Display media
 	if (media.length > 0) {
 		for (let i = 0; i < media.length; i++) {
 			mediaButton.innerHTML += `<button class="mediaIndicator bg-dark" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="${i}" aria-label="Slide ${
@@ -44,6 +45,12 @@ export async function specificAuctionItem(item) {
 				</div>
 			`;
 		}
+		//Carousel function
+		const active = document.querySelector(".mediaIndicator");
+		const activeOne = document.querySelector(".carousel-item");
+
+		active.classList.add("active");
+		activeOne.classList.add("active");
 	} else {
 		mediaPlace.innerHTML += `
 		<div class="carousel-item active h-100 border border">
@@ -52,15 +59,10 @@ export async function specificAuctionItem(item) {
 			</div>
 		</div>
 		`;
+		nextPrevBtn.forEach((element) => {
+			element.classList.add("opacity-0");
+		});
 	}
-
-	//Carousel function
-	const active = document.querySelector(".mediaIndicator");
-	const activeOne = document.querySelector(".carousel-item");
-
-	console.log(active);
-	active.classList.add("active");
-	activeOne.classList.add("active");
 
 	//Basic item info
 	containerOne.innerHTML = `

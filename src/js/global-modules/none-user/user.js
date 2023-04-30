@@ -34,8 +34,10 @@ export function checkUser() {
 		}
 
 		// Disable specific link
-		items.addEventListener("click", (event) => {
-			event.preventDefault();
-		});
+		if (items) {
+			items.addEventListener("click", (event) => {
+				event.preventDefault();
+			});
+		}
 	}
 }
