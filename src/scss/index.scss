@@ -318,6 +318,9 @@ main {
     height: 400px;
     margin: 100px auto 0px auto;
 
+    & .carousel-indicators {
+        bottom: -45px;
+    }
     & .carousel button {
         & span {
             box-shadow: 0 3px 3px rgba(0, 0, 0, 0.459);
