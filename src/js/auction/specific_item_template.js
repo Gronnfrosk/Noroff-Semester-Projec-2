@@ -1,5 +1,5 @@
 //import { load } from "../storage/token.mjs";
-import { getItem } from "../api/HTTP-methods/getItem.js";
+import { getItem } from "../api/auction/getItem.js";
 
 const mediaPlace = document.querySelector(".carousel-inner");
 const mediaButton = document.querySelector(".carousel-indicators");

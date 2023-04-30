@@ -1,4 +1,4 @@
-import { editAvatar } from "../api/auth/edit_avatar.js";
+import { editAvatar } from "../api/profile/edit_avatar.js";
 
 /**
  * This function triggers by form submit to collect form data and send to API.
