@@ -3,6 +3,7 @@ import { load } from "../../localstorage/save_load_remove.js";
 const userNav = document.querySelectorAll("#nav-user");
 const navNew = document.querySelectorAll("#login");
 const addItem = document.querySelector(".add-btn");
+const items = document.querySelector(".card-container");
 
 /**
  * This function stops none users to visit home page or profile page
@@ -17,16 +18,24 @@ export function checkUser() {
 	if (!token && !userToken) {
 		console.log("No token in storage");
 
+		// Hide logout and profile nav
 		userNav.forEach((element) => {
 			element.classList.add("d-none");
 		});
 
+		// Show login nav
 		navNew.forEach((element) => {
 			element.classList.remove("d-none");
 		});
 
+		// Hide create auction item button
 		if (addItem) {
 			addItem.classList.add("d-none");
 		}
+
+		// Disable specific link
+		items.addEventListener("click", (event) => {
+			event.preventDefault();
+		});
 	}
 }

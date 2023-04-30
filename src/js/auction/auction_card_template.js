@@ -52,7 +52,7 @@ export async function showCards(items) {
 						auctionCard.innerHTML += `
 		        <div class="box" id="${id}">
 		            <div class="listing d-flex flex-column">
-						<a href="/html/specific_auction_item.html?itemID=${id}">
+						<a href="https://gronnfrosk.github.io/Noroff-Semester-Project-2/html/specific_auction_item.html?itemID=${id}">
 							<div class="listing-image">
 								<img src="${media[0]}" alt="Auction item" class="fs-6 mx-auto text-center">
 							</div>
@@ -75,7 +75,7 @@ export async function showCards(items) {
 						auctionCard.innerHTML += `
 		        <div class="box" id="${id}">
 		            <div class="listing d-flex flex-column">
-						<a href="/html/specific_auction_item.html?itemID=${id}">
+						<a href="https://gronnfrosk.github.io/Noroff-Semester-Project-2/html/specific_auction_item.html?itemID=${id}">
 							<div class="listing-image">
 								<p class="d-flex align-items-center border border-5 border-danger p-3 m-3 rounded-circle border-opacity-10 fw-bolder">No image available</p>
 							</div>
