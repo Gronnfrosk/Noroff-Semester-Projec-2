@@ -1,3 +1,6 @@
+body {
+    height: 100%;
+}
 
 .fa-bullseye-pointer {
     color: #FB1B1B;
@@ -60,6 +63,17 @@ nav  {
     font-size: 1.25em;
 }
 
+.add-item-form .form-floating {
+    margin-bottom: 10px;
+
+    & .date-input {
+        width: fit-content;
+    }
+    & .description-input {
+        height: 150px;
+    }
+}
+
 footer {
     font-size: 0.8em;
 }
@@ -88,21 +102,70 @@ main {
     }
 }
 
-.card-container .cards {
-    position: relative;
-    left: 63px;
+.card-container {
+    text-align: center;
+    
+    & .gap-5 {
+        gap: 4rem!important;
+    }
+    & .cards {
+        position: relative;
+        left: 63px;
+        width: 70%;
+
+        & .box {
+            width: 230px;
+        }
+        & a {
+            text-decoration: none;
+            color: black;
+        }
+        & .no-img {
+            position: relative;
+            top: 115px;
+            text-align: center;
+            height: 0;
+        }
+        & .listing-image {
+            display: flex;
+            justify-content: center;
+            height: 235px;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.37);
+            overflow: hidden;
+            background-color: #fff;
+        }
+        & img { 
+            transform: scale(1.4);
+            transition: all .5s;
+            height: 115%;
+        }
+        & img:hover {
+            transform: scale(1.5);
+        }
+        & .listing-info {
+            text-align: left;
+        }
+        & .profile-info p {
+            margin: 0;
+        } 
+        & h4 {
+            padding: 5px 0;
+            font-size: 1.3em;
+        }
+        & .btn-dark {
+            cursor: default;
+        }
+    }
+    & button {
+        width: 50%!important;
+        margin-top: 48px;
+        
+    }
 }
 
-.cards {
-    width: 70%;
-}
 
-.box {
-    background-color: #212529;
-    width: 30%;
-    min-width: 190px;
-    height: 250px;
-}
+
+
 
 /* Signin page */
 .signin-body {
@@ -238,25 +301,46 @@ main {
 
     & h2 {
         font-size: 1.3em;
-        margin-bottom: 0;
+        margin-bottom: 5px;
         margin-left: 0;
     }
 
     & h3 {
+        margin-top: 10px;
+        margin-bottom: 3px;
         font-size: 1.15em;
     }
 }
 
 .details-image {
     margin-top: 100px;
-    width: 70%;
+    max-width: 800px;
+    height: 400px;
     margin: 100px auto 0px auto;
 
+    & .carousel-indicators {
+        bottom: -45px;
+    }
+    & .carousel button {
+        & span {
+            box-shadow: 0 3px 3px rgba(0, 0, 0, 0.459);
+        }
+    }
+    & .carousel-item .image{
+        height: 400px;
+        display: flex;
+        
+        & img {
+            max-height: 400px;
+            max-width: 100%;
+            margin: auto;
+        }
+    }
     & .edit-edit {
         display: flex;
         justify-content: end;
         position: relative;
-        left: 45px;
+        z-index: 2;
         bottom: 407px;
     }
     & .edit-btn {
@@ -268,26 +352,18 @@ main {
     display: flex;
     justify-content: space-between;
     max-width: 900px;
-    margin: auto;
+    margin: 50px auto 0 auto;
     padding: 0 50px;
 
     & .details-one {
         max-width: 600px;
         margin-right: 40px;
     }
-    & .details-two {
-        text-align: end;
-        width: 100px; 
-          
-          & p {
-              width: 100px;
-          } 
-      }
 }
 
 .details-bid {
     max-width: 450px;
-    padding: 25px 0 0 50px;
+    margin: 0 auto;
 
     & .bid-input {
         width: 90%;
@@ -303,12 +379,12 @@ main {
         padding-top: 39px;
         text-align: center;
     }
-    & img {
-        width: 60px;
+    & a {
+        text-decoration: none;
+        color: black;
     }
-    & .recent-bid {
-        position: relative;
-        bottom: 10px;
+    & a:hover {
+        font-weight: bold;
     }
     & .bid-log p {
         margin-bottom: 0;
@@ -381,8 +457,16 @@ main {
             top: 278px;
         }
         & .add-item {
-            width: 140px;
-            font-size: 0.7em;
+            width: 126px;
+            top: -37px;
+            height: 35px;
+            
+        }
+        & .add-desktop {
+            display: none;
+        }
+        & .add-phone {
+            display: block!important;
         }
     }
     
@@ -392,6 +476,32 @@ main {
 
     .card-container .cards {
         left: 0px;
+        width: 90%;
+        padding-top: 0!important;
+        justify-content: center!important;
+        gap: 15px!important;
+
+        & .box {
+            width: 154px;
+            height: fit-content;
+            margin-bottom: 10px;
+        }
+        & .no-img {
+            top: 60px;
+        }
+        & .listing {
+            height: fit-content;
+        }
+        & .listing-image { 
+            height: 155px;
+        }
+        & .profile-info p {
+            font-size: 0.9em;
+        } 
+        & h4 {
+            font-size: 1em;
+            margin-bottom: 0;
+        }
     }
 
     /* Signin page */
@@ -438,12 +548,11 @@ main {
         margin: auto;
         padding: 0;
 
-        & .details-two {
-            display: contents;
-            & p {
-                width: 100%;
-            } 
+        & .deadline {
+            width: fit-content;
+            float: right;
         }
+
     }
     
     .details-bid {
