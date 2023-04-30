@@ -72,6 +72,47 @@ nav  {
     & .description-input {
         height: 150px;
     }
+    
+    & .media-input {
+        height: 15px; 
+        margin-bottom: 5px;
+        padding-bottom: 15px;
+    }
+    & .url-upload {
+
+        & .number, .media-item {
+            display: flex;
+
+            & p {
+                margin-top: revert;
+                margin-bottom: 0;
+            }
+            & div {
+                display: flex;
+                margin: 5px;
+            }
+        }
+        & img { 
+            max-height: 40px;
+            max-width: 50px;
+            margin-top: 5px;
+        }
+        & .number {
+            position: relative;
+            bottom: 20px;
+            right: 31px;
+
+            & p {
+                margin: 0;
+            }
+        }
+    }
+}
+
+.media-url label {
+    width: fit-content;
+    height: fit-content;
+    padding: 4px 0.75rem;
 }
 
 footer {

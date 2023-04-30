@@ -1,8 +1,6 @@
-// Create post
-import { API_SOCIAL_URL } from "../constants.mjs";
-import { authFetch } from "../auth_fetch.mjs";
+import { API_AUCTION_LISTING_URL } from "../constants.js";
+import { authFetch } from "../auth_fetch.js";
 
-const action = "/posts";
 const method = "post";
 
 /**
@@ -11,10 +9,8 @@ const method = "post";
  * @param {String} updatePostURL This is the url needed for "POST" request.
  * @param {String} method The HTTP request method.
  */
-export async function createPost(postData) {
-	const createPostURL = API_SOCIAL_URL + action;
-
-	const response = await authFetch(createPostURL, {
+export async function createAuctionItem(postData) {
+	const response = await authFetch(API_AUCTION_LISTING_URL, {
 		method,
 		body: JSON.stringify(postData),
 	});
