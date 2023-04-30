@@ -47,14 +47,17 @@
                     <div class="collapse navbar-collapse mx-2" id="navbarSupportedContent">
                         <ul class="nav navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link" href="https://gronnfrosk.github.io/Noroff-Semester-Project-2/">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="https://gronnfrosk.github.io/Noroff-Semester-Project-2/html/profile.html">Profile</a>
-                            </li>
-                            <li class="nav-item" id="logout">
-                                <a class="nav-link logout-nav" href="">Logout</a>
-                            </li>
+								<a class="nav-link" href="https://gronnfrosk.github.io/Noroff-Semester-Project-2">Home</a>
+							</li>
+							<li class="nav-item d-none " id="login">
+								<a class="nav-link login-nav" href="https://gronnfrosk.github.io/Noroff-Semester-Project-2/html/signin.html">Login</a>
+							</li>
+							<li class="nav-item" id="nav-user">
+								<a class="nav-link" href="https://gronnfrosk.github.io/Noroff-Semester-Project-2/html/profile.html">Profile</a>
+							</li>
+							<li class="nav-item" id="nav-user">
+								<a class="nav-link logout-nav" href="" id="logout">Logout</a>
+							</li>
                         </ul>
                         <div class="nav-credit" id="nav-credit"></div>
                         <form class="d-flex search_form" role="search" id="search_form">
@@ -65,35 +68,21 @@
             </nav>
             <main class="home specific">
                 <div class="details-image">
-                    <div id="carouselExampleIndicators" class="carousel slide mx-auto" data-bs-ride="false">
+                    <div id="carouselExampleIndicators" class="carousel slide mx-auto h-100" data-bs-ride="false">
                         <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
                         </div>
-                        <div class="carousel-inner">
-                        <div class="carousel-item">
-                            <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#555" dy=".3em">First slide</text></svg>
-                    
-                        </div>
-                        <div class="carousel-item active">
-                            <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Second slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#666"></rect><text x="50%" y="50%" fill="#444" dy=".3em">Second slide</text></svg>
-
-                        </div>
-                        <div class="carousel-item">
-                            <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Third slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#555"></rect><text x="50%" y="50%" fill="#333" dy=".3em">Third slide</text></svg>
-                        </div>
+                        <div class="carousel-inner h-100">
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="carousel-control-prev-icon bg-dark border border-3 border-dark" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
                         </button>
                         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="carousel-control-next-icon bg-dark border border-3 border-dark" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span> 
                         </button>
                     </div>
-                    <div class="edit-edit">
+                    <div class="edit-edit d-none">
                         <button type="button" class="btn edit-btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-gear"></i></button>
                     </div>
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -120,67 +109,42 @@
                 </div>
                 <div class="details">
                     <div class="details-one mb-4">
-                        <h1>Title</h1>
-                        <p>It is a long established fact that a reader will be distracted by
-                            the readable content of a page when looking at its layout. The point
-                            of using Lorem Ipsum is that it has a more-or-less normal
-                            distribution of letters, as opposed to using 'Content here, content
-                            here', making it look like readable English.
-                        </p>
                     </div>
                     <div class="details-two">
-                        <p><b>Deadline</b></p>
-                        <p class="deadline"><i class="fa-regular fa-clock mx-1"></i>24.05.2023</p>
                     </div>
                     
                 </div>
                 <div class="details-bid mt-3">
                     <div class="bid-input">
                         <div class="form-floating">
-                            <div class="col-auto">
+                            <div class="col-auto mb-1">
                                 <span id="recent-bid" class="form-text">
-                                Must be above the most recent bid:
+                                Must be above the highest bid:
                                 </span>
                             </div>
                             <input type="text" class="form-control" aria-describedby="passwordHelpBlock" placeholder="Password" required/>
-                            <div class="invalid-feedback mb-3">The bid must be above last bid</div>
+                            <div class="invalid-feedback mb-3">The bid must be above highest</div>
                             <label for="validationCustom01 form-label">Add new bid here</label>
                         </div>
                         <div class="mx-auto my-2">
                             <button class="btn btn-info add-item px-5" data-bs-toggle="modal" type="button" data-bs-target="#addItemModal">Place new bid</button>
                         </div>
                     </div>
-                    <div class="Bid-history my-5">
-                        <h2>Most recent bid</h2>
-                        <div class="recent-bid d-flex flex-row align-items-center gap-3 mb-3">
-                            <p>350 credit - Somebody cool</p>
-                            <img
-                                    src="data:image/png;base64,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"
-                                    alt="Image of the user profile with the most recent bid"
-                                    class="pe-0 profile rounded-circle"
-                                />
-                        </div>
-                        <div class="ms-5">
-                            <h3>Bidding history</h3>
-                            <div class="bid-log">
-                                <p>250 credit - John Doe</p>
-                                <p>200 credit - Somebody cool</p>
-                                <p>150 credit - John Doe</p>
-                            </div>
-                        </div>
+                    <div class="bid-history my-5">
                     </div>
                 </div>
             </main>
-            <footer class="home d-flex flex-wrap justify-content-between align-items-center pt-3 border-top w-75">
+            <footer class="home d-flex flex-wrap justify-content-between align-items-center pt-3">
                 <p class="col-md-4 mb-0 text-muted p-2">&copy; 2023 AuctionPoint, Inc</p>
                 <a href="https://gronnfrosk.github.io/Noroff-Semester-Project-2" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
                     <i class="fa-sharp fa-solid fa-bullseye-pointer mx-1"></i></i>
                 </a>
                 <ul class="nav col-md-4 justify-content-end">
-                    <div class="d-flex flex-row gap-4">
+                    <div class="d-flex member-nav flex-row gap-4">
                         <li class="nav-item"><a href="https://gronnfrosk.github.io/Noroff-Semester-Project-2" class="nav-link px-2 text-muted">Home</a></li>
-                        <li class="nav-item"><a href="https://gronnfrosk.github.io/Noroff-Semester-Project-2/html/profile.html" class="nav-link px-2 text-muted">Profile</a></li>
-                        <li class="nav-item"><a href="" class="nav-link px-2 text-muted" id="logout">logout</a></li>
+                        <li class="nav-item d-none" id="login"><a href="https://gronnfrosk.github.io/Noroff-Semester-Project-2/html/signin.html" class="nav-link px-2 text-muted" id="login">login</a></li>
+                        <li class="nav-item" id="nav-user"><a href="https://gronnfrosk.github.io/Noroff-Semester-Project-2/html/profile.html" class="nav-link px-2 text-muted">Profile</a></li>
+                        <li class="nav-item" id="nav-user"><a href="" class="nav-link px-2 text-muted" id="logout">logout</a></li>
                     </div>
                 </ul>
             </footer>
