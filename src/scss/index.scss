@@ -63,6 +63,14 @@ nav  {
     font-size: 1.25em;
 }
 
+.add-item-form {
+    text-align: left;
+
+    & .modal-footer {
+        padding-top: 23px;
+    }
+}
+
 .add-item-form .form-floating {
     margin-bottom: 10px;
 
@@ -197,7 +205,7 @@ main {
             cursor: default;
         }
     }
-    & button {
+    & .moreBtn {
         width: 50%!important;
         margin-top: 48px;
         
@@ -274,7 +282,6 @@ main {
         top: -75px;
         background-color: white;
     }
-    
     & .profile-avatar {
         height: 150px;
         display: flex;
@@ -325,6 +332,13 @@ main {
     }
     & .auction-container {
         background-color: #EEF5FB;
+    }
+    & .dropdown-profile {
+        display: flex;
+        justify-content: flex-end;
+    }
+    & .cards {
+        left: 0;
     }
 }
 

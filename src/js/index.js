@@ -24,6 +24,7 @@ if (path === "/Noroff-Semester-Project-2/html/signin.html" || path === "/html/si
 	checkToken.checkUserToken();
 	user.logout();
 	displayProfile();
+	createForm();
 	editAvatarListener();
 	console.log("Hello profile page");
 } else if (path === "/Noroff-Semester-Project-2/html/specific_auction_item.html" || path === "/html/specific_auction_item.html") {

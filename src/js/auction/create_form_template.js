@@ -156,8 +156,4 @@ export function createForm() {
 		<div class="media-box"><p>4.</p></div>
         <img src="${contents}" alt="Image" class="bd-placeholder-img">`;
 	});
-
-	if (mediaUrlFour.length < 0) {
-		console.log("Hello");
-	}
 }

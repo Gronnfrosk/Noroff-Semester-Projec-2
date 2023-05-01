@@ -11,9 +11,6 @@ const method = "post";
  * @param {String} method The HTTP request method.
  */
 export async function createBid(id, newBid) {
-	console.log(id);
-	console.log(newBid);
-
 	if (!id) {
 		throw new Error("Get requires an ID!");
 	}
@@ -31,6 +28,6 @@ export async function createBid(id, newBid) {
 			window.location.reload();
 		}, 500);
 	} else {
-		alert(`Error! Bid was not placed on auction item: ${bidInfo.title} `);
+		alert(`Error! Bid was not placed on auction item: ${bidInfo.title}`);
 	}
 }

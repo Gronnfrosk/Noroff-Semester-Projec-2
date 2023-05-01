@@ -1,16 +1,35 @@
 import { API_AUCTION_PROFILE_URL } from "../constants.js";
-import { displayProfile } from "../../profile/profile_info.js";
-import { searchItems } from "../../auction/search.js";
+import { authFetch } from "../auth_fetch.js";
 
-const method = "get";
+export async function getProfile(name) {
+	if (!name) {
+		throw new Error("Get requires a profile name!");
+	}
+	const profileUrl = API_AUCTION_PROFILE_URL + name;
 
-export async function getProfiles() {
-	const response = await fetch(API_AUCTION_PROFILE_URL, {
-		headers: { "Content-type": "application/json" },
-		method,
-	});
+	const response = await authFetch(profileUrl);
 
-	const profiles = await response.json();
+	return await response.json();
+}
 
-	displayProfile(profiles);
+export async function getProfileListings(name) {
+	if (!name) {
+		throw new Error("Get requires a profile name!");
+	}
+	const profileUrl = API_AUCTION_PROFILE_URL + name + "/listings";
+
+	const response = await authFetch(profileUrl);
+
+	return await response.json();
+}
+
+export async function getProfileBids(name) {
+	if (!name) {
+		throw new Error("Get requires a profile name!");
+	}
+	const profileUrl = API_AUCTION_PROFILE_URL + name + "/bids";
+
+	const response = await authFetch(profileUrl);
+
+	return await response.json();
 }
