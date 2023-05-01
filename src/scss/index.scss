@@ -204,10 +204,6 @@ main {
     }
 }
 
-
-
-
-
 /* Signin page */
 .signin-body {
     display: flex;
@@ -358,9 +354,10 @@ main {
     max-width: 800px;
     height: 400px;
     margin: 100px auto 0px auto;
+    /*
     background-color: #EEF5FB;
     border: 40px solid #EEF5FB;
-    
+    */
 
 
     & .carousel-indicators {
@@ -595,11 +592,13 @@ input[type=number] {
     
     .details-image {
         flex-direction: column;
-        margin-bottom: 0;
-        border: none;
+        height: 350px;
 
+        & .carousel-item .image {
+            height: 350px;
+        }
         & .carousel {
-            margin-top: 100px;
+            margin-top: 100px; 
         }
         & .edit-edit {
             left: 0px;
