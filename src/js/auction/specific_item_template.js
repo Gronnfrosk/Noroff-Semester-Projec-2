@@ -120,7 +120,7 @@ export async function specificAuctionItem(item) {
 
 	if (!bids[0]) {
 		containerThree.innerHTML = "";
-		containerThree.innerHTML += `<h2>No bid yet</h2>`;
+		containerThree.innerHTML += `<h2 class="bid-winner" id="0">No bid yet</h2>`;
 	} else {
 		const bidHistory = document.querySelector(".bid-log");
 		const bidHighest = document.querySelector(".highest");
