@@ -358,6 +358,10 @@ main {
     max-width: 800px;
     height: 400px;
     margin: 100px auto 0px auto;
+    background-color: #EEF5FB;
+    border: 40px solid #EEF5FB;
+    
+
 
     & .carousel-indicators {
         bottom: -45px;
@@ -592,6 +596,7 @@ input[type=number] {
     .details-image {
         flex-direction: column;
         margin-bottom: 0;
+        border: none;
 
         & .carousel {
             margin-top: 100px;
