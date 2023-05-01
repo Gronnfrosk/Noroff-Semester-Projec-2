@@ -25,9 +25,7 @@ export async function specificAuctionItem(item) {
 
 	const deadline = new Date(endsAt);
 	const dateFormat = deadline.toLocaleDateString();
-	const hr = deadline.getHours();
-	const min = deadline.getMinutes();
-	const clockFormat = hr + ":" + min;
+	const clockFormat = deadline.toLocaleString("en-US", { hour: "numeric", minute: "numeric", hour12: true });
 	const start = Date.now();
 	const elapsed = deadline - start;
 
@@ -51,6 +49,12 @@ export async function specificAuctionItem(item) {
 
 		active.classList.add("active");
 		activeOne.classList.add("active");
+
+		if (media.length === 1) {
+			nextPrevBtn.forEach((element) => {
+				element.classList.add("opacity-0");
+			});
+		}
 	} else {
 		mediaPlace.innerHTML += `
 		<div class="carousel-item active h-100 border border">
@@ -123,7 +127,7 @@ export async function specificAuctionItem(item) {
 
 		const bidDetails = bids.sort((a, b) => a.amount - b.amount).reverse();
 
-		bidHighest.innerHTML += `<div class="" id="${bidDetails[0].bidderName}"><p>${bidDetails[0].amount} credit - ${bidDetails[0].bidderName}</p></div>`;
+		bidHighest.innerHTML += `<div class="bid-winner" id="${bidDetails[0].amount}"><p>${bidDetails[0].amount} credit - ${bidDetails[0].bidderName}</p></div>`;
 
 		bidDetails.forEach((bid) => {
 			bidHistory.innerHTML += `<div class="" id="${bid.bidderName}"><p>${bid.amount} credit - ${bid.bidderName}</p></div>`;

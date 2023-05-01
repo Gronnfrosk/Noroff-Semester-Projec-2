@@ -11,6 +11,7 @@ const profile = key.load("profile");
  * @param {String} method The HTTP request method "POST".
  */
 export async function editAvatar(media) {
+	console.log(media);
 	if (profile) {
 		const userName = profile.name;
 		const method = "put";

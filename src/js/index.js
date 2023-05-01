@@ -7,6 +7,8 @@ import { getAuctionItems } from "./api/auction/getItem.js";
 import { specificAuctionItem } from "./auction/specific_item_template.js";
 import { setCreateItemFormListener } from "./auction/create_item.js";
 import { createForm } from "./auction/create_form_template.js";
+import { setCreateBidFormListener } from "./auction/create_bid.js";
+import { bidInput } from "./auction/bid_input.js";
 
 const path = location.pathname;
 
@@ -27,6 +29,8 @@ if (path === "/Noroff-Semester-Project-2/html/signin.html" || path === "/html/si
 } else if (path === "/Noroff-Semester-Project-2/html/specific_auction_item.html" || path === "/html/specific_auction_item.html") {
 	checkToken.checkUserToken();
 	specificAuctionItem();
+	bidInput();
+	setCreateBidFormListener();
 	user.logout();
 	console.log("Hello specific page");
 } else if (path === "/Noroff-Semester-Project-2/" || path === "/index.html") {
