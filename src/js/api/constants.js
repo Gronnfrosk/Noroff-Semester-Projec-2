@@ -5,3 +5,4 @@ export const API_AUCTION_URL = `${API_HOST_URL}${API_BASE}${API_AUCTION_BASE}`;
 export const API_AUCTION_PROFILE_URL = `${API_AUCTION_URL}/profiles/`;
 export const API_AUCTION_LISTING_URL = `${API_AUCTION_URL}/listings/`;
 export const API_AUCTION_LISTING_URL_ACTIVE = `${API_AUCTION_URL}/listings?_active=true`;
+export const API_AUCTION_LISTING_URL_NOT_ACTIVE = `${API_AUCTION_URL}/listings?_active=false`;

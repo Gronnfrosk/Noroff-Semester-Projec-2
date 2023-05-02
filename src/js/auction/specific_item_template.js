@@ -24,7 +24,7 @@ export async function specificAuctionItem(item) {
 	const { id_, title, description, tags, media, created, updated, endsAt, seller, bids, _count } = await getItem(id);
 
 	const deadline = new Date(endsAt);
-	const dateFormat = deadline.toLocaleDateString();
+	const dateFormat = deadline.toLocaleDateString("en-GB");
 	const clockFormat = deadline.toLocaleString("en-US", { hour: "numeric", minute: "numeric", hour12: true });
 	const start = Date.now();
 	const elapsed = deadline - start;

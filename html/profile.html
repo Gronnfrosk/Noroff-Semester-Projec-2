@@ -106,13 +106,13 @@
 			<section class="auction-history mt-2 text-center">
 				<ul class="nav nav-tabs mx-3">
 					<li class="nav-item">
-						<a class="nav-link active" aria-current="page" href="#">My auction</a>
+						<a class="nav-link active" aria-current="page" href="?tabs=">Listings</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">My bids</a>
+						<a class="nav-link" href="?tabs=bids">Bids</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Owned</a>
+						<a class="nav-link" href="?tabs=wins">Wins</a>
 					</li>
 				</ul>
 				<div class="blue-container pb-5">
@@ -132,24 +132,6 @@
 					</div>
 				</div>
                 <div class="card-container">
-					<div class="dropdown-profile">
-						<button
-							class="btn btn-white bg-white dropdown-toggle border border-white float-end m-3 mt-0"
-							type="button"
-							data-bs-toggle="dropdown"
-							aria-expanded="false"
-						>
-							Filter
-						</button>
-						<ul class="dropdown-menu border-1">
-							<li><a class="dropdown-item" href="?filter=">Newest</a></li>
-							<li><a class="dropdown-item" href="?filter=old">Oldest</a></li>
-							<li><a class="dropdown-item" href="?filter=short">Shortest deadline</a></li>
-							<li><a class="dropdown-item" href="?filter=long">Longest deadline</a></li>
-							<li><a class="dropdown-item" href="?filter=bids">Most bids</a></li>
-							
-						</ul>
-					</div>
 					<div class="cards mx-auto d-flex flex-wrap justify-content-center gap-5" id="card-container">
                     </div>
 					<button id="moreBtn" class="w-100 btn btn-lg btn-info mx-auto moreBtn mb-5" type="button">More</button>
