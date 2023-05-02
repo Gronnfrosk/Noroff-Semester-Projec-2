@@ -23,6 +23,7 @@ export async function displayProfile() {
 	const nameOther = params.get("nameID");
 	const profile = load("profile");
 
+	// check if profile is myself or other user
 	async function anotherProfile() {
 		let profileInfo;
 
@@ -33,6 +34,7 @@ export async function displayProfile() {
 		}
 		return profileInfo;
 	}
+
 	const profileInfo = await anotherProfile();
 	const profileWins = profileInfo.wins;
 
@@ -61,16 +63,16 @@ export async function displayProfile() {
 		searchItems(result);
 	} else if (tabsParam === "wins") {
 		tabsWinsProfile.classList.add("active");
+		const profileBids = await getProfileBids(profile.name);
+		const result = profileBids.map((a) => a.listing);
+
 		for (var i = 0; i < profileWins.length; i++) {
-			auctionCard.innerHTML += `<div class="box winning-box h-100">
-			<a href="https://gronnfrosk.github.io/Noroff-Semester-Project-2/html/specific_auction_item.html?itemID=${profileWins[i]}">
-				<div class="winner">
-					<i class="fa-solid fa-trophy"></i>
-					<p>${i + 1}</p>
-				</div>
-				</a>
-			</div>
-			`;
+			const winsResult = result.filter((a) => {
+				return a.id === profileWins[i];
+			});
+
+			showCards(winsResult);
+			searchItems(winsResult);
 		}
 	}
 }

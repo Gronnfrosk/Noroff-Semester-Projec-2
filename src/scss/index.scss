@@ -350,37 +350,6 @@ main {
     & .cards {
         left: 0;
     }
-    & .winner {
-        font-size: 3em;
-        height: 230px;
-        background-color: #212529;
-        color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: row;
-        transition-duration: 0.5s;
-        transition-property: background, border-radius;
-        
-        & i {
-            font-size: 2.2em;
-            
-        }
-        & p {
-            color: #212529;
-            position: relative;
-            width: 0;
-            top: -10px;
-            right: 72px;
-            font-weight: bold;
-            font-size: 0.8em;
-        }
-        
-    }
-    & .winner:hover {
-            background: #0dcaf0;
-            border-radius: 50%;
-        }
 }
 
 /* Specific page */
