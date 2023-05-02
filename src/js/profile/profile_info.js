@@ -7,6 +7,9 @@ import { showCards } from "../auction/auction_card_template.js";
 const profileAvatar = document.querySelector("#avatar");
 const profileContainer = document.querySelector("#profile-detail");
 const auctionCard = document.querySelector("#card-container");
+const tabsListingsProfile = document.querySelector("#profile-listings");
+const tabsBidsProfile = document.querySelector("#profile-bids");
+const tabsWinsProfile = document.querySelector("#profile-wins");
 
 /**
  * This function uses post title and id to display the search results when keypress.
@@ -44,16 +47,20 @@ export async function displayProfile() {
 	const tabsParam = params.get("tabs");
 
 	if (tabsParam === null || tabsParam === "") {
+		tabsListingsProfile.classList.add("active");
+
 		const profileListings = await getProfileListings(profile.name);
 		filterItems(profileListings);
 		searchItems(profileListings);
 	} else if (tabsParam === "bids") {
+		tabsBidsProfile.classList.add("active");
 		const profileBids = await getProfileBids(profile.name);
 		const result = profileBids.map((a) => a.listing);
 
 		showCards(result);
 		searchItems(result);
 	} else if (tabsParam === "wins") {
+		tabsWinsProfile.classList.add("active");
 		for (var i = 0; i < profileWins.length; i++) {
 			auctionCard.innerHTML += `<div class="box winning-box h-100">
 			<a href="https://gronnfrosk.github.io/Noroff-Semester-Project-2/html/specific_auction_item.html?itemID=${profileWins[i]}">

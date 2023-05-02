@@ -300,6 +300,7 @@ main {
         top: -152px;
         left: 152px;
     }
+   
     & .profile-info {
         width: 300px;
         position: relative;
@@ -323,10 +324,19 @@ main {
     & .active {
         font-weight: bold;        
     }
+    & .nav-tabs a {
+        width: 100px;
+        transition: background-color 0.3s ease-in-out;
+    }
+    & .nav-tabs a:hover {
+        background-color: #EEF5FB;
+        border-bottom-color: #EEF5FB;
+    }
     & .nav-link.active {
-            background-color: #EEF5FB;
-            border-bottom-color: #EEF5FB;
-        }
+        background-color: #EEF5FB;
+        border-bottom-color: #EEF5FB;
+        
+    }
     & .nav-item a {
         color: #212529;
     }
