@@ -54,6 +54,11 @@ nav  {
     }
 }
 
+.disabled {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
 .btn-outline-info {
     color: black;
     border-width: 3px;
@@ -324,9 +329,14 @@ main {
     & .active {
         font-weight: bold;        
     }
-    & .nav-tabs a {
-        width: 100px;
-        transition: background-color 0.3s ease-in-out;
+    & .nav-tabs {
+        display: inline-flex;
+        margin-top: 20px;
+
+        & a {
+            width: 100px;
+            transition: background-color 0.3s ease-in-out;
+        }
     }
     & .nav-tabs a:hover {
         background-color: #EEF5FB;
@@ -335,10 +345,55 @@ main {
     & .nav-link.active {
         background-color: #EEF5FB;
         border-bottom-color: #EEF5FB;
+    }
+    & .winning-box {
+        width: 100%;
+        margin-top: 20px;
+        font-weight: bold;
+        color: #212529;
+        
+        & p {
+            width: fit-content;
+            margin: 0 auto 5px auto;
+        }
+    }
+    & .winner {
+        margin: auto;
+        font-size: 3em;
+        height: 100px;
+        width: 100px;
+        background-color: #212529;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        transition-duration: 0.5s;
+        transition-property: background, border-radius;
+        
+        & i {
+            font-size: 1.15em;
+            position: relative;
+            left: 19px;
+        }
+        & p {
+            color: #212529;
+            position: relative;
+            width: 100%;
+            right: 31px;
+            margin-bottom: 22px;
+            font-weight: bold;
+            font-size: 0.35em;
+        }
         
     }
+    & .winner:hover {
+            background: #0dcaf0;
+            border-radius: 50%;
+        }
     & .nav-item a {
         color: #212529;
+        width: 100%;
     }
     & .auction-container {
         background-color: #EEF5FB;
@@ -355,6 +410,8 @@ main {
 /* Specific page */
 .specific {
     max-width: 900px;
+    margin: 0 auto 30px auto;
+    padding: 0 20px;
 
     & p {
         margin: 0;
@@ -378,11 +435,6 @@ main {
     max-width: 800px;
     height: 400px;
     margin: 100px auto 0px auto;
-    /*
-    background-color: #EEF5FB;
-    border: 40px solid #EEF5FB;
-    */
-
 
     & .carousel-indicators {
         bottom: -45px;
@@ -416,15 +468,17 @@ main {
 
 .details {
     display: flex;
-    justify-content: space-between;
-    max-width: 900px;
+    justify-content: center;
     margin: 50px auto 0 auto;
-    padding: 0 50px;
 
     & .details-one {
-        max-width: 600px;
         margin-right: 40px;
+        width: 600px;
     }
+}
+
+.bid-history {
+    border-right: 73px double #EEF5FB;
 }
 
 .details-bid {
@@ -432,13 +486,14 @@ main {
     margin: 0 auto;
 
     & .bid-input {
-        width: 90%;
+        width: 100%;
 
         & button {
             width: 100%;
         }
     }
     & input[type="number"] {
+        height: 45px;
         text-align: center;
         padding: 0!important;
         font-size: 1.25em;
@@ -449,22 +504,112 @@ main {
         display: flex;
         justify-content: flex-end;
         width: 100%;
-        padding-top: 61px;
+        padding-top: 52px;
         opacity: 1!important;
         font-size: 1.25em;
         height: auto;
+    }
+    & .highest {
+        width: fit-content;
+        display: flex;
+        flex-direction: row;
+        align-items: center; 
+        align-items: center;
+        position: relative;
+        bottom: 30px;
+    }
+    & .bid-winner p {
+        margin-top: 30px;
+        margin-right: 15px;
+    } 
+    & img {
+        height: 70px;
+        width: 70px;
+        border-radius: 50%;
+        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.459);
+    }
+    & a img {
+        background-color: white;
     }
     & a {
         text-decoration: none;
         color: black;
     }
-    & a:hover {
-        font-weight: bold;
+    & .bid-log {
+        overflow: auto;
+        width: fit-content;
+        padding-right: 30px;
+        max-height: 215px;
+        margin: 10px 0;
     }
     & .bid-log p {
         margin-bottom: 0;
-        margin-left: 25px;
+        
     }
+    & .seller {
+        background-color: #EEF5FB;
+        border: 10px double white;
+        width: 225px;
+        height: 215px;
+        padding-top: 15px;
+
+        & i {
+            color: #212529;
+        }
+        & p {
+            padding-top: 90px;
+            position: relative;
+            bottom: 83px;
+        }
+    }
+}
+
+
+.link {
+    position: relative;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        border-radius: 4px;
+        background-color: #0dcaf0;
+        bottom: 0;
+        left: 0;
+        transform-origin: right;
+        transform: scaleX(0);
+        transition: transform .3s ease-in-out;
+    }
+    &:hover::before {
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+}
+
+.details-two .deadline {
+    width: max-content;
+
+}
+
+/* width */
+.bid-log::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+.bid-log::-webkit-scrollbar-track {
+background: #f1f1f1;
+}
+
+/* Handle */
+.bid-log::-webkit-scrollbar-thumb {
+background: #212529ab; 
+}
+
+/* Handle on hover */
+.bid-log::-webkit-scrollbar-thumb:hover {
+background: #212529; 
 }
 
 input::-webkit-outer-spin-button,
@@ -602,17 +747,21 @@ input[type=number] {
     }
 
     /* Profile page */
-    .auction-history {
-
-        & .winner {
-        height: 155px;
-        }
+    .nav-tabs {
+        margin-top: 0px;
     }
     
 
     /* Specific page */
-    .specific h2 {
-        margin: 0;
+    
+    .specific {
+        max-width: 900px;
+        margin: 0px;
+        padding: 0px;
+        
+        & h2 {
+            margin: 0;
+        }
     }
 
     .details-image, .details, .details-bid {
@@ -636,6 +785,14 @@ input[type=number] {
         }
     }
 
+    .bid-history {
+        border-right-width: 30px;
+
+        & .ms-5 {
+            margin-left: 15px!important;
+        }
+    }
+
     .details {
         flex-direction: column;
         margin-top: 50px;
@@ -651,8 +808,5 @@ input[type=number] {
     .details-bid {
         padding: 0;
         
-        & .bid-input {
-            width: 100%;
-        }
     }
 }

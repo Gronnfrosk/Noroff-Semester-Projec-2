@@ -6,10 +6,9 @@ import { showCards } from "../auction/auction_card_template.js";
 
 const profileAvatar = document.querySelector("#avatar");
 const profileContainer = document.querySelector("#profile-detail");
-const auctionCard = document.querySelector("#card-container");
-const tabsListingsProfile = document.querySelector("#profile-listings");
-const tabsBidsProfile = document.querySelector("#profile-bids");
-const tabsWinsProfile = document.querySelector("#profile-wins");
+const editAvatar = document.querySelector("#edit-avatar");
+const addItem = document.querySelector(".add-item");
+const navTabs = document.querySelector(".nav-tabs");
 
 /**
  * This function uses post title and id to display the search results when keypress.
@@ -20,56 +19,91 @@ const tabsWinsProfile = document.querySelector("#profile-wins");
 export async function displayProfile() {
 	const queryString = document.location.search;
 	const params = new URLSearchParams(queryString);
-	const nameOther = params.get("nameID");
+	const nameOther = params.get("name");
+	const tabsParam = params.get("tabs");
 	const profile = load("profile");
 
 	// check if profile is myself or other user
 	async function anotherProfile() {
 		let profileInfo;
+		let creditContent;
 
-		if (!nameOther || nameOther === profile) {
+		if (!nameOther || nameOther === profile.name) {
 			profileInfo = await getProfile(profile.name);
+			creditContent = `<div class="credit mx-auto text-center mt-2"><p class="">Total Credit - ${profileInfo.credits}</p></div>`;
+		} else if (profile.name !== nameOther) {
+			profileInfo = await getProfile(nameOther);
+			creditContent = `<div class="credit mx-auto text-center mt-2"><p class=""></p></div>`;
+			editAvatar.classList.add("opacity-0");
+			editAvatar.classList.add("disabled");
+			addItem.classList.add("disabled");
+			addItem.classList.add("text-info");
 		} else {
-			profileInfo = await getProfile(nameOther.name);
+			alert("No name found");
 		}
-		return profileInfo;
+		return { profileInfo, creditContent };
 	}
 
-	const profileInfo = await anotherProfile();
+	const profileInfo = (await anotherProfile()).profileInfo;
+	const profileListings = await getProfileListings(profileInfo.name);
 	const profileWins = profileInfo.wins;
+	const profileBids = await getProfileBids(profileInfo.name);
+	const result = profileBids.map((a) => a.listing);
+	console.log(profileInfo);
+	console.log(profileListings);
+	console.log(profileWins);
+	console.log(profileBids);
+	console.log(result);
+
+	const credit = (await anotherProfile()).creditContent;
+
+	navTabs.innerHTML = `
+			<li class="nav-item">
+				<a class="nav-link" id="profile-listings" aria-current="page" data-toggle="tab" href="?name=${profileInfo.name}">Listings (${profileInfo._count.listings})</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" id="profile-bids" href="?name=${profileInfo.name}&tabs=bids" data-toggle="tab">Bids (${profileBids.length})</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" id="profile-wins" href="?name=${profileInfo.name}&tabs=wins" data-toggle="tab">Wins (${profileWins.length})</a>
+			</li>
+				`;
 
 	profileAvatar.innerHTML += `<img src="${profileInfo.avatar}" alt="Image for the user: ${profileInfo.name}" class="pe-0 avatar">`;
 
 	profileContainer.innerHTML += `<div class="profile-info mx-auto">
 		<div class="name text-center"><h2>${profileInfo.name}</h2></div>
 		<div class="email text-center"><p>${profileInfo.email}</p></div>
-		<div class="credit mx-auto text-center mt-2"><p class="">Total Credit - ${profileInfo.credits}</p></div>
+		${credit}
 	</div>`;
 
-	const tabsParam = params.get("tabs");
+	const tabsListingsProfile = document.querySelector("#profile-listings");
+	const tabsBidsProfile = document.querySelector("#profile-bids");
+	const tabsWinsProfile = document.querySelector("#profile-wins");
 
 	if (tabsParam === null || tabsParam === "") {
 		tabsListingsProfile.classList.add("active");
 
-		const profileListings = await getProfileListings(profile.name);
 		filterItems(profileListings);
 		searchItems(profileListings);
 	} else if (tabsParam === "bids") {
 		tabsBidsProfile.classList.add("active");
-		const profileBids = await getProfileBids(profile.name);
-		const result = profileBids.map((a) => a.listing);
 
 		showCards(result);
 		searchItems(result);
 	} else if (tabsParam === "wins") {
 		tabsWinsProfile.classList.add("active");
-		const profileBids = await getProfileBids(profile.name);
-		const result = profileBids.map((a) => a.listing);
+
+		// Sort bids on listing by deadline
+		result.sort(function (a, b) {
+			return new Date(b.endsAt) - new Date(a.endsAt);
+		});
 
 		for (var i = 0; i < profileWins.length; i++) {
 			const winsResult = result.filter((a) => {
 				return a.id === profileWins[i];
 			});
+			//console.log(winsResult);
 
 			showCards(winsResult);
 			searchItems(winsResult);

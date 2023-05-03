@@ -1,9 +1,14 @@
-//import { load } from "../storage/token.mjs";
+import { load } from "../localstorage/save_load_remove.js";
 import { getItem } from "../api/auction/getItem.js";
+import { getProfile } from "../api/profile/get_profile.js";
 
 const mediaPlace = document.querySelector(".carousel-inner");
 const mediaButton = document.querySelector(".carousel-indicators");
+const bidInputPlace = document.querySelector("#bidding");
+const sellerPlace = document.querySelector("#seller");
 const nextPrevBtn = document.querySelectorAll(".slide-btn");
+const inputField = document.querySelector("#create-bid");
+const bidInput = document.querySelector("#bid-input");
 const containerOne = document.querySelector(".details-one");
 const containerTwo = document.querySelector(".details-two");
 const containerThree = document.querySelector(".bid-history");
@@ -22,12 +27,15 @@ export async function specificAuctionItem(item) {
 	const params = new URLSearchParams(queryString);
 	const id = params.get("itemID");
 	const { id_, title, description, tags, media, created, updated, endsAt, seller, bids, _count } = await getItem(id);
-
+	console.log(await getItem(id));
 	const deadline = new Date(endsAt);
 	const dateFormat = deadline.toLocaleDateString("en-GB");
 	const clockFormat = deadline.toLocaleString("en-US", { hour: "numeric", minute: "numeric", hour12: true });
 	const start = Date.now();
 	const elapsed = deadline - start;
+	const bidDetails = bids.sort((a, b) => a.amount - b.amount).reverse();
+	const profile = load("profile");
+	const minCredit = bidDetails[0].amount + 1;
 
 	// Display media
 	if (media.length > 0) {
@@ -68,7 +76,7 @@ export async function specificAuctionItem(item) {
 		});
 	}
 
-	//Basic item info
+	// Basic item info
 	containerOne.innerHTML = `
                     <h1>${title}</h1>
                     <p>${description}</p>
@@ -107,30 +115,79 @@ export async function specificAuctionItem(item) {
 	}
 
 	//Bid info
-	containerThree.innerHTML += `
-                    <h2>Highest bid:</h2>
-					<div class="highest">
-					</div>
-					<div>
-                    	<div class="ms-5">
-                        <h3>Bidding history</h3>
-                        <div class="bid-log">
-                        </div>
-                    </div>`;
-
 	if (!bids[0]) {
 		containerThree.innerHTML = "";
 		containerThree.innerHTML += `<h2 class="bid-winner" id="0">No bid yet</h2>`;
 	} else {
+		const bidder = await getProfile(bidDetails[0].bidderName);
+
+		containerThree.innerHTML += `
+							<h2>Highest bid:</h2>
+							<div class="highest">
+							<a href="https://gronnfrosk.github.io/Noroff-Semester-Project-2/html/profile.html?name=${bidDetails[0].bidderName}" >
+							<div class="bid-winner" id="${bidDetails[0].amount}">
+								<p class="link">${bidDetails[0].amount} credit - ${bidDetails[0].bidderName}</p>
+							</div>
+						</a>
+						<img src="${bidder.avatar}" alt="Bidder avatar" >
+							</div>
+							<div>
+								<div class="ms-5">
+								<h3>Bidding history (Total ${_count.bids})</h3>
+								<div class="bid-log">
+								</div>
+							</div>`;
+
 		const bidHistory = document.querySelector(".bid-log");
-		const bidHighest = document.querySelector(".highest");
-
-		const bidDetails = bids.sort((a, b) => a.amount - b.amount).reverse();
-
-		bidHighest.innerHTML += `<div class="bid-winner" id="${bidDetails[0].amount}"><p>${bidDetails[0].amount} credit - ${bidDetails[0].bidderName}</p></div>`;
 
 		bidDetails.forEach((bid) => {
-			bidHistory.innerHTML += `<div class="" id="${bid.bidderName}"><p>${bid.amount} credit - ${bid.bidderName}</p></div>`;
+			bidHistory.innerHTML += `
+				<div class="" id="${bid.bidderName}">
+					<a href="https://gronnfrosk.github.io/Noroff-Semester-Project-2/html/profile.html?name=${bid.bidderName}">
+						<p class="link">${bid.amount} credit - ${bid.bidderName}</p>
+					</a>
+				</div>`;
 		});
+	}
+
+	if (seller.avatar) {
+		sellerPlace.innerHTML += `
+		<h3>Seller</h3>
+		<a href="https://gronnfrosk.github.io/Noroff-Semester-Project-2/html/profile.html?name=${seller.name}">
+			<img src="${seller.avatar}" alt="Seller avatar" class="mt-2">
+			<p class="link">${seller.name}</p>
+		</a>
+		`;
+	} else {
+		sellerPlace.innerHTML += `
+		<h3 class="mt-4 pt-3">Seller</h3>
+		<a href="https://gronnfrosk.github.io/Noroff-Semester-Project-2/html/profile.html?name=${seller.name}">
+			<i class="fa-solid fa-user fs-1"></i>
+			<p class="link">${seller.name}</p>
+		</a>
+		`;
+	}
+
+	const maxCredit = document.querySelector(".nav-credit p").id;
+
+	bidInputPlace.innerHTML = `
+                <div class="col-auto mb-1">
+                	<span id="recent-bid" class="form-text">
+                	Lowest acceptable bid:
+                	</span>
+                </div>
+                <input id="validationCustom00" value="${minCredit}" type="number" class="form-control" required name="amount" min="${minCredit}" max="${maxCredit}"/>
+                <div class="invalid-feedback mb-3">The bid must be above highest</div>
+                <label for="validationCustom00 form-label">Credit</label>
+            `;
+
+	if (seller.name === profile.name || minCredit > maxCredit) {
+		inputField.classList.add("disabled");
+
+		if (seller.name === profile.name) {
+			bidInput.innerHTML += `<p class="text-center my-3 text-danger fw-bold">You can not bid on your own listings.</p>`;
+		} else if (minCredit > maxCredit) {
+			bidInput.innerHTML += `<p class="text-center my-3 text-danger fw-bold">You do not have enough Credits to bid on this item.</p>`;
+		}
 	}
 }
