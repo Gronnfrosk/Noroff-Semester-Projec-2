@@ -33,9 +33,7 @@ export async function specificAuctionItem(item) {
 	const clockFormat = deadline.toLocaleString("en-US", { hour: "numeric", minute: "numeric", hour12: true });
 	const start = Date.now();
 	const elapsed = deadline - start;
-	const bidDetails = bids.sort((a, b) => a.amount - b.amount).reverse();
 	const profile = load("profile");
-	const minCredit = bidDetails[0].amount + 1;
 
 	// Display media
 	if (media.length > 0) {
@@ -46,7 +44,7 @@ export async function specificAuctionItem(item) {
 			mediaPlace.innerHTML += `
 				<div class="carousel-item">
 					<div class="image">
-						<img src="${media[i]}" alt="Auction item ${title[i]}" class="bd-placeholder-img bd-placeholder-img-lg d-block">
+						<img src="${media[i]}" alt="Auction item" class="bd-placeholder-img bd-placeholder-img-lg d-block">
 					</div>
 				</div>
 			`;
@@ -101,6 +99,7 @@ export async function specificAuctionItem(item) {
 					</div>
 					`;
 	}
+
 	// Deadline passed show red icon
 	if (elapsed < 0) {
 		const clockIcon = document.querySelectorAll(".fa-clock");
@@ -119,7 +118,9 @@ export async function specificAuctionItem(item) {
 		containerThree.innerHTML = "";
 		containerThree.innerHTML += `<h2 class="bid-winner" id="0">No bid yet</h2>`;
 	} else {
+		const bidDetails = bids.sort((a, b) => a.amount - b.amount).reverse();
 		const bidder = await getProfile(bidDetails[0].bidderName);
+		//const minCredit = bidDetails[0].amount + 1;
 
 		containerThree.innerHTML += `
 							<h2>Highest bid:</h2>
@@ -169,6 +170,7 @@ export async function specificAuctionItem(item) {
 	}
 
 	const maxCredit = document.querySelector(".nav-credit p").id;
+	const minCredit = parseInt(document.querySelector(".bid-winner").id) + 1;
 
 	bidInputPlace.innerHTML = `
                 <div class="col-auto mb-1">

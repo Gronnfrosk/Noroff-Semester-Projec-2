@@ -45,17 +45,11 @@ export async function displayProfile() {
 	}
 
 	const profileInfo = (await anotherProfile()).profileInfo;
-	const profileListings = await getProfileListings(profileInfo.name);
+	const credit = (await anotherProfile()).creditContent;
 	const profileWins = profileInfo.wins;
 	const profileBids = await getProfileBids(profileInfo.name);
 	const result = profileBids.map((a) => a.listing);
 	console.log(profileInfo);
-	console.log(profileListings);
-	console.log(profileWins);
-	console.log(profileBids);
-	console.log(result);
-
-	const credit = (await anotherProfile()).creditContent;
 
 	navTabs.innerHTML = `
 			<li class="nav-item">
@@ -83,6 +77,7 @@ export async function displayProfile() {
 
 	if (tabsParam === null || tabsParam === "") {
 		tabsListingsProfile.classList.add("active");
+		const profileListings = await getProfileListings(profileInfo.name);
 
 		filterItems(profileListings);
 		searchItems(profileListings);
