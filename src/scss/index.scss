@@ -80,7 +80,8 @@ nav  {
     margin-bottom: 10px;
 
     & .date-input {
-        width: fit-content;
+        width: 50%;
+        margin: auto;
     }
     & .description-input {
         height: 150px;
@@ -88,7 +89,7 @@ nav  {
     
     & .media-input {
         height: 15px; 
-        margin-bottom: 5px;
+        margin-bottom: 10px;
         padding-bottom: 15px;
     }
     & .url-upload {
