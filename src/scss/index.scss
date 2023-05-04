@@ -326,6 +326,10 @@ main {
     }
 }
 
+.sort {
+    position: absolute;
+}
+
 .auction-history {
     & .active {
         font-weight: bold;        
@@ -751,7 +755,9 @@ input[type=number] {
     .nav-tabs {
         margin-top: 0px;
     }
-    
+    .sort {
+        display: none;
+    }
 
     /* Specific page */
     
