@@ -1,6 +1,6 @@
 import { load } from "../localstorage/save_load_remove.js";
 import { getProfile, getProfileListings, getProfileBids } from "../api/profile/get_profile.js";
-import { filterItems } from "../auction/filter_items.js";
+import { getFilterItems } from "../auction/filter_items.js";
 import { searchItems } from "../auction/search.js";
 import { showCards } from "../auction/auction_card_template.js";
 
@@ -79,7 +79,7 @@ export async function displayProfile() {
 		tabsListingsProfile.classList.add("active");
 		const profileListings = await getProfileListings(profileInfo.name);
 
-		filterItems(profileListings);
+		getFilterItems(profileListings);
 		searchItems(profileListings);
 	} else if (tabsParam === "bids") {
 		tabsBidsProfile.classList.add("active");

@@ -1,39 +1,40 @@
-import { showCards } from "./auction_card_template.js";
+//import { showCards } from "./auction_card_template.js";
 
-export function filterItems(items) {
+export async function getFilterItems(items) {
 	const params = new URLSearchParams(window.location.search);
 	const filterParam = params.get("filter");
+	const awaited = await items;
 
-	if (filterParam === null || filterParam === "" || filterParam === "old") {
+	if (filterParam === null || filterParam === "" || filterParam === "old" || !filterParam) {
 		//Newest;
-		items.sort(function (a, b) {
+		awaited.sort(function (a, b) {
 			return new Date(b.created) - new Date(a.created);
 		});
 
 		// Oldest
 		if (filterParam === "old") {
-			items.reverse();
+			awaited.reverse();
 		}
 	}
 
 	if (filterParam === "short" || filterParam === "long") {
 		// deadline longest
-		items.sort(function (a, b) {
+		awaited.sort(function (a, b) {
 			return new Date(b.endsAt) - new Date(a.endsAt);
 		});
 
 		// deadline closest
 		if (filterParam === "short") {
-			items.reverse();
+			awaited.reverse();
 		}
 	}
 
 	if (filterParam === "bids") {
 		// Most bids
-		items.sort(function (a, b) {
+		awaited.sort(function (a, b) {
 			return b._count.bids - a._count.bids;
 		});
 	}
 
-	showCards(items);
+	return items;
 }
