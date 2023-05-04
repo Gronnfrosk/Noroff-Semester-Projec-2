@@ -1,4 +1,15 @@
 import { load } from "../localstorage/save_load_remove.js";
+import { getProfile, getProfileListings, getProfileBids } from "../api/profile/get_profile.js";
+import { filterItems } from "../auction/filter_items.js";
+import { searchItems } from "../auction/search.js";
+import { showCards } from "../auction/auction_card_template.js";
+
+const profileAvatar = document.querySelector("#avatar");
+const profileContainer = document.querySelector("#profile-detail");
+const auctionCard = document.querySelector("#card-container");
+const tabsListingsProfile = document.querySelector("#profile-listings");
+const tabsBidsProfile = document.querySelector("#profile-bids");
+const tabsWinsProfile = document.querySelector("#profile-wins");
 
 /**
  * This function uses post title and id to display the search results when keypress.
@@ -6,16 +17,60 @@ import { load } from "../localstorage/save_load_remove.js";
  * @param {Element} profileAvatar This is a html element where avatar image are displayed.
  * @param {Object} profile This is data of user obtained from the profile value in localStorage.
  */
-export function displayProfile() {
-	const profileAvatar = document.querySelector("#avatar");
-	const profileContainer = document.querySelector("#profile-detail");
+export async function displayProfile() {
+	const queryString = document.location.search;
+	const params = new URLSearchParams(queryString);
+	const nameOther = params.get("nameID");
 	const profile = load("profile");
 
-	profileAvatar.innerHTML += `<img src="${profile.avatar}" alt="Image for the user: ${profile.name}" class="pe-0 avatar">`;
+	async function anotherProfile() {
+		let profileInfo;
+
+		if (!nameOther || nameOther === profile) {
+			profileInfo = await getProfile(profile.name);
+		} else {
+			profileInfo = await getProfile(nameOther.name);
+		}
+		return profileInfo;
+	}
+	const profileInfo = await anotherProfile();
+	const profileWins = profileInfo.wins;
+
+	profileAvatar.innerHTML += `<img src="${profileInfo.avatar}" alt="Image for the user: ${profileInfo.name}" class="pe-0 avatar">`;
 
 	profileContainer.innerHTML += `<div class="profile-info mx-auto">
-    <div class="name text-center"><h2>${profile.name}</h2></div>
-    <div class="email text-center"><p>${profile.email}</p></div>
-    <div class="credit mx-auto text-center mt-2"><p class="">Total Credit - ${profile.credits}</p></div>
-</div>`;
+		<div class="name text-center"><h2>${profileInfo.name}</h2></div>
+		<div class="email text-center"><p>${profileInfo.email}</p></div>
+		<div class="credit mx-auto text-center mt-2"><p class="">Total Credit - ${profileInfo.credits}</p></div>
+	</div>`;
+
+	const tabsParam = params.get("tabs");
+
+	if (tabsParam === null || tabsParam === "") {
+		tabsListingsProfile.classList.add("active");
+
+		const profileListings = await getProfileListings(profile.name);
+		filterItems(profileListings);
+		searchItems(profileListings);
+	} else if (tabsParam === "bids") {
+		tabsBidsProfile.classList.add("active");
+		const profileBids = await getProfileBids(profile.name);
+		const result = profileBids.map((a) => a.listing);
+
+		showCards(result);
+		searchItems(result);
+	} else if (tabsParam === "wins") {
+		tabsWinsProfile.classList.add("active");
+		for (var i = 0; i < profileWins.length; i++) {
+			auctionCard.innerHTML += `<div class="box winning-box h-100">
+			<a href="https://gronnfrosk.github.io/Noroff-Semester-Project-2/html/specific_auction_item.html?itemID=${profileWins[i]}">
+				<div class="winner">
+					<i class="fa-solid fa-trophy"></i>
+					<p>${i + 1}</p>
+				</div>
+				</a>
+			</div>
+			`;
+		}
+	}
 }

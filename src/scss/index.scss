@@ -63,6 +63,14 @@ nav  {
     font-size: 1.25em;
 }
 
+.add-item-form {
+    text-align: left;
+
+    & .modal-footer {
+        padding-top: 23px;
+    }
+}
+
 .add-item-form .form-floating {
     margin-bottom: 10px;
 
@@ -72,6 +80,47 @@ nav  {
     & .description-input {
         height: 150px;
     }
+    
+    & .media-input {
+        height: 15px; 
+        margin-bottom: 5px;
+        padding-bottom: 15px;
+    }
+    & .url-upload {
+
+        & .number, .media-item {
+            display: flex;
+
+            & p {
+                margin-top: revert;
+                margin-bottom: 0;
+            }
+            & div {
+                display: flex;
+                margin: 5px;
+            }
+        }
+        & img { 
+            max-height: 40px;
+            max-width: 50px;
+            margin-top: 5px;
+        }
+        & .number {
+            position: relative;
+            bottom: 20px;
+            right: 31px;
+
+            & p {
+                margin: 0;
+            }
+        }
+    }
+}
+
+.media-url label {
+    width: fit-content;
+    height: fit-content;
+    padding: 4px 0.75rem;
 }
 
 footer {
@@ -156,16 +205,12 @@ main {
             cursor: default;
         }
     }
-    & button {
+    & .moreBtn {
         width: 50%!important;
         margin-top: 48px;
         
     }
 }
-
-
-
-
 
 /* Signin page */
 .signin-body {
@@ -237,7 +282,6 @@ main {
         top: -75px;
         background-color: white;
     }
-    
     & .profile-avatar {
         height: 150px;
         display: flex;
@@ -256,6 +300,7 @@ main {
         top: -152px;
         left: 152px;
     }
+   
     & .profile-info {
         width: 300px;
         position: relative;
@@ -279,16 +324,63 @@ main {
     & .active {
         font-weight: bold;        
     }
+    & .nav-tabs a {
+        width: 100px;
+        transition: background-color 0.3s ease-in-out;
+    }
+    & .nav-tabs a:hover {
+        background-color: #EEF5FB;
+        border-bottom-color: #EEF5FB;
+    }
     & .nav-link.active {
-            background-color: #EEF5FB;
-            border-bottom-color: #EEF5FB;
-        }
+        background-color: #EEF5FB;
+        border-bottom-color: #EEF5FB;
+        
+    }
     & .nav-item a {
         color: #212529;
     }
     & .auction-container {
         background-color: #EEF5FB;
     }
+    & .dropdown-profile {
+        display: flex;
+        justify-content: flex-end;
+    }
+    & .cards {
+        left: 0;
+    }
+    & .winner {
+        font-size: 3em;
+        height: 230px;
+        background-color: #212529;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        transition-duration: 0.5s;
+        transition-property: background, border-radius;
+        
+        & i {
+            font-size: 2.2em;
+            
+        }
+        & p {
+            color: #212529;
+            position: relative;
+            width: 0;
+            top: -10px;
+            right: 72px;
+            font-weight: bold;
+            font-size: 0.8em;
+        }
+        
+    }
+    & .winner:hover {
+            background: #0dcaf0;
+            border-radius: 50%;
+        }
 }
 
 /* Specific page */
@@ -317,6 +409,11 @@ main {
     max-width: 800px;
     height: 400px;
     margin: 100px auto 0px auto;
+    /*
+    background-color: #EEF5FB;
+    border: 40px solid #EEF5FB;
+    */
+
 
     & .carousel-indicators {
         bottom: -45px;
@@ -372,12 +469,21 @@ main {
             width: 100%;
         }
     }
-    & input[type="text"] {
+    & input[type="number"] {
         text-align: center;
+        padding: 0!important;
+        font-size: 1.25em;
+        font-weight: bold;
+        
     }
     & label {
-        padding-top: 39px;
-        text-align: center;
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        padding-top: 61px;
+        opacity: 1!important;
+        font-size: 1.25em;
+        height: auto;
     }
     & a {
         text-decoration: none;
@@ -392,6 +498,15 @@ main {
     }
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
 
 /*mobile styles*/
 @media only screen and (max-width: 700px) {
@@ -518,6 +633,12 @@ main {
     }
 
     /* Profile page */
+    .auction-history {
+
+        & .winner {
+        height: 155px;
+        }
+    }
     
 
     /* Specific page */
@@ -532,10 +653,13 @@ main {
     
     .details-image {
         flex-direction: column;
-        margin-bottom: 0;
+        height: 350px;
 
+        & .carousel-item .image {
+            height: 350px;
+        }
         & .carousel {
-            margin-top: 100px;
+            margin-top: 100px; 
         }
         & .edit-edit {
             left: 0px;
@@ -545,7 +669,7 @@ main {
 
     .details {
         flex-direction: column;
-        margin: auto;
+        margin-top: 50px;
         padding: 0;
 
         & .deadline {
