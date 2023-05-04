@@ -1,4 +1,4 @@
-//import { showCards } from "./auction_card_template.js";
+//import { searchItems } from "./search.js";
 
 export async function getFilterItems(items) {
 	const params = new URLSearchParams(window.location.search);

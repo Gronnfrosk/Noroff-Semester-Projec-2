@@ -22,13 +22,13 @@ if (path === "/Noroff-Semester-Project-2/html/signin.html" || path === "/html/si
 	checkToken.checkUserTokenLogin();
 	console.log("Hello register site");
 } else if (path === "/Noroff-Semester-Project-2/html/profile.html" || path === "/html/profile.html") {
-	//checkToken.checkUserToken();
-	//user.logout();
-	//displayProfile();
-	//createForm();
-	//editAvatarListener();
+	checkToken.checkUserToken();
+	user.logout();
+	displayProfile();
+	createForm();
+	editAvatarListener();
 	//displayNumberOfCards();
-	//console.log("Hello profile page");
+	console.log("Hello profile page");
 } else if (path === "/Noroff-Semester-Project-2/html/specific_auction_item.html" || path === "/html/specific_auction_item.html") {
 	checkToken.checkUserToken();
 	specificAuctionItem();
