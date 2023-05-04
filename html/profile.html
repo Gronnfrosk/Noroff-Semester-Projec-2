@@ -49,7 +49,7 @@
 							<a class="nav-link" href="https://gronnfrosk.github.io/Noroff-Semester-Project-2/">Home</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link text-white" href="https://gronnfrosk.github.io/Noroff-Semester-Project-2/html/profile.html">Profile</a>
+							<a class="nav-link" href="https://gronnfrosk.github.io/Noroff-Semester-Project-2/html/profile.html">Profile</a>
 						</li>
 						<li class="nav-item" id="logout">
 							<a class="nav-link logout-nav" href="">Logout</a>
@@ -68,7 +68,7 @@
 				<div class="profile-image mx-auto" >
 					<div class="profile-avatar" id="avatar">
 					</div>
-					<button type="button" class="btn edit-btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-gear"></i></button>
+					<button type="button" id="edit-avatar" class="btn edit-btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-gear"></i></button>
 					<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 						<div class="modal-dialog modal-dialog-centered">
 							<div class="modal-content">
@@ -105,15 +105,6 @@
 			</section>
 			<section class="auction-history mt-2 text-center">
 				<ul class="nav nav-tabs mx-3">
-					<li class="nav-item">
-						<a class="nav-link" id="profile-listings" aria-current="page" data-toggle="tab" href="?tabs=">Listings</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" id="profile-bids" href="?tabs=bids" data-toggle="tab">Bids</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" id="profile-wins" href="?tabs=wins" data-toggle="tab">Wins</a>
-					</li>
 				</ul>
 				<div class="blue-container pb-5">
 				<button class="btn btn-info add-item add-desktop my-4 px-5 " data-bs-toggle="modal" type="button" data-bs-target="#CreateAuctionItemModal">Add item for auction +</button>
@@ -133,6 +124,10 @@
 				</div>
                 <div class="card-container">
 					<div class="cards mx-auto d-flex flex-wrap justify-content-center gap-5" id="card-container">
+                    </div>
+					<div class="cards-bids mx-auto d-flex flex-wrap justify-content-center gap-5" id="card-container">
+                    </div>
+					<div class="cards-wins mx-auto d-flex flex-wrap justify-content-center gap-5" id="card-container">
                     </div>
 					<button id="moreBtn" class="w-100 btn btn-lg btn-info mx-auto moreBtn mb-5" type="button">More</button>
 				</div>

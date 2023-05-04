@@ -3,7 +3,7 @@ import { filterItems } from "../../auction/filter_items.js";
 import { searchItems } from "../../auction/search.js";
 import { authFetch } from "../auth_fetch.js";
 
-const action = "?_bids=true";
+const action = "?_bids=true&_seller=true";
 
 export async function getAuctionItems() {
 	const response = await authFetch(API_AUCTION_LISTING_URL_ACTIVE);
