@@ -42,6 +42,7 @@ export function createForm() {
             <label for="validationCustom01 form-label">Description </label>
         </div>
         <div class="form-floating deadline-input">
+             <label for="validationCustom02 form-label" class="p-0 ps-2">Deadline</label>
             <input
                 type="datetime-local"
                 class="form-control date-input"
@@ -52,12 +53,11 @@ export function createForm() {
                 pattern = "MM-DD-YYYY HH:mm"
                 name="endsAt"
             />
-            <div class="invalid-feedback mb-3">Need time and date for auction deadline</div>
-            <label for="validationCustom02 form-label">Deadline</label>
+            <div class="invalid-feedback mb-3 text-center">Requires a time and date for auction deadline</div>
+           
         </div>
         <label class="col-form-label">Media URL:</label>
         <div class="form-floating media-url">
-            
             <input
                 type="url"
                 class="form-control media-input"
