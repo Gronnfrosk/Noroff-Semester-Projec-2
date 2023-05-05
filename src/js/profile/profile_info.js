@@ -15,7 +15,6 @@ const auctionCard = document.querySelector("#card-container");
 export async function displayProfile() {
 	// Profile info
 	const profile = await anotherProfile();
-	console.log(profile);
 
 	// Display listings
 	const profileListings = await getProfileListings(profile.profileInfo.name);
@@ -31,8 +30,6 @@ export async function displayProfile() {
 	// Display profile wins
 	const profileWins = profile.profileInfo.wins;
 	profileWins.reverse();
-
-	console.log(profileWins);
 
 	for (var z = 0; z < profileWins.length; z++) {
 		const winsResult = result.filter((a) => {
