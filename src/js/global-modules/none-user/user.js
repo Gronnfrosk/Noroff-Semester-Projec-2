@@ -16,8 +16,6 @@ export function checkUser() {
 	const userToken = load("profile");
 
 	if (!token && !userToken) {
-		console.log("No token in storage");
-
 		// Hide logout and profile nav
 		userNav.forEach((element) => {
 			element.classList.add("d-none");

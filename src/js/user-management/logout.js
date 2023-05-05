@@ -11,7 +11,7 @@ export function logout() {
 
 	logoutButtons.forEach((button) => {
 		if (button !== undefined)
-			button.addEventListener("click", () => {
+			button.addEventListener("click", (event) => {
 				event.preventDefault();
 				remove("token");
 				remove("profile");

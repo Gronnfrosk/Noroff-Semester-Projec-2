@@ -1,8 +1,8 @@
-import { API_AUCTION_URL } from "../constants.js";
-import * as key from "../../localstorage/save_load_remove.js";
+import { API_AUCTION_PROFILE_URL } from "../constants.js";
+import { load } from "../../localstorage/save_load_remove.js";
+import { authFetch } from "../auth_fetch.js";
 
-const auth = key.load("token");
-const profile = key.load("profile");
+const method = "put";
 
 /**
  * This async function sends an API "POST" request and informs if successful or not.
@@ -11,25 +11,19 @@ const profile = key.load("profile");
  * @param {String} method The HTTP request method "POST".
  */
 export async function editAvatar(media) {
+	const profile = load("profile");
+
 	if (profile) {
 		const userName = profile.name;
-		const method = "put";
-		const action = "/profiles/" + userName + "/media";
-		const avatarURL = API_AUCTION_URL + action;
+		const avatarURL = API_AUCTION_PROFILE_URL + userName + "/media";
 
-		const response = await fetch(avatarURL, {
-			headers: { "Content-type": "application/json", Authorization: `Bearer ${auth}` },
+		const response = await authFetch(avatarURL, {
 			method,
 			body: JSON.stringify({ avatar: media }),
 		});
 
-		const { accessToken, ...user } = await response.json();
-
 		if (response.ok) {
-			key.save("profile", user);
-			setTimeout(() => {
-				window.location.href = "https://gronnfrosk.github.io/Noroff-Semester-Project-2/html/profile.html";
-			}, 500);
+			window.location.reload();
 		} else {
 			alert("Error! Your avatar was not changed.");
 		}

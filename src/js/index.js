@@ -27,7 +27,6 @@ if (path === "/Noroff-Semester-Project-2/html/signin.html" || path === "/html/si
 	displayProfile();
 	createForm();
 	editAvatarListener();
-	//displayNumberOfCards();
 	console.log("Hello profile page");
 } else if (path === "/Noroff-Semester-Project-2/html/specific_auction_item.html" || path === "/html/specific_auction_item.html") {
 	checkToken.checkUserToken();

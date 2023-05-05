@@ -15,16 +15,15 @@ export async function displayNumberOfCards() {
 	showCards(items);
 	searchItems(filterItems);
 
-	// Display of more button and adding more cards by click
-	if (items.length > 99) {
-		moreLoadBtn.classList.add("d-none");
-	}
-
+	// Load more
 	moreLoadBtn.addEventListener("click", (cards) => {
 		auctionCard.innerHTML = ``;
 		n += 15;
-
 		const items = filterItems.slice(0, n);
+
+		if (items.length > 99) {
+			moreLoadBtn.classList.add("d-none");
+		}
 
 		showCards(items);
 	});

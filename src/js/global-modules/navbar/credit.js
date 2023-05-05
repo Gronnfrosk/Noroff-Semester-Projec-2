@@ -10,9 +10,10 @@ import { getProfile } from "../../api/profile/get_profile.js";
 export async function displayCredits() {
 	const creditTotal = document.querySelector("#nav-credit");
 	const profile = load("profile");
-	const profileInfo = await getProfile(profile.name);
 
-	if (profileInfo) {
+	if (profile) {
+		const profileInfo = await getProfile(profile.name);
+
 		creditTotal.innerHTML += `<p class="text-white fw-semibold d-flex align-items-center m-0 pe-3" id="${profileInfo.credits}">Total Credits - ${profileInfo.credits}</p>`;
 	}
 }
