@@ -130,8 +130,10 @@ export async function specificAuctionItem(item) {
 								<p class="link">${bidDetails[0].amount} credit - ${bidDetails[0].bidderName}</p>
 							</div>
 						</a>
-						<img src="${bidder.avatar}" alt="Bidder avatar" >
-							</div>
+						<div class="image-special">
+							<img src="${bidder.avatar}" alt="Bidder avatar" >
+						</div>
+						</div>
 							<div>
 								<div class="ms-5">
 								<h3>Bidding history (Total ${_count.bids})</h3>
@@ -155,7 +157,9 @@ export async function specificAuctionItem(item) {
 		sellerPlace.innerHTML += `
 		<h3>Seller</h3>
 		<a href="https://gronnfrosk.github.io/Noroff-Semester-Project-2/html/profile.html?name=${seller.name}">
-			<img src="${seller.avatar}" alt="Seller avatar" class="mt-2">
+			<div class="image-special">
+				<img src="${seller.avatar}" alt="Seller avatar" class="mt-2">
+			</div>
 			<p class="link">${seller.name}</p>
 		</a>
 		`;

@@ -9,14 +9,26 @@ import { editAvatar } from "../api/profile/edit_avatar.js";
  */
 export function editAvatarListener() {
 	const form = document.querySelector("#avatar-edit");
+	const preView = document.querySelector("#pre-view-avatar");
 
 	if (form) {
+		form.addEventListener("paste", function (e) {
+			preView.innerHTML = "";
+			const contents = e.clipboardData.getData("text");
+
+			preView.innerHTML += `
+				<img src="${contents}" alt="Profile image" class="pe-0 avatar">
+				<i class="fa-solid fa-user fs-1"></i>;`;
+		});
+
 		form.addEventListener("submit", (event) => {
 			const mediaInput = document.querySelector(".media-input");
 			event.preventDefault();
 
 			// send it to the API
-			editAvatar(mediaInput.value);
+			if (mediaInput.value !== 0) {
+				editAvatar(mediaInput.value);
+			}
 		});
 	}
 }
