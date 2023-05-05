@@ -27,7 +27,6 @@ export async function specificAuctionItem(item) {
 	const params = new URLSearchParams(queryString);
 	const id = params.get("itemID");
 	const { id_, title, description, tags, media, created, updated, endsAt, seller, bids, _count } = await getItem(id);
-	console.log(await getItem(id));
 	const deadline = new Date(endsAt);
 	const dateFormat = deadline.toLocaleDateString("en-GB");
 	const clockFormat = deadline.toLocaleString("en-US", { hour: "numeric", minute: "numeric", hour12: true });
@@ -131,7 +130,7 @@ export async function specificAuctionItem(item) {
 							</div>
 						</a>
 						<div class="image-special">
-							<img src="${bidder.avatar}" alt="Bidder avatar" >
+							<img src="${bidder.avatar}" alt="Avatar" >
 						</div>
 						</div>
 							<div>
