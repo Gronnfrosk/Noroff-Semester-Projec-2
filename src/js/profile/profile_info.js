@@ -15,6 +15,7 @@ const auctionCard = document.querySelector("#card-container");
 export async function displayProfile() {
 	// Profile info
 	const profile = await anotherProfile();
+	console.log(profile);
 
 	// Display listings
 	const profileListings = await getProfileListings(profile.profileInfo.name);
@@ -31,6 +32,8 @@ export async function displayProfile() {
 	const profileWins = profile.profileInfo.wins;
 	profileWins.reverse();
 
+	console.log(profileWins);
+
 	for (var z = 0; z < profileWins.length; z++) {
 		const winsResult = result.filter((a) => {
 			return a.id === profileWins[z];
@@ -42,23 +45,11 @@ export async function displayProfile() {
 	// Display top profile template
 	profileContent(profile.profileInfo, profileBids.length, profileWins.length, profile.creditContent);
 
-	// Display bottom profile default
 	const box = auctionCard.children;
 	const listings = profileListings.length;
 	const bids = result.length;
 	const wins = profileWins.length;
 
-	for (let x = listings; x < listings + bids; x++) {
-		if (box[x]) {
-			box[x].classList.add("d-none");
-		}
-	}
-
-	for (let y = listings + bids; y < listings + bids + wins; y++) {
-		if (box[y]) {
-			box[y].classList.add("d-none");
-		}
-	}
 	// Tabs function: Listings, bids, wins
 	profileTabs(listings, bids, wins, box);
 }
