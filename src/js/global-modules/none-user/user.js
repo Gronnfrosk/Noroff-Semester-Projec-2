@@ -3,7 +3,10 @@ import { load } from "../../localstorage/save_load_remove.js";
 const userNav = document.querySelectorAll("#nav-user");
 const navNew = document.querySelectorAll("#login");
 const addItem = document.querySelector(".add-btn");
-const items = document.querySelector(".card-container");
+const profileLinks = document.querySelector(".details-bid");
+
+const token = load("token");
+const userToken = load("profile");
 
 /**
  * This function stops none users to visit home page or profile page
@@ -12,9 +15,6 @@ const items = document.querySelector(".card-container");
  * @param {string} userToken This is the localStorage key with user profile data value.
  */
 export function checkUser() {
-	const token = load("token");
-	const userToken = load("profile");
-
 	if (!token && !userToken) {
 		// Hide logout and profile nav
 		userNav.forEach((element) => {
@@ -31,9 +31,11 @@ export function checkUser() {
 			addItem.classList.add("d-none");
 		}
 
-		// Disable specific link
-		if (items) {
-			items.addEventListener("click", (event) => {
+		// Disable profile links
+		if (profileLinks) {
+			profileLinks.classList.add("link-disabled");
+
+			profileLinks.addEventListener("click", (event) => {
 				event.preventDefault();
 			});
 		}

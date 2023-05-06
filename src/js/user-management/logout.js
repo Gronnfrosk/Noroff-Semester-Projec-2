@@ -1,4 +1,5 @@
 import { remove } from "../localstorage/save_load_remove.js";
+
 const logoutButtons = document.querySelectorAll("#logout");
 
 /**
@@ -7,8 +8,6 @@ const logoutButtons = document.querySelectorAll("#logout");
  */
 
 export function logout() {
-	console.log("Hello from logout");
-
 	logoutButtons.forEach((button) => {
 		if (button !== undefined)
 			button.addEventListener("click", (event) => {

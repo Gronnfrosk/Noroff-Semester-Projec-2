@@ -29,22 +29,17 @@ if (path === "/Noroff-Semester-Project-2/html/signin.html" || path === "/html/si
 	editAvatarListener();
 	console.log("Hello profile page");
 } else if (path === "/Noroff-Semester-Project-2/html/specific_auction_item.html" || path === "/html/specific_auction_item.html") {
-	checkToken.checkUserToken();
 	specificAuctionItem();
 	setCreateBidFormListener();
 	user.logout();
 	console.log("Hello specific page");
 } else if (path === "/Noroff-Semester-Project-2/" || path === "/index.html") {
 	user.logout();
-	//getAuctionItems();
 	displayNumberOfCards();
-	//showCards();
 	createForm();
 	setCreateItemFormListener();
 
 	console.log("Hello home page");
 }
-
-console.log("Hello main index javascript");
 
 globalFunctions();

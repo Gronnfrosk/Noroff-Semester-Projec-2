@@ -118,8 +118,15 @@ export async function specificAuctionItem(item) {
 		containerThree.innerHTML += `<h2 class="bid-winner" id="0">No bid yet</h2>`;
 	} else {
 		const bidDetails = bids.sort((a, b) => a.amount - b.amount).reverse();
-		const bidder = await getProfile(bidDetails[0].bidderName);
-		//const minCredit = bidDetails[0].amount + 1;
+		var avatar = `<i class="fa-solid fa-user fs-1"></i>`;
+
+		if (profile) {
+			const bidder = await getProfile(bidDetails[0].bidderName);
+
+			if (bidder === undefined) {
+				avatar = `<img src="${bidder.avatar}" alt="Avatar" ></img>`;
+			}
+		}
 
 		containerThree.innerHTML += `
 							<h2>Highest bid:</h2>
@@ -129,8 +136,8 @@ export async function specificAuctionItem(item) {
 								<p class="link">${bidDetails[0].amount} credit - ${bidDetails[0].bidderName}</p>
 							</div>
 						</a>
-						<div class="image-special">
-							<img src="${bidder.avatar}" alt="Avatar" >
+						<div class="image-special justify-content-center">
+							${avatar}
 						</div>
 						</div>
 							<div>
@@ -172,7 +179,12 @@ export async function specificAuctionItem(item) {
 		`;
 	}
 
-	const maxCredit = document.querySelector(".nav-credit p").id;
+	var maxCredit = 0;
+
+	if (profile) {
+		maxCredit = document.querySelector(".nav-credit p").id;
+	}
+
 	const minCredit = parseInt(document.querySelector(".bid-winner").id) + 1;
 
 	bidInputPlace.innerHTML = `
@@ -186,10 +198,12 @@ export async function specificAuctionItem(item) {
                 <label for="validationCustom00 form-label">Credit</label>
             `;
 
-	if (seller.name === profile.name || minCredit > maxCredit) {
+	if (!profile || seller.name === profile.name || minCredit > maxCredit) {
 		inputField.classList.add("disabled");
 
-		if (seller.name === profile.name) {
+		if (!profile) {
+			bidInput.innerHTML += `<p class="text-center my-3 text-danger fw-bold">You need to register or login to an account to add new bid.</p>`;
+		} else if (seller.name === profile.name) {
 			bidInput.innerHTML += `<p class="text-center my-3 text-danger fw-bold">You can not bid on your own listings.</p>`;
 		} else if (minCredit > maxCredit) {
 			bidInput.innerHTML += `<p class="text-center my-3 text-danger fw-bold">You do not have enough Credits to bid on this item.</p>`;
