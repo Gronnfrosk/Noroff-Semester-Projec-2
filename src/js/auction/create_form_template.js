@@ -1,3 +1,5 @@
+import { deleteUrl } from "../global-modules/delete_url.js";
+
 const formCreate = document.querySelector("#add-item-form");
 
 //min="2023-05-01T08:30"
@@ -64,57 +66,65 @@ export function createForm() {
                 id="validationCustom03"
                 placeholder="Media URL 1"
                 required
+                pattern="https://.*"
                 name="media0"
             />
-            <div class="invalid-feedback mb-3">Must have at least one image. Only valid URL<br />- Example: http://www.example.com</div>
+            <div class="btn delete-url delete-cover"><i class="fa-solid fa-delete-left"></i></div>
+            <div class="invalid-feedback mb-3">Must have at least one image.<br />- Example: http://www.example.com</div>
             <label for="validationCustom03 form-label" class="form-label">Paste for preview</label>
-            <div class="box cards" id="cover-img">	
-			</div>
-            <div class="form-floating media-url one d-none">
-                <input
-                    type="url"
-                    class="form-control media-input"
-                    id="validationCustom04"
-                    placeholder="Media URL 2"
-                    name="media1"
-                />
-                <label for="validationCustom04 form-label" class="form-label">Image nr. 2</label>
-            </div>
-            <div class="form-floating media-url two d-none">
-                <input
-                    type="url"
-                    class="form-control media-input"
-                    id="validationCustom05"
-                    placeholder="Media URL 3"
-                    name="media2"
-                />
-                <label for="validationCustom05 form-label" class="form-label">Image nr. 3</label>
-            </div>
-            <div class="form-floating media-url three d-none">
-                <input
-                    type="url"
-                    class="form-control media-input  "
-                    id="validationCustom06"
-                    placeholder="Media URL 4"
-                    name="media3"
-                />
-                <label for="validationCustom06 form-label" class="form-label">Image nr. 4</label>
-            </div>
-            <div class="url-upload">
-            <div class="media-item">
-                <div class="media-one"></div>
-                <div class="media-two"></div>
-                <div class="media-three"></div>
-                <div class="media-four"></div>
-            </div>
-            <div class="number">
-            </div>
+            <div class="box cards" id="cover-img">	 
+		</div>
+        <div class="form-floating media-url one d-none">
+            <input
+                type="url"
+                class="form-control media-input"
+                id="validationCustom04"
+                placeholder="Media URL 2"
+                pattern="https://.*"
+                name="media1"
+            />
+            <div class="btn delete-url"><i class="fa-solid fa-delete-left"></i></div>
+            <label for="validationCustom04 form-label" class="form-label">Image nr. 2</label>
+        </div>
+        <div class="form-floating media-url two d-none">
+            <input
+                type="url"
+                class="form-control media-input"
+                id="validationCustom05"
+                placeholder="Media URL 3"
+                pattern="https://.*"
+                name="media2"
+            />
+            <div class="btn delete-url"><i class="fa-solid fa-delete-left"></i></div>
+            <label for="validationCustom05 form-label" class="form-label media3-4">Image nr. 3</label>
+        </div>
+        <div class="form-floating media-url three d-none">
+            <input
+                type="url"
+                class="form-control media-input  "
+                id="validationCustom06"
+                placeholder="Media URL 4"
+                pattern="https://.*"
+                name="media3"
+            />
+            <div class="btn delete-url"><i class="fa-solid fa-delete-left"></i></div>
+            <label for="validationCustom06 form-label" class="form-label media3-4">Image nr. 4</label>
+        </div>
+        <div class="url-upload">
+        <div class="media-item">
+            <div class="media-one"></div>
+            <div class="media-two"></div>
+            <div class="media-three"></div>
+            <div class="media-four"></div>
+        </div>
+        <div class="number">
         </div>
     </div>
 </div>
+</div>
 <div class="modal-footer">
-    <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Close</button>
-    <button type="submit" class="btn btn-info" data-bs-target="#exampleModal">Start item auction</button>	
+<button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Close</button>
+<button type="submit" class="btn btn-info" data-bs-target="#exampleModal">Start item auction</button>	
 </div>
 `;
 
@@ -174,4 +184,7 @@ export function createForm() {
 		<div class="media-box"><p>4.</p></div>
         <img src="${contents}" alt="Image" class="bd-placeholder-img">`;
 	});
+
+	// Delete url input
+	deleteUrl();
 }

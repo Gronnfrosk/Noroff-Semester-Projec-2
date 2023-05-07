@@ -78,13 +78,14 @@
 										<div class="form-floating">
 											<input
 												type="url"
-												class="form-control avatar-media-input"
+												class="form-control avatar-media-input media-input"
 												id="validationCustom20"
 												placeholder="Avatar URL"
 												required
 												minlength="20"
 												name="avatar"
 											/>
+											<div class="btn btn-dark delete-url"><i class="fa-solid fa-delete-left"></i></div>
 											<div class="invalid-feedback mb-3">Only valid URL<br />- Example: http://www.example.com</div>
 											<label for="validationCustom20 form-label">Avatar URL </label>
 										</div>
@@ -127,11 +128,11 @@
 				</ul>
 				<div class="blue-container pb-5">
 				<button class="btn btn-info add-item add-desktop my-4 px-5 " data-bs-toggle="modal" type="button" data-bs-target="#CreateAuctionItemModal">Add item for auction +</button>
-				<div class="modal fade" id="CreateAuctionItemModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal fade" id="CreateAuctionItemModal" tabindex="-1" aria-labelledby="CreateAuctionItemModalLabel" aria-hidden="true">
 					<div class="modal-dialog modal-dialog-centered">
 						<div class="modal-content">
 							<div class="modal-header">
-								<h1 class="modal-title fs-5" id="exampleModalLabel">Add auction item</h1>
+								<h1 class="modal-title fs-5" id="CreateAuctionItemModalLabel">Add auction item</h1>
 								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 							</div>
 							<div class="modal-body">

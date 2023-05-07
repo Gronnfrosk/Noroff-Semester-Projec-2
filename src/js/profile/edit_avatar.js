@@ -1,4 +1,5 @@
 import { editAvatar } from "../api/profile/edit_avatar.js";
+import { deleteUrl } from "../global-modules/delete_url.js";
 
 /**
  * This function triggers by form submit to collect form data and send to API.
@@ -22,6 +23,8 @@ export function editAvatarListener() {
 				<img src="${contents}" alt="Profile image" class="pe-0 avatar">
 				`;
 		});
+
+		deleteUrl();
 
 		form.addEventListener("submit", (event) => {
 			event.preventDefault();

@@ -1,4 +1,5 @@
 import { register } from "../api/auth/register.js";
+import { deleteUrl } from "../global-modules/delete_url.js";
 
 /**
  * This function triggers by form submit to collect form data and send to API.
@@ -9,6 +10,8 @@ import { register } from "../api/auth/register.js";
  */
 export function setRegisterFormListener() {
 	const form = document.querySelector("#registerForm");
+
+	deleteUrl();
 
 	if (form) {
 		form.addEventListener("submit", (event) => {

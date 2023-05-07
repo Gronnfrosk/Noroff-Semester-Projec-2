@@ -1,4 +1,5 @@
 import { createAuctionItem } from "../api/auction/create_item.js";
+
 const formCreate = document.querySelector("#add-item-form");
 
 /**

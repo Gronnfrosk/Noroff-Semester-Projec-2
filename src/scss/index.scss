@@ -73,9 +73,7 @@ nav .nav-link, footer .nav-link {
     border-width: 3px;
 }
 
-.edit-btn {
-    font-size: 1.25em;
-}
+
 
 .add-item-form {
     text-align: left;
@@ -95,14 +93,31 @@ nav .nav-link, footer .nav-link {
     & .description-input {
         height: 150px;
     }
-    
     & .media-input {
         height: 15px; 
         margin-bottom: 10px;
         padding-bottom: 15px;
     }
+    & .btn {
+        border: none;
+        height: 0;
+        float: right;
+        position: relative;
+        bottom: 44px;
+        padding: 2px 7px;
+        
+    }
+    & i {
+        font-size: 1.3em;
+        padding-top: 5px;
+        padding-left: 10px;
+        background-color: white;
+    }
+    & .media3-4 {
+        margin: 0;
+        padding-top: 12px;
+    }
     & .url-upload {
-
         & .number, .media-item {
             display: flex;
 
@@ -286,7 +301,7 @@ main {
         font-size: 2.5em;
     }
     & .form-floating:focus-within {
-        z-index: 2;
+        z-index: 1.1;
     }
     
     & input[type="text"], .login-email {
@@ -304,6 +319,22 @@ main {
         margin-bottom: 10px;
         border-top-left-radius: 0;
         border-top-right-radius: 0;
+    }
+    & .delete-url {
+        float: right;
+        position: absolute;
+        bottom: 1px;
+        padding: 16px 9px;
+        right: 1px;
+        border-top-left-radius: 0%;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 0%;
+        background-color: #fff;
+        border: none;
+
+        & i {
+            font-size: 1.2em;
+        }
     }
     & .btn {
         font-size: 1em;
@@ -350,6 +381,9 @@ main {
         
         }
     }
+    & .edit-btn {
+        font-size: 1.25em;
+    }
     & .avatar {
         background-color: white;
         width: 100%;
@@ -366,7 +400,19 @@ main {
             display: none;
         }
     }
-    
+    & .form-floating {
+        & .btn-dark {
+            float: right;
+            position: relative;
+            bottom: 58.5px;
+            right: 1px;
+            padding: 11px;
+        }
+        & i {
+            font-size: 2em;
+        }
+    }
+
     & .pre-view {
         position: inherit;
     }
@@ -398,7 +444,7 @@ main {
 }
 .sort {
     position: relative;
-    z-index: 4;
+    z-index: 2;
     top: 75px;
     margin-right: 20px;
     height: 0;
@@ -421,11 +467,11 @@ main {
 
     & .blue-container {
         position: relative;
-        z-index: 3;
+        z-index: 1.2;
     }
     & .active {
         position: relative;
-        z-index: 2;
+        z-index: 1.1;
         font-weight: bold;
         box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.219); 
         height: 55px;
@@ -779,7 +825,10 @@ input[type=number] {
             & p {
                 margin-bottom: 10px;
                 position: relative;
-                bottom: 28px;
+                bottom: 26px;
+                right: 8px;
+                border-bottom: 2px solid white;
+                padding: 5px;
             }
         }
     }
