@@ -12,17 +12,18 @@ export function editAvatarListener() {
 	const preView = document.querySelector("#pre-view-avatar");
 
 	if (form) {
+		const mediaInput = document.querySelector(".avatar-media-input");
+
 		form.addEventListener("paste", function (e) {
-			preView.innerHTML = "";
 			const contents = e.clipboardData.getData("text");
+			preView.innerHTML = "";
 
 			preView.innerHTML += `
 				<img src="${contents}" alt="Profile image" class="pe-0 avatar">
-				<i class="fa-solid fa-user fs-1"></i>;`;
+				`;
 		});
 
 		form.addEventListener("submit", (event) => {
-			const mediaInput = document.querySelector(".media-input");
 			event.preventDefault();
 
 			// send it to the API

@@ -12,10 +12,13 @@ export async function displayNumberOfCards() {
 	const filterItems = await getFilterItems(response);
 	const items = filterItems.slice(0, n);
 
+	// Load default number of listings
 	showCards(items);
+
+	// search all
 	searchItems(filterItems);
 
-	// Load more
+	// Load more listings
 	moreLoadBtn.addEventListener("click", (cards) => {
 		auctionCard.innerHTML = ``;
 		n += 15;

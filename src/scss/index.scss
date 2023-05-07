@@ -65,7 +65,7 @@ nav .nav-link, footer .nav-link {
 
 .disabled {
     pointer-events: none;
-    opacity: 0.7;
+    opacity: 0.5;
 }
 
 .btn-outline-info {
@@ -198,6 +198,7 @@ main {
     background-color: #fff;
 }
 
+
 .cards img { 
     transform: scale(1.4);
     transition: all .5s;
@@ -215,6 +216,11 @@ main {
         left: 63px;
         width: 70%;
 
+        & .listing-image p {
+            transform: scale(1);
+            transition: all .5s;
+        } 
+
         & a {
             text-decoration: none;
             color: black;
@@ -225,8 +231,9 @@ main {
             text-align: center;
             height: 0;
         }
-        
-        
+        & .listing-image p:hover {
+            transform: scale(1.2);
+        }
         & img:hover {
             transform: scale(1.5);
         }
@@ -349,11 +356,15 @@ main {
         transform: scale(1.2);
     }
     & .edit-container {
+        height: 44px;
         position: relative;
         text-align: center;
         margin-left: 203px;
-        bottom: 80px;        
+        bottom: 80px;
         
+        & button {
+            display: none;
+        }
     }
     
     & .pre-view {
@@ -380,11 +391,15 @@ main {
             border-radius: 20px;
             box-shadow: 0 3px 3px rgba(0, 0, 0, 0.103);
         }
+        & .none-user-credit {
+            border: 15px double white;
+        }
     }
 }
 .sort {
     position: relative;
-    top: 88px;
+    z-index: 4;
+    top: 75px;
     margin-right: 20px;
     height: 0;
 }
@@ -403,24 +418,39 @@ main {
 }
 
 .auction-history {
+
+    & .blue-container {
+        position: relative;
+        z-index: 3;
+    }
     & .active {
-        font-weight: bold;        
+        position: relative;
+        z-index: 2;
+        font-weight: bold;
+        box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.219); 
+        height: 55px;
+        pointer-events: none;
     }
     & .nav-tabs {
-        margin-top: 20px;
+        height: 55px;
+        align-items: end;
 
         & a {
+            height: 42px;
             width: 100px;
-            transition: background-color 0.1s ease-out;
+            transition: height 0.3s ease-out, background-color 0.3s ease-out;
         }
     }
     & .nav-tabs a:hover {
         background-color: #EEF5FB;
         border-bottom-color: #EEF5FB;
+        height: 50px;
+        
     }
     & .nav-link.active {
         background-color: #EEF5FB;
         border-bottom-color: #EEF5FB;
+        height: 50px;
     }
     & .winning-box {
         width: 100%;
@@ -662,7 +692,7 @@ main {
     }
 }
 
-.link, .nav-link {
+.link, nav .nav-link, footer .nav-link {
     position: relative;
     
     &::before {

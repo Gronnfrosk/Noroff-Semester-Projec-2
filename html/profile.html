@@ -64,13 +64,13 @@
 				<div class="blue"></div>
 				<div class="top-container">
 					<div class="edit-container">
-					<button type="button" id="edit-avatar" class="btn edit-btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-gear"></i></button>
+					<button type="button" id="edit-avatar" class="btn edit-btn" data-bs-toggle="modal" data-bs-target="#avatarModal"><i class="fa-solid fa-gear"></i></button>
 					</div>	
-						<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal fade" id="avatarModal" tabindex="-1" aria-labelledby="avatarModalLabel" aria-hidden="true">
 							<div class="modal-dialog modal-dialog-centered">
 								<div class="modal-content">
 									<div class="modal-header">
-										<h1 class="modal-title fs-5" id="exampleModalLabel">Edit avatar</h1>
+										<h1 class="modal-title fs-5" id="avatarModalLabel">Edit avatar</h1>
 										<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 									</div>
 									<div class="modal-body">
@@ -78,15 +78,15 @@
 										<div class="form-floating">
 											<input
 												type="url"
-												class="form-control media-input"
-												id="validationCustom00.5"
+												class="form-control avatar-media-input"
+												id="validationCustom20"
 												placeholder="Avatar URL"
 												required
 												minlength="20"
 												name="avatar"
 											/>
 											<div class="invalid-feedback mb-3">Only valid URL<br />- Example: http://www.example.com</div>
-											<label for="validationCustom00.5 form-label">Avatar URL </label>
+											<label for="validationCustom20 form-label">Avatar URL </label>
 										</div>
 										<label for="pre-view-avatar form-label" class="view-url">Paste for preview</label>
 										<div class="img-edit">
@@ -100,7 +100,7 @@
 									</div>
 									<div class="modal-footer">
 										<button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Close</button>
-										<button type="submit" class="btn btn-info" data-bs-target="#exampleModal" data-bs-toggle="modal">Save changes</button>	
+										<button type="submit" class="btn btn-info" data-bs-target="#avatarModal" data-bs-toggle="modal">Save changes</button>	
 									</div>
 									</form>
 								</div>

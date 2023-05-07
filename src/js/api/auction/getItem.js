@@ -1,6 +1,4 @@
 import { API_AUCTION_LISTING_URL, API_AUCTION_LISTING_URL_ACTIVE } from "../constants.js";
-//import { filterItems } from "../../auction/filter_items.js";
-//import { searchItems } from "../../auction/search.js";
 import { authFetch } from "../auth_fetch.js";
 
 const action = "?_bids=true&_seller=true";

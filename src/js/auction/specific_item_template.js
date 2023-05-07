@@ -1,6 +1,7 @@
 import { load } from "../localstorage/save_load_remove.js";
 import { getItem } from "../api/auction/getItem.js";
 import { getProfile } from "../api/profile/get_profile.js";
+import { displayCredits } from "../global-modules/navbar/credit.js";
 
 const mediaPlace = document.querySelector(".carousel-inner");
 const mediaButton = document.querySelector(".carousel-indicators");
@@ -118,12 +119,13 @@ export async function specificAuctionItem(item) {
 		containerThree.innerHTML += `<h2 class="bid-winner" id="0">No bid yet</h2>`;
 	} else {
 		const bidDetails = bids.sort((a, b) => a.amount - b.amount).reverse();
-		var avatar = `<i class="fa-solid fa-user fs-1"></i>`;
 
 		if (profile) {
+			var avatar = `<i class="fa-solid fa-user fs-1"></i>`;
 			const bidder = await getProfile(bidDetails[0].bidderName);
 
-			if (bidder === undefined) {
+			if (bidder !== undefined) {
+				avatar = "";
 				avatar = `<img src="${bidder.avatar}" alt="Avatar" ></img>`;
 			}
 		}
