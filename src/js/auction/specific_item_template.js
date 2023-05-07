@@ -183,13 +183,14 @@ export async function specificAuctionItem(item) {
 
 	var maxCredit = 0;
 
-	if (profile) {
-		maxCredit = document.querySelector(".nav-credit p").id;
-	}
+	setTimeout(() => {
+		if (profile) {
+			maxCredit = document.querySelector(".nav-credit p").id;
+		}
 
-	const minCredit = parseInt(document.querySelector(".bid-winner").id) + 1;
+		const minCredit = parseInt(document.querySelector(".bid-winner").id) + 1;
 
-	bidInputPlace.innerHTML = `
+		bidInputPlace.innerHTML = `
                 <div class="col-auto mb-1">
                 	<span id="recent-bid" class="form-text">
                 	Lowest acceptable bid:
@@ -200,15 +201,16 @@ export async function specificAuctionItem(item) {
                 <label for="validationCustom00 form-label">Credit</label>
             `;
 
-	if (!profile || seller.name === profile.name || minCredit > maxCredit) {
-		inputField.classList.add("disabled");
+		if (!profile || seller.name === profile.name || minCredit > maxCredit) {
+			inputField.classList.add("disabled");
 
-		if (!profile) {
-			bidInput.innerHTML += `<p class="text-center my-3 text-danger fw-bold">You need to register or login to an account to add new bid.</p>`;
-		} else if (seller.name === profile.name) {
-			bidInput.innerHTML += `<p class="text-center my-3 text-danger fw-bold">You can not bid on your own listings.</p>`;
-		} else if (minCredit > maxCredit) {
-			bidInput.innerHTML += `<p class="text-center my-3 text-danger fw-bold">You do not have enough Credits to bid on this item.</p>`;
+			if (!profile) {
+				bidInput.innerHTML += `<p class="text-center my-3 text-danger fw-bold">You need to register or login to an account to add new bid.</p>`;
+			} else if (seller.name === profile.name) {
+				bidInput.innerHTML += `<p class="text-center my-3 text-danger fw-bold">You can not bid on your own listings.</p>`;
+			} else if (minCredit > maxCredit) {
+				bidInput.innerHTML += `<p class="text-center my-3 text-danger fw-bold">You do not have enough Credits to bid on this item.</p>`;
+			}
 		}
-	}
+	}, 700);
 }
