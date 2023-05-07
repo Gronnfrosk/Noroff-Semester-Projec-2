@@ -23,23 +23,23 @@ if (path === "/Noroff-Semester-Project-2/html/signin.html" || path === "/html/si
 	console.log("Hello register site");
 } else if (path === "/Noroff-Semester-Project-2/html/profile.html" || path === "/html/profile.html") {
 	checkToken.checkUserToken();
-	user.logout();
+	globalFunctions();
 	displayProfile();
-	createForm();
 	editAvatarListener();
+	createForm();
+	user.logout();
 	console.log("Hello profile page");
 } else if (path === "/Noroff-Semester-Project-2/html/specific_auction_item.html" || path === "/html/specific_auction_item.html") {
+	globalFunctions();
 	specificAuctionItem();
 	setCreateBidFormListener();
 	user.logout();
 	console.log("Hello specific page");
 } else if (path === "/Noroff-Semester-Project-2/" || path === "/index.html") {
-	user.logout();
+	globalFunctions();
 	displayNumberOfCards();
 	createForm();
 	setCreateItemFormListener();
-
+	user.logout();
 	console.log("Hello home page");
 }
-
-globalFunctions();
