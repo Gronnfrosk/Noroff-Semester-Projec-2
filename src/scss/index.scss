@@ -353,6 +353,18 @@ main {
         align-items: center; 
         background-color: #EEF5FB;
     }
+    & .delete-url {
+        float: right;
+        position: relative;
+        bottom: 57px;
+        right: 1px;
+        padding: 15px 10px;
+        background-color: white;
+
+        & i {
+            font-size: 1.2em;
+        }
+    }
     & #pre-view-avatar {
         border: 4px solid #FB1B1B;
         
@@ -415,7 +427,7 @@ main {
 }
 .sort {
     position: relative;
-    z-index: 4;
+    z-index: 2;
     top: 75px;
     margin-right: 20px;
     height: 0;
@@ -438,11 +450,11 @@ main {
 
     & .blue-container {
         position: relative;
-        z-index: 3;
+        z-index: 1.2;
     }
     & .active {
         position: relative;
-        z-index: 2;
+        z-index: 1.1;
         font-weight: bold;
         box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.219); 
         height: 55px;
@@ -469,6 +481,20 @@ main {
         border-bottom-color: #EEF5FB;
         height: 50px;
     }
+    & .delete-url {
+        position: relative;
+        height: 0;
+        float: right;
+        bottom: 47px;
+        left: 10px;
+        border: none;
+        & i {
+            font-size: 1.1em;
+            background-color: white;
+            padding: 6px 10px;  
+        }
+    }
+   
     & .winning-box {
         width: 100%;
         margin-top: 20px;
@@ -526,6 +552,10 @@ main {
     }
 }
 
+.media-url .media3-4 {
+    top: 10px;
+}
+
 /* Specific page */
 .specific {
     max-width: 900px;
@@ -577,7 +607,7 @@ main {
         display: flex;
         justify-content: end;
         position: relative;
-        z-index: 2;
+        z-index: 1.1;
         bottom: 407px;
     }
     & .edit-btn {
