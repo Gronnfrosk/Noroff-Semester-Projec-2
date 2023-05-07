@@ -183,8 +183,12 @@ header {
 main {
     & .blue-container {
         background-color: #EEF5FB;
-        min-height: 420px
-        ;
+        min-height: 420px;
+
+        & .dropdown-item.active {
+            background-color: #0dcaf0;
+            color: black;
+        }
     }
 }
 
@@ -283,7 +287,6 @@ main {
 }
 
 .signin-main {
-    margin-top: 200px;
     max-width: 500px;
     padding: 15px;
     

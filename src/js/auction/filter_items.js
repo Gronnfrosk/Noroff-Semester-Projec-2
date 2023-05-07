@@ -1,19 +1,35 @@
-//import { searchItems } from "./search.js";
+const newList = document.querySelector("#newest");
+const oldestList = document.querySelector("#oldest");
+const shortestList = document.querySelector("#shortest");
+const longestList = document.querySelector("#longest");
+const bidsList = document.querySelector("#bids");
 
 export async function getFilterItems(items) {
 	const params = new URLSearchParams(window.location.search);
 	const filterParam = params.get("filter");
 	const awaited = await items;
 
-	if (filterParam === null || filterParam === "" || filterParam === "old" || !filterParam) {
+	if (filterParam === null || filterParam === "" || filterParam === "new" || filterParam === "old" || !filterParam) {
 		//Newest;
 		awaited.sort(function (a, b) {
 			return new Date(b.created) - new Date(a.created);
 		});
 
+		newList.classList.add("active");
+		oldestList.classList.remove("active");
+		shortestList.classList.remove("active");
+		longestList.classList.remove("active");
+		bidsList.classList.remove("active");
+
 		// Oldest
 		if (filterParam === "old") {
 			awaited.reverse();
+
+			newList.classList.remove("active");
+			oldestList.classList.add("active");
+			shortestList.classList.remove("active");
+			longestList.classList.remove("active");
+			bidsList.classList.remove("active");
 		}
 	}
 
@@ -23,9 +39,21 @@ export async function getFilterItems(items) {
 			return new Date(b.endsAt) - new Date(a.endsAt);
 		});
 
+		newList.classList.remove("active");
+		oldestList.classList.remove("active");
+		shortestList.classList.remove("active");
+		longestList.classList.add("active");
+		bidsList.classList.remove("active");
+
 		// deadline closest
 		if (filterParam === "short") {
 			awaited.reverse();
+
+			newList.classList.remove("active");
+			oldestList.classList.remove("active");
+			shortestList.classList.add("active");
+			longestList.classList.remove("active");
+			bidsList.classList.remove("active");
 		}
 	}
 
@@ -34,6 +62,12 @@ export async function getFilterItems(items) {
 		awaited.sort(function (a, b) {
 			return b._count.bids - a._count.bids;
 		});
+
+		newList.classList.remove("active");
+		oldestList.classList.remove("active");
+		shortestList.classList.remove("active");
+		longestList.classList.remove("active");
+		bidsList.classList.add("active");
 	}
 
 	return items;
