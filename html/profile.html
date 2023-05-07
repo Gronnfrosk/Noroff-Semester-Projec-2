@@ -56,53 +56,72 @@
 						</li>
 					</ul>
 					<div class="nav-credit" id="nav-credit"></div>
-					<form class="d-flex search_form" role="search" id="search_form">
-						<input class="form-control me-2" type="search" placeholder="Search the auction" aria-label="Search" id="search_input" />
-					</form>
 				</div>
 			</div>
 		</nav>
 		<main class="home">
 			<section class="profile-top">
 				<div class="blue"></div>
-				<div class="profile-image mx-auto" >
-					<div class="profile-avatar" id="avatar">
-					</div>
+				<div class="top-container">
+					<div class="edit-container">
 					<button type="button" id="edit-avatar" class="btn edit-btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-gear"></i></button>
-					<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-						<div class="modal-dialog modal-dialog-centered">
-							<div class="modal-content">
-								<div class="modal-header">
-									<h1 class="modal-title fs-5" id="exampleModalLabel">Edit avatar</h1>
-									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-								</div>
-								<div class="modal-body">
-									<form id="avatar-edit" class="needs-validation" novalidate>
-									<div class="form-floating">
-										<input
-											type="url"
-											class="form-control media-input"
-											id="validationCustom00.5"
-											placeholder="Avatar URL"
-											required
-											name="avatar"
-										/>
-										<div class="invalid-feedback mb-3">Only valid URL<br />- Example: http://www.example.com</div>
-										<label for="validationCustom00.5 form-label">Avatar URL </label>
+					</div>	
+						<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+							<div class="modal-dialog modal-dialog-centered">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h1 class="modal-title fs-5" id="exampleModalLabel">Edit avatar</h1>
+										<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 									</div>
+									<div class="modal-body">
+										<form id="avatar-edit" class="needs-validation" novalidate>
+										<div class="form-floating">
+											<input
+												type="url"
+												class="form-control media-input"
+												id="validationCustom00.5"
+												placeholder="Avatar URL"
+												required
+												minlength="20"
+												name="avatar"
+											/>
+											<div class="invalid-feedback mb-3">Only valid URL<br />- Example: http://www.example.com</div>
+											<label for="validationCustom00.5 form-label">Avatar URL </label>
+										</div>
+										<label for="pre-view-avatar form-label" class="view-url">Paste for preview</label>
+										<div class="img-edit">
+											<div class="profile-image pre-view my-4 mx-auto" >
+												<div class="profile-avatar" id="pre-view-avatar">
+													<i class="fa-solid fa-user"></i>
+												</div>
+											</div>
+										</div>
+										<p class="text-center">Cover the red borders to get a full sized avatar.</p>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Close</button>
+										<button type="submit" class="btn btn-info" data-bs-target="#exampleModal" data-bs-toggle="modal">Save changes</button>	
+									</div>
+									</form>
 								</div>
-								<div class="modal-footer">
-									<button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Close</button>
-									<button type="submit" class="btn btn-info" data-bs-target="#exampleModal" data-bs-toggle="modal">Save changes</button>	
-								</div>
-								</form>
 							</div>
 						</div>
 					</div>
 				</div>
+				<div class="profile-image mx-auto" >
+					<div class="profile-avatar" id="avatar">
+					</div>
+				</div>
 				<div class="p-3 rounded-3 border-opacity-25" id="profile-detail">	
 				</div>
+			</div>
 			</section>
+			<div class="sort created dropdown-toggle float-end">
+				Created
+			</div>
+			<div class="sort deadline d-none dropdown-toggle float-end">
+				Deadline
+			</div>
 			<section class="auction-history mt-2 text-center">
 				<ul class="nav nav-tabs mx-3">
 				</ul>
@@ -122,29 +141,29 @@
 						</div>
 					</div>
 				</div>
-                <div class="card-container">
+				<div class="info-box d-none" id="info-box"><p>The total amount of wins and bids may not be equal to the total amount. Some listings may have been deleted</p></div>
+                <div class="card-container profile-container">
 					<div class="cards mx-auto d-flex flex-wrap justify-content-center gap-5" id="card-container">
-                    </div>
-					<div class="cards-bids mx-auto d-flex flex-wrap justify-content-center gap-5" id="card-container">
-                    </div>
-					<div class="cards-wins mx-auto d-flex flex-wrap justify-content-center gap-5" id="card-container">
-                    </div>
-					<button id="moreBtn" class="w-100 btn btn-lg btn-info mx-auto moreBtn mb-5" type="button">More</button>
+					</div>
+					<div class="nothing">
+						<i class="fa-sharp fa-solid fa-bullseye-pointer mx-1"></i>
+						<p>Nothing registered yet</p>
+					</div>
 				</div>
 			</div>
 			</section>
 		</main>
         <footer class="home d-flex flex-wrap justify-content-between align-items-center pt-3">
 			<p class="col-md-4 mb-0 text-muted p-2">&copy; 2023 AuctionPoint, Inc</p>
-			<a href="https://gronnfrosk.github.io/Noroff-Semester-Project-2" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+			<a href="https://gronnfrosk.github.io/Noroff-Semester-Project-2" class="col-md-4 d-flex align-items-center justify-content-center mb-md-0 me-md-auto link-dark text-decoration-none">
 				<i class="fa-sharp fa-solid fa-bullseye-pointer mx-1"></i></i>
 			</a>
 			<ul class="nav col-md-4 justify-content-end">
 				<div class="d-flex member-nav flex-row gap-4">
-					<li class="nav-item"><a href="https://gronnfrosk.github.io/Noroff-Semester-Project-2" class="nav-link px-2 text-muted">Home</a></li>
-					<li class="nav-item d-none" id="login"><a href="https://gronnfrosk.github.io/Noroff-Semester-Project-2/html/signin.html" class="nav-link px-2 text-muted" id="login">login</a></li>
-					<li class="nav-item" id="nav-user"><a href="https://gronnfrosk.github.io/Noroff-Semester-Project-2/html/profile.html" class="nav-link px-2 text-muted">Profile</a></li>
-					<li class="nav-item" id="nav-user"><a href="" class="nav-link px-2 text-muted" id="logout">logout</a></li>
+					<li class="nav-item"><a href="https://gronnfrosk.github.io/Noroff-Semester-Project-2" class="nav-link text-muted">Home</a></li>
+					<li class="nav-item d-none" id="login"><a href="https://gronnfrosk.github.io/Noroff-Semester-Project-2/html/signin.html" class="nav-link text-muted" id="login">login</a></li>
+					<li class="nav-item" id="nav-user"><a href="https://gronnfrosk.github.io/Noroff-Semester-Project-2/html/profile.html" class="nav-link text-muted">Profile</a></li>
+					<li class="nav-item" id="nav-user"><a href="" class="nav-link text-muted" id="logout">logout</a></li>
 				</div>
 			</ul>
 		</footer>

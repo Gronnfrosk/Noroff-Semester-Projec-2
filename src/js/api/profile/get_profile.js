@@ -1,4 +1,4 @@
-import { API_AUCTION_PROFILE_URL, API_AUCTION_LISTING_URL, API_AUCTION_LISTING_URL_NOT_ACTIVE } from "../constants.js";
+import { API_AUCTION_PROFILE_URL } from "../constants.js";
 import { authFetch } from "../auth_fetch.js";
 
 export async function getProfile(name) {

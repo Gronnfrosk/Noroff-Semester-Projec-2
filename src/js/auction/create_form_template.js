@@ -16,7 +16,8 @@ export function createForm() {
 
 	let todayTime = today.getFullYear() + "-" + currentMonths + "-" + currentDays + "T" + currentHours + ":" + currentMinutes;
 
-	formCreate.innerHTML += `<div class="form-floating">
+	formCreate.innerHTML += `
+        <div class="form-floating">
             <input
                 type="text"
                 class="form-control title-input"
@@ -54,9 +55,8 @@ export function createForm() {
                 name="endsAt"
             />
             <div class="invalid-feedback mb-3 text-center">Requires a time and date for auction deadline</div>
-           
         </div>
-        <label class="col-form-label">Media URL:</label>
+        <label class="col-form-label">Media URL (min 1, max 4):</label>
         <div class="form-floating media-url">
             <input
                 type="url"
@@ -67,45 +67,56 @@ export function createForm() {
                 name="media0"
             />
             <div class="invalid-feedback mb-3">Must have at least one image. Only valid URL<br />- Example: http://www.example.com</div>
-            <label for="validationCustom03 form-label">Paste for preview</label>
-            <input
+            <label for="validationCustom03 form-label" class="form-label">Paste for preview</label>
+            <div class="box cards" id="cover-img">	
+			</div>
+            <div class="form-floating media-url one d-none">
+                <input
                     type="url"
-                    class="form-control media-input one d-none"
+                    class="form-control media-input"
                     id="validationCustom04"
                     placeholder="Media URL 2"
                     name="media1"
                 />
+                <label for="validationCustom04 form-label" class="form-label">Image nr. 2</label>
+            </div>
+            <div class="form-floating media-url two d-none">
                 <input
                     type="url"
-                    class="form-control media-input two d-none"
+                    class="form-control media-input"
                     id="validationCustom05"
-                    placeholder="Media URL 2"
+                    placeholder="Media URL 3"
                     name="media2"
                 />
+                <label for="validationCustom05 form-label" class="form-label">Image nr. 3</label>
+            </div>
+            <div class="form-floating media-url three d-none">
                 <input
                     type="url"
-                    class="form-control media-input three d-none"
+                    class="form-control media-input  "
                     id="validationCustom06"
-                    placeholder="Media URL 2"
+                    placeholder="Media URL 4"
                     name="media3"
                 />
+                <label for="validationCustom06 form-label" class="form-label">Image nr. 4</label>
+            </div>
             <div class="url-upload">
-                <div class="media-item">
-                    <div class="media-one"></div>
-                    <div class="media-two"></div>
-                    <div class="media-three"></div>
-                    <div class="media-four"></div>
-                </div>
-                <div class="number">
-                </div>
+            <div class="media-item">
+                <div class="media-one"></div>
+                <div class="media-two"></div>
+                <div class="media-three"></div>
+                <div class="media-four"></div>
+            </div>
+            <div class="number">
             </div>
         </div>
     </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-info" data-bs-target="#exampleModal">Start item auction</button>	
-    </div>
-    `;
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Close</button>
+    <button type="submit" class="btn btn-info" data-bs-target="#exampleModal">Start item auction</button>	
+</div>
+`;
 
 	const mediaUrl = document.querySelector("#validationCustom03");
 	const mediaUrlTwo = document.querySelector("#validationCustom04");
@@ -118,15 +129,22 @@ export function createForm() {
 	const mediaPreviewTwo = document.querySelector(".media-two");
 	const mediaPreviewThree = document.querySelector(".media-three");
 	const mediaPreviewFour = document.querySelector(".media-four");
+	const cover = document.querySelector("#cover-img");
 
 	mediaUrl.addEventListener("paste", function (e) {
+		cover.innerHTML = "";
 		const contents = e.clipboardData.getData("text");
 
 		inputOne.classList.remove("d-none");
 
-		mediaPreview.innerHTML = `
-		<div class="media-box"><p>1.</p></div>
-        <img src="${contents}" alt="Image" class="bd-placeholder-img">`;
+		cover.innerHTML += `
+                <div class="listing d-flex flex-column">
+                    <div class="listing-image">
+                        <img src="${contents}" alt="Profile image" alt="Auction item" class="fs-6 mx-auto text-center">
+                    </div>
+				</div>
+                <p class="text-center">Cover image view</p>
+            `;
 	});
 
 	mediaUrlTwo.addEventListener("paste", function (e) {

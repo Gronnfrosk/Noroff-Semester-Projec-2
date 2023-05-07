@@ -27,7 +27,6 @@ export async function specificAuctionItem(item) {
 	const params = new URLSearchParams(queryString);
 	const id = params.get("itemID");
 	const { id_, title, description, tags, media, created, updated, endsAt, seller, bids, _count } = await getItem(id);
-	console.log(await getItem(id));
 	const deadline = new Date(endsAt);
 	const dateFormat = deadline.toLocaleDateString("en-GB");
 	const clockFormat = deadline.toLocaleString("en-US", { hour: "numeric", minute: "numeric", hour12: true });
@@ -119,8 +118,15 @@ export async function specificAuctionItem(item) {
 		containerThree.innerHTML += `<h2 class="bid-winner" id="0">No bid yet</h2>`;
 	} else {
 		const bidDetails = bids.sort((a, b) => a.amount - b.amount).reverse();
-		const bidder = await getProfile(bidDetails[0].bidderName);
-		//const minCredit = bidDetails[0].amount + 1;
+		var avatar = `<i class="fa-solid fa-user fs-1"></i>`;
+
+		if (profile) {
+			const bidder = await getProfile(bidDetails[0].bidderName);
+
+			if (bidder === undefined) {
+				avatar = `<img src="${bidder.avatar}" alt="Avatar" ></img>`;
+			}
+		}
 
 		containerThree.innerHTML += `
 							<h2>Highest bid:</h2>
@@ -130,8 +136,10 @@ export async function specificAuctionItem(item) {
 								<p class="link">${bidDetails[0].amount} credit - ${bidDetails[0].bidderName}</p>
 							</div>
 						</a>
-						<img src="${bidder.avatar}" alt="Bidder avatar" >
-							</div>
+						<div class="image-special justify-content-center">
+							${avatar}
+						</div>
+						</div>
 							<div>
 								<div class="ms-5">
 								<h3>Bidding history (Total ${_count.bids})</h3>
@@ -155,7 +163,9 @@ export async function specificAuctionItem(item) {
 		sellerPlace.innerHTML += `
 		<h3>Seller</h3>
 		<a href="https://gronnfrosk.github.io/Noroff-Semester-Project-2/html/profile.html?name=${seller.name}">
-			<img src="${seller.avatar}" alt="Seller avatar" class="mt-2">
+			<div class="image-special">
+				<img src="${seller.avatar}" alt="Seller avatar" class="mt-2">
+			</div>
 			<p class="link">${seller.name}</p>
 		</a>
 		`;
@@ -169,7 +179,12 @@ export async function specificAuctionItem(item) {
 		`;
 	}
 
-	const maxCredit = document.querySelector(".nav-credit p").id;
+	var maxCredit = 0;
+
+	if (profile) {
+		maxCredit = document.querySelector(".nav-credit p").id;
+	}
+
 	const minCredit = parseInt(document.querySelector(".bid-winner").id) + 1;
 
 	bidInputPlace.innerHTML = `
@@ -183,10 +198,12 @@ export async function specificAuctionItem(item) {
                 <label for="validationCustom00 form-label">Credit</label>
             `;
 
-	if (seller.name === profile.name || minCredit > maxCredit) {
+	if (!profile || seller.name === profile.name || minCredit > maxCredit) {
 		inputField.classList.add("disabled");
 
-		if (seller.name === profile.name) {
+		if (!profile) {
+			bidInput.innerHTML += `<p class="text-center my-3 text-danger fw-bold">You need to register or login to an account to add new bid.</p>`;
+		} else if (seller.name === profile.name) {
 			bidInput.innerHTML += `<p class="text-center my-3 text-danger fw-bold">You can not bid on your own listings.</p>`;
 		} else if (minCredit > maxCredit) {
 			bidInput.innerHTML += `<p class="text-center my-3 text-danger fw-bold">You do not have enough Credits to bid on this item.</p>`;
