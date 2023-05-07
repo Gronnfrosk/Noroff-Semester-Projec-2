@@ -168,10 +168,15 @@ header {
 main {
     & .blue-container {
         background-color: #EEF5FB;
-        min-height: 420px
-        ;
+        min-height: 420px;
+    }
+    & .dropdown-item.active {
+        color: black;
+        background-color: #0dcaf0;
     }
 }
+
+
 
 .modal-body .box {
     margin: auto;
@@ -232,7 +237,7 @@ main {
             height: 0;
         }
         & .listing-image p:hover {
-            transform: scale(1.2);
+            transform: scale(1.1);
         }
         & img:hover {
             transform: scale(1.5);
@@ -307,6 +312,18 @@ main {
     }
     & .btn {
         font-size: 1em;
+    }
+    & .delete-url {
+        position: absolute;
+        right: 1px;
+        border: none;
+        bottom: 2px;
+        background-color: white;
+        padding: 15px 12px;
+
+        & i {
+            font-size: 1.15em;
+        }
     }
 }
 
