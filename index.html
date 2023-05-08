@@ -69,20 +69,20 @@
 		</nav>
 		<header class="d-flex justify-content-center mx-4">
 			<div>
-				<div>
+				<div class="welcome">
 					<h1>Welcome!</h1>
 					<h1>Join the online auction today</h1>
 					<i class="fa-sharp fa-solid fa-bullseye-pointer"></i>
 				</div>
-				<div class="add-btn d-grid gap-2">
-					<button class="btn btn-info add-item add-desktop d-none" data-bs-toggle="modal" type="button" data-bs-target="#exampleModal">Add item for auction +</button>
-					<button class="btn btn-info add-item add-phone d-none" data-bs-toggle="modal" type="button" data-bs-target="#exampleModal">Add item +</button>
+				<div class="add-btn d-grid gap-2 d-none">
+					<button class="btn btn-info add-item add-desktop" data-bs-toggle="modal" type="button" data-bs-target="#CreateAuctionItemModal">Add item for auction +</button>
+					<button class="btn btn-info add-item add-phone d-none" data-bs-toggle="modal" type="button" data-bs-target="#CreateAuctionItemModal">Add item +</button>
 				</div>
-					<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal fade" id="CreateAuctionItemModal" tabindex="-1" aria-labelledby="CreateAuctionItemModalLabel" aria-hidden="true">
 						<div class="modal-dialog modal-dialog-centered">
 							<div class="modal-content">
 								<div class="modal-header">
-									<h1 class="modal-title fs-5" id="exampleModalLabel">Add auction item</h1>
+									<h1 class="modal-title fs-5" id="CreateAuctionItemModalLabel">Add auction item</h1>
 									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 								</div>
 								<div class="modal-body">

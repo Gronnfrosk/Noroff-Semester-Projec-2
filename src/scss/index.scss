@@ -83,6 +83,19 @@ nav .nav-link, footer .nav-link {
     & .modal-footer {
         padding-top: 23px;
     }
+    & .delete-url {
+        position: relative;
+        height: 0;
+        float: right;
+        bottom: 47px;
+        left: 10px;
+        border: none;
+        & i {
+            font-size: 1.1em;
+            background-color: white;
+            padding: 6px 10px;  
+        }
+    }
 }
 
 .add-item-form .form-floating {
@@ -101,6 +114,7 @@ nav .nav-link, footer .nav-link {
         margin-bottom: 10px;
         padding-bottom: 15px;
     }
+    
     & .url-upload {
 
         & .number, .media-item {
@@ -152,7 +166,7 @@ footer {
 header {
     padding-top: 200px;
   
-    & i {
+    & .welcome i {
         width: 100%;
         text-align: center;
         position: relative;
@@ -480,21 +494,7 @@ main {
         background-color: #EEF5FB;
         border-bottom-color: #EEF5FB;
         height: 50px;
-    }
-    & .delete-url {
-        position: relative;
-        height: 0;
-        float: right;
-        bottom: 47px;
-        left: 10px;
-        border: none;
-        & i {
-            font-size: 1.1em;
-            background-color: white;
-            padding: 6px 10px;  
-        }
-    }
-   
+    }  
     & .winning-box {
         width: 100%;
         margin-top: 20px;

@@ -16,17 +16,17 @@ const userToken = load("profile");
  */
 export function checkUser() {
 	if (token && userToken) {
-		// Hide logout and profile nav
+		// Hide login nav
 		userNav.forEach((element) => {
 			element.classList.remove("d-none");
 		});
 
-		// Show login nav
+		// Show logout and profile nav
 		navNew.forEach((element) => {
 			element.classList.add("d-none");
 		});
 
-		// Hide create auction item button
+		// Show create auction item button
 		if (addItem) {
 			addItem.classList.remove("d-none");
 		}
