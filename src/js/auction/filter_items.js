@@ -50,9 +50,6 @@ export async function getFilterItems(items) {
 		});
 
 		newList.classList.remove("active");
-		oldestList.classList.remove("active");
-		shortestList.classList.remove("active");
-		longestList.classList.remove("active");
 		bidsList.classList.add("active");
 	}
 
