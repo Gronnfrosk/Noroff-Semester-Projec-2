@@ -4,7 +4,6 @@ import { getProfile } from "../api/profile/get_profile.js";
 const editAvatar = document.querySelector(".edit-container button");
 const addItem = document.querySelector(".add-item");
 const sorted = document.querySelector(".sort");
-const sortedDeadline = document.querySelector(".deadline");
 const blueContainer = document.querySelector(".blue-container");
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
@@ -18,6 +17,7 @@ export async function anotherProfile() {
 
 	if (!nameOther || nameOther === profile.name) {
 		editAvatar.style.display = "contents";
+		addItem.classList.remove("d-none");
 		profileInfo = await getProfile(profile.name);
 		creditContent = `<div class="credit mx-auto text-center mt-2"><p class="">Total Credit - ${profileInfo.credits}</p></div>`;
 	} else if (profile.name !== nameOther) {
@@ -26,8 +26,6 @@ export async function anotherProfile() {
 
 		blueContainer.style.padding = "30px 0 48px 0";
 		sorted.style.top = "75px";
-		sortedDeadline.style.top = "75px";
-		addItem.style.display = "none";
 	} else {
 		alert("No name found");
 	}
