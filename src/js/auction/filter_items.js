@@ -15,21 +15,12 @@ export async function getFilterItems(items) {
 			return new Date(b.created) - new Date(a.created);
 		});
 
-		newList.classList.add("active");
-		oldestList.classList.remove("active");
-		shortestList.classList.remove("active");
-		longestList.classList.remove("active");
-		bidsList.classList.remove("active");
-
 		// Oldest
 		if (filterParam === "old") {
 			awaited.reverse();
 
 			newList.classList.remove("active");
 			oldestList.classList.add("active");
-			shortestList.classList.remove("active");
-			longestList.classList.remove("active");
-			bidsList.classList.remove("active");
 		}
 	}
 
@@ -40,20 +31,15 @@ export async function getFilterItems(items) {
 		});
 
 		newList.classList.remove("active");
-		oldestList.classList.remove("active");
-		shortestList.classList.remove("active");
 		longestList.classList.add("active");
-		bidsList.classList.remove("active");
 
 		// deadline closest
 		if (filterParam === "short") {
 			awaited.reverse();
 
 			newList.classList.remove("active");
-			oldestList.classList.remove("active");
 			shortestList.classList.add("active");
 			longestList.classList.remove("active");
-			bidsList.classList.remove("active");
 		}
 	}
 

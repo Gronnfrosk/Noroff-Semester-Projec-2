@@ -4,7 +4,7 @@ import * as checkToken from "./localstorage/check_storage.js";
 import { displayProfile } from "./profile/profile_info.js";
 import { editAvatarListener } from "./profile/edit_avatar.js";
 //import { getAuctionItems } from "./api/auction/getItem.js";
-import { specificAuctionItem } from "./auction/specific_item_template.js";
+import { specificAuctionItem } from "./auction/specific-listing/specific_item_template.js";
 import { setCreateItemFormListener } from "./auction/Create-listings/create_item.js";
 import { createForm } from "./auction/Create-listings/create_form_template.js";
 import { setCreateBidFormListener } from "./auction/create_bid.js";

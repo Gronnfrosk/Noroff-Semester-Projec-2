@@ -12,6 +12,5 @@ export function minDateTime() {
 
 	let todayTime = today.getFullYear() + "-" + currentMonths + "-" + currentDays + "T" + currentHours + ":" + currentMinutes;
 
-	console.log(todayTime);
 	return todayTime;
 }
