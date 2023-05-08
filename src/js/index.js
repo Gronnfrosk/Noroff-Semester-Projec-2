@@ -5,8 +5,8 @@ import { displayProfile } from "./profile/profile_info.js";
 import { editAvatarListener } from "./profile/edit_avatar.js";
 //import { getAuctionItems } from "./api/auction/getItem.js";
 import { specificAuctionItem } from "./auction/specific_item_template.js";
-import { setCreateItemFormListener } from "./auction/create_item.js";
-import { createForm } from "./auction/create_form_template.js";
+import { setCreateItemFormListener } from "./auction/Create-listings/create_item.js";
+import { createForm } from "./auction/Create-listings/create_form_template.js";
 import { setCreateBidFormListener } from "./auction/create_bid.js";
 import { displayNumberOfCards } from "./auction/auction_cards_display.js";
 import { showCards } from "./auction/auction_card_template.js";
@@ -27,6 +27,7 @@ if (path === "/Noroff-Semester-Project-2/html/signin.html" || path === "/html/si
 	displayProfile();
 	editAvatarListener();
 	createForm();
+	setCreateItemFormListener();
 	user.logout();
 	console.log("Hello profile page");
 } else if (path === "/Noroff-Semester-Project-2/html/specific_auction_item.html" || path === "/html/specific_auction_item.html") {

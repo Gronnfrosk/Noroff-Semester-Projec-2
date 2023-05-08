@@ -1,4 +1,4 @@
-import { deleteUrl } from "../global-modules/delete_url.js";
+import { deleteUrl } from "../../global-modules/delete_url.js";
 import { addItemMedia } from "./preview_create_form.js";
 import { minDateTime } from "./min_date&time.js";
 
