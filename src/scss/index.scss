@@ -822,6 +822,7 @@ input[type=number] {
             height: 0;
             justify-content: flex-end;
             & p {
+                border-bottom: 10px double white;
                 margin-bottom: 10px;
                 position: relative;
                 bottom: 28px;
@@ -938,7 +939,7 @@ input[type=number] {
         height: 430px;
     }
     .sort {
-        top: 140px;
+        top: 135px;
     }
     .info-box {
         margin: 13px auto 0px auto;
