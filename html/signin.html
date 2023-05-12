@@ -66,14 +66,14 @@
                         type="email"
                         name="email"
                         class="form-control login-email"
-                        id="validationCustom01"
+                        id="validationCustom000"
                         placeholder="Email address"
                         required
                         pattern="^[\w\-.]+@stud\.noroff\.no$"
                         title="Only @stud.noroff.no emails are allowed to login."
                     />
                     <div class="invalid-feedback mb-3">Only @stud.noroff.no emails are allowed to login.</div>
-                    <label for="validationCustom01 form-label">Email address</label>
+                    <label for="validationCustom000 form-label">Email address</label>
                 </div>
                 <div class="form-floating">
                     <input
@@ -81,16 +81,16 @@
                         name="password"
                         autocomplete="on"
                         class="form-control login-password"
-                        id="validationCustom02"
+                        id="validationCustom001"
                         placeholder="Password"
 						pattern=".{8,}"
                         required
                         title="Requires password of at least 8 characters."
                     />
                     <div class="invalid-feedback mb-3">Requires password of at least 8 characters.</div>
-                    <label for="validationCustom02 form-label">Password</label>
+                    <label for="validationCustom001 form-label">Password</label>
                 </div>
-                <button id="login" class="w-100 btn btn-lg btn-info mt-2" type="submit">Login</button>
+                <button id="login" class="w-100 btn btn-lg btn-info mt-2" type="submit" data-bs-target="#loginForm">Login</button>
                 <div class="Register my-3 ">
                     <p class="mt-5 mb-2">If you don't have an account:</p>
                     <a href="https://gronnfrosk.github.io/Noroff-Semester-Project-2/html/register.html"><button id="show-register" class="register-btn btn btn-outline-info" type="button">Register here</button></a>
