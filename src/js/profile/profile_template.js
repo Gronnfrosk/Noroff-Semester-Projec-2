@@ -3,7 +3,7 @@ const profileAvatar = document.querySelector("#avatar");
 const profileContainer = document.querySelector("#profile-detail");
 
 export function profileContent(profileInfo, profileBids, profileWins, credit) {
-	profileAvatar.innerHTML += `<img src="${profileInfo.avatar}" alt="Profile image" class="pe-0 avatar">`;
+	profileAvatar.innerHTML += `<img src="${profileInfo.avatar}" alt="Profile image" class="pe-0 avatar" onerror="this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKaiKiPcLJj7ufrj6M2KaPwyCT4lDSFA5oog&usqp=CAU'">`;
 
 	profileContainer.innerHTML += `
         <div class="profile-info mx-auto">

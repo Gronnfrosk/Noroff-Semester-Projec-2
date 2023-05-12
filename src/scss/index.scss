@@ -2,6 +2,14 @@ body {
     height: 100%;
 }
 
+h1, h2, h3, h4, nav, footer, button, .nav-link, label {
+    font-family: muli, 'consolas', sans-serif!important;
+}
+
+p, span, .dropdown-item, .sort {
+    font-family: roboto, arial, helvetica, sans-serif;
+}
+
 .fa-bullseye-pointer {
     color: #FB1B1B;
 }
@@ -31,29 +39,31 @@ nav  {
     & button {
         padding: 0!important;
         box-shadow: none!important;
-    }
-    & .bar {
-        display: block;
-        width: 25px;
-        height: 2.8px;
-        margin: 5px auto;
-        transition: all 0.3s ease-in-out;
-        background-color: rgb(192, 191, 191);
-    }
-    & .hamburger {
-        cursor: pointer;
-        display: block;
-        float: right;  
-        padding: 5px 10px;
-    }
-    & .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-    & .hamburger.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-    & .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
+    
+        & .hamburger {
+            cursor: pointer;
+            display: block;
+            float: right;  
+            padding: 5px 10px; 
+            
+            & .bar {
+                display: block;
+                width: 25px;
+                height: 2.8px;
+                margin: 5px auto;
+                transition: all 0.3s ease-in-out;
+                background-color: rgb(192, 191, 191);
+            }
+        }
+        & .hamburger.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+        & .hamburger.active .bar:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        & .hamburger.active .bar:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
     }
 } 
 
@@ -66,6 +76,10 @@ nav .nav-link, footer .nav-link {
 .disabled {
     pointer-events: none;
     opacity: 0.5;
+}
+
+input, .form-control, .delete-url {
+    background-color: #EEF5FB;
 }
 
 .btn-outline-info {
@@ -87,13 +101,13 @@ nav .nav-link, footer .nav-link {
     & .delete-url {
         position: relative;
         height: 0;
+        padding: 0 12px;
         float: right;
-        bottom: 47px;
+        bottom: 42px;
         left: 10px;
         border: none;
         & i {
             font-size: 1.1em;
-            background-color: white;
             padding: 6px 10px;  
         }
     }
@@ -333,7 +347,6 @@ main {
         right: 1px;
         border: none;
         bottom: 2px;
-        background-color: white;
         padding: 15px 12px;
 
         & i {
@@ -374,7 +387,6 @@ main {
         bottom: 57px;
         right: 1px;
         padding: 15px 10px;
-        background-color: white;
 
         & i {
             font-size: 1.2em;
@@ -551,10 +563,6 @@ main {
     & .cards {
         left: 0;
     }
-}
-
-.media-url .media3-4 {
-    top: 10px;
 }
 
 /* Specific page */

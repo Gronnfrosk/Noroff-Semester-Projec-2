@@ -5,7 +5,6 @@ var avatar = "";
 var bidLog = "";
 
 export async function displayBids(profile, bids, _count) {
-	console.log(_count);
 	containerThree.innerHTML = ``;
 	const bidDetails = bids.sort((a, b) => a.amount - b.amount).reverse();
 

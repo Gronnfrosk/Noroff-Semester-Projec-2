@@ -85,7 +85,7 @@ export function createForm() {
                 name="media2"
             />
             <div class="btn delete-url"><i class="fa-solid fa-delete-left"></i></div>
-            <label for="validationCustom05 form-label" class="form-label media3-4">Image nr. 3</label>
+            <label for="validationCustom05 form-label" class="form-label">Image nr. 3</label>
         </div>
         <div class="form-floating media-url d-none">
             <input
@@ -97,7 +97,7 @@ export function createForm() {
                 name="media3"
             />
             <div class="btn delete-url"><i class="fa-solid fa-delete-left"></i></div>
-            <label for="validationCustom06 form-label" class="form-label media3-4">Image nr. 4</label>
+            <label for="validationCustom06 form-label" class="form-label">Image nr. 4</label>
         </div>
         <div class="url-upload">
             <div class="media-item">

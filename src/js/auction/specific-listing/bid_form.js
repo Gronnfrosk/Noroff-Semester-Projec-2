@@ -30,7 +30,7 @@ export function displayBidForm(profile) {
 			inputField.classList.add("disabled");
 
 			if (!profile) {
-				bidInput.innerHTML += `<p class="text-center my-3 text-danger fw-bold">You need to register or login to an account to add new bid.</p>`;
+				bidInput.innerHTML += `<p class="text-center my-3 text-danger fw-bold">Only those who are logged in with a registered account at AuctionPoint can bid on this item and get more bid details.</p>`;
 			} else if (seller.name === profile.name) {
 				bidInput.innerHTML += `<p class="text-center my-3 text-danger fw-bold">You can not bid on your own listings.</p>`;
 			} else if (minCredit > maxCredit) {

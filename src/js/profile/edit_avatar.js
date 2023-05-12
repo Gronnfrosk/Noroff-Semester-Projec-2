@@ -20,7 +20,7 @@ export function editAvatarListener() {
 			preView.innerHTML = "";
 
 			preView.innerHTML += `
-				<img src="${contents}" alt="Profile image" class="pe-0 avatar">
+				<img src="${contents}" alt="Profile image" class="pe-0 avatar" onerror="this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKaiKiPcLJj7ufrj6M2KaPwyCT4lDSFA5oog&usqp=CAU'">
 				`;
 		});
 
