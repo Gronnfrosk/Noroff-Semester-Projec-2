@@ -5,6 +5,7 @@ var avatar = "";
 var bidLog = "";
 
 export async function displayBids(profile, bids, _count) {
+	console.log(_count);
 	containerThree.innerHTML = ``;
 	const bidDetails = bids.sort((a, b) => a.amount - b.amount).reverse();
 
@@ -42,7 +43,7 @@ export async function displayBids(profile, bids, _count) {
                 </div>
             </div>
             <div class="ms-5">
-                <h3>Bidding history (Total ${_count.bids})</h3>
+                <h3>Bidding history (Total ${_count})</h3>
                 <div class="bid-log">
                     ${bidLog}
                 </div>
