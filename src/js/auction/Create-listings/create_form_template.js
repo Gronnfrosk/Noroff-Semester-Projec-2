@@ -55,7 +55,6 @@ export function createForm() {
                 id="validationCustom03"
                 placeholder="Media URL 1"
                 required
-                pattern="https://.*"
                 name="media0"
             />
             <div class="btn delete-url delete-cover"><i class="fa-solid fa-delete-left"></i></div>
@@ -69,7 +68,6 @@ export function createForm() {
                 class="form-control media-input"
                 id="validationCustom04"
                 placeholder="Media URL 2"
-                pattern="https://.*"
                 name="media1"
             />
             <div class="btn delete-url"><i class="fa-solid fa-delete-left"></i></div>
@@ -81,7 +79,6 @@ export function createForm() {
                 class="form-control media-input"
                 id="validationCustom05"
                 placeholder="Media URL 3"
-                pattern="https://.*"
                 name="media2"
             />
             <div class="btn delete-url"><i class="fa-solid fa-delete-left"></i></div>
@@ -93,7 +90,6 @@ export function createForm() {
                 class="form-control media-input  "
                 id="validationCustom06"
                 placeholder="Media URL 4"
-                pattern="https://.*"
                 name="media3"
             />
             <div class="btn delete-url"><i class="fa-solid fa-delete-left"></i></div>
