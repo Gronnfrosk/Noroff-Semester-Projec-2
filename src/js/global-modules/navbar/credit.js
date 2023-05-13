@@ -16,7 +16,7 @@ export async function displayCredits() {
 	if (profile !== null && creditTotal !== null) {
 		const profileInfo = await getProfile(profile.name);
 
-		creditTotal.innerHTML += `<p class="text-white fw-semibold d-flex align-items-center m-0 pe-3" id="${profileInfo.credits}">Total Credits - ${profileInfo.credits}</p>`;
+		creditTotal.innerHTML += `<p class="text-white d-flex align-items-center m-0 pe-3" id="${profileInfo.credits}">Total Credits - ${profileInfo.credits}</p>`;
 
 		return profileInfo.credits;
 	} else {
