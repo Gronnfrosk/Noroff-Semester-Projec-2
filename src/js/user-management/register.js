@@ -13,15 +13,15 @@ export function setRegisterFormListener() {
 
 	deleteUrl();
 
-	if (form) {
-		form.addEventListener("submit", (event) => {
-			event.preventDefault();
-			const form = event.target;
-			const data = new FormData(form);
-			const profile = Object.fromEntries(data.entries());
+	form.addEventListener("submit", (event) => {
+		event.preventDefault();
+		const form = event.target;
+		const data = new FormData(form);
+		const profile = Object.fromEntries(data.entries());
 
-			// send it to the API
+		// Send it to the API if form is successful validated
+		if (form.checkValidity()) {
 			register(profile);
-		});
-	}
+		}
+	});
 }

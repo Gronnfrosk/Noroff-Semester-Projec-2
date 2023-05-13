@@ -29,8 +29,8 @@ export function editAvatarListener() {
 		form.addEventListener("submit", (event) => {
 			event.preventDefault();
 
-			// send it to the API
-			if (mediaInput.value !== 0) {
+			// Send it to the API if form is successful validated
+			if (form.checkValidity()) {
 				editAvatar(mediaInput.value);
 			}
 		});

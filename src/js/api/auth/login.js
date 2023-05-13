@@ -21,15 +21,15 @@ export async function login(profile) {
 		body: JSON.stringify(profile),
 	});
 
-	const { accessToken, ...user } = await response.json();
-
-	save("token", accessToken);
-	save("profile", user);
-
 	if (response.ok) {
+		const { accessToken, ...user } = await response.json();
+
+		save("token", accessToken);
+		save("profile", user);
+
 		alert("You are now logged in at AuctionPoint.");
 		window.location.href = "https://gronnfrosk.github.io/Noroff-Semester-Project-2";
 	} else {
-		alert("Error! You have entered an invalid username or password.");
+		alert("Error! You have entered invalid username or password combination.");
 	}
 }
