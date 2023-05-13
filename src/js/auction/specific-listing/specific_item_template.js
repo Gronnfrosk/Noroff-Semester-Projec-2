@@ -29,9 +29,9 @@ export async function specificAuctionItem(item) {
 
 	// Display media and gallery
 	mediaPlace.innerHTML += `
-		<div class="carousel-item active h-100 border border">
+		<div class="carousel-item active h-100 border">
 			<div class="image h-50 justify-content-center align-items-center h-100">
-				<img src="https://img.freepik.com/premium-vector/camera-prohibited-sign-vector_58388-56.jpg?size=626&ext=jpg&ga=GA1.1.933137767.1681841899&semt=ais" alt="Auction item" class="bd-placeholder-img bd-placeholder-img-lg d-block">
+				<img src="https://img.freepik.com/premium-vector/camera-prohibited-sign-vector_58388-56.jpg?size=626&ext=jpg&ga=GA1.1.933137767.1681841899&semt=ais" alt="Auction item" class="bd-placeholder-img bd-placeholder-img-lg d-block p-1">
 			</div>
 		</div>
 		`;

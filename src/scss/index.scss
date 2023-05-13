@@ -996,10 +996,10 @@ input::-webkit-inner-spin-button {
     
     .details-image {
         flex-direction: column;
-        height: 350px;
+        max-height: 350px;
 
-        & .carousel-item .image {
-            height: 350px;
+        & .carousel-item .image, .carousel-item .image img {
+            max-height: 350px;
         }
         & .carousel {
             margin-top: 100px; 
