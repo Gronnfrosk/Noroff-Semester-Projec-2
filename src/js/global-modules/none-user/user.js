@@ -32,7 +32,7 @@ export function checkUser() {
 		}
 	}
 
-	if (!token && !userToken) {
+	if (userToken === null || token === null) {
 		// Disable profile links
 		if (profileLinks) {
 			profileLinks.classList.add("link-disabled");

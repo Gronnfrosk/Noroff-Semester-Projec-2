@@ -2,15 +2,14 @@ const bidInputPlace = document.querySelector("#bidding");
 const inputField = document.querySelector("#create-bid");
 const bidInput = document.querySelector("#bid-input");
 
-export function displayBidForm(profile) {
+export function displayBidForm(profile, seller) {
 	setTimeout(() => {
+		const minCredit = parseInt(document.querySelector(".bid-winner").id) + 1;
 		var maxCredit = 0;
 
-		if (profile) {
+		if (profile !== null) {
 			maxCredit = document.querySelector(".nav-credit p").id;
 		}
-
-		const minCredit = parseInt(document.querySelector(".bid-winner").id) + 1;
 
 		bidInputPlace.innerHTML = `
                 <div class="col-auto mb-1">
@@ -26,11 +25,11 @@ export function displayBidForm(profile) {
 				</div>
             `;
 
-		if (!profile || seller.name === profile.name || minCredit > maxCredit) {
+		if (profile === null || seller.name === profile.name || minCredit > maxCredit) {
 			inputField.classList.add("disabled");
 
-			if (!profile) {
-				bidInput.innerHTML += `<p class="text-center my-3 text-danger fw-bold">Only those who are logged in with a registered account at AuctionPoint can bid on this item and get more bid details.</p>`;
+			if (profile === null) {
+				bidInput.innerHTML += `<p class="text-center my-3 text-danger fw-bold">Only those who are logged in with an registered account at AuctionPoint can bid on this item and get more details.</p>`;
 			} else if (seller.name === profile.name) {
 				bidInput.innerHTML += `<p class="text-center my-3 text-danger fw-bold">You can not bid on your own listings.</p>`;
 			} else if (minCredit > maxCredit) {

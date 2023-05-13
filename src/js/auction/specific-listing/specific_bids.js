@@ -8,12 +8,13 @@ export async function displayBids(profile, bids, _count) {
 	containerThree.innerHTML = ``;
 	const bidDetails = bids.sort((a, b) => a.amount - b.amount).reverse();
 
-	if (profile) {
-		avatar = `<i class="fa-solid fa-user fs-1"></i>`;
+	if (profile !== null) {
 		const bidder = await getProfile(bidDetails[0].bidderName);
 		if (bidder !== undefined) {
-			avatar = `<img src="${bidder.avatar}" alt="Avatar" ></img>`;
+			avatar = `<img src="${bidder.avatar}" alt="Avatar" onerror="this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKaiKiPcLJj7ufrj6M2KaPwyCT4lDSFA5oog&usqp=CAU'"></img>`;
 		}
+	} else {
+		avatar = `<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKaiKiPcLJj7ufrj6M2KaPwyCT4lDSFA5oog&usqp=CAU' alt="Avatar"></img>`;
 	}
 
 	// bidding history of all bids

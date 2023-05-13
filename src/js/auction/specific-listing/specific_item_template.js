@@ -60,7 +60,7 @@ export async function specificAuctionItem(item) {
 	}
 
 	// Bid input with min and max bid
-	displayBidForm(profile);
+	displayBidForm(profile, seller);
 
 	// Seller of item
 	displaySeller(seller);
