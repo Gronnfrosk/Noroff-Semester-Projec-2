@@ -11,10 +11,10 @@ export async function displayBids(profile, bids, _count) {
 	if (profile !== null) {
 		const bidder = await getProfile(bidDetails[0].bidderName);
 		if (bidder !== undefined) {
-			avatar = `<img src="${bidder.avatar}" alt="Avatar" onerror="this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKaiKiPcLJj7ufrj6M2KaPwyCT4lDSFA5oog&usqp=CAU'"></img>`;
+			avatar = `<img src="${bidder.avatar}" alt="Avatar" onerror="this.src='https://cdn-icons-png.flaticon.com/512/459/459122.png?w=826&t=st=1683974940~exp=1683975540~hmac=14f2e1cc636568b3959b2f157c76fb23764401ca86096b0a6f893c102da7c331'"></img>`;
 		}
 	} else {
-		avatar = `<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKaiKiPcLJj7ufrj6M2KaPwyCT4lDSFA5oog&usqp=CAU' alt="Avatar"></img>`;
+		avatar = `<img src='https://cdn-icons-png.flaticon.com/512/459/459122.png?w=826&t=st=1683974940~exp=1683975540~hmac=14f2e1cc636568b3959b2f157c76fb23764401ca86096b0a6f893c102da7c331' alt="Avatar"></img>`;
 	}
 
 	// bidding history of all bids

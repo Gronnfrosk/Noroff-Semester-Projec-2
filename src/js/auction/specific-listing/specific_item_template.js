@@ -31,7 +31,7 @@ export async function specificAuctionItem(item) {
 	mediaPlace.innerHTML += `
 		<div class="carousel-item active h-100 border border">
 			<div class="image h-50 justify-content-center align-items-center h-100">
-				<p class="d-flex align-items-center border border-5 border-danger p-3 m-3 rounded-circle border-opacity-10 fw-bolder h-50">No image available</p>
+				<img src="https://img.freepik.com/premium-vector/camera-prohibited-sign-vector_58388-56.jpg?size=626&ext=jpg&ga=GA1.1.933137767.1681841899&semt=ais" alt="Auction item" class="bd-placeholder-img bd-placeholder-img-lg d-block">
 			</div>
 		</div>
 		`;

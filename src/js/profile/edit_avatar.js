@@ -20,7 +20,7 @@ export function editAvatarListener() {
 			preView.innerHTML = "";
 
 			preView.innerHTML += `
-				<img src="${contents}" alt="Profile image" class="pe-0 avatar" onerror="this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKaiKiPcLJj7ufrj6M2KaPwyCT4lDSFA5oog&usqp=CAU'">
+				<img src="${contents}" alt="Profile image" class="pe-0 avatar" onerror="this.src='https://img.freepik.com/premium-vector/camera-prohibited-sign-vector_58388-56.jpg?size=626&ext=jpg&ga=GA1.1.933137767.1681841899&semt=ais'">
 				`;
 		});
 
