@@ -36,5 +36,5 @@ export function displayBidForm(profile, seller) {
 				bidInput.innerHTML += `<p class="text-center my-3 text-danger fw-bold">You do not have enough Credits to bid on this item.</p>`;
 			}
 		}
-	}, 700);
+	}, 500);
 }
