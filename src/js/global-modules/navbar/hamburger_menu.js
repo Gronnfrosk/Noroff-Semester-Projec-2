@@ -5,7 +5,7 @@ export function navHamburger() {
 		hamburger.classList.toggle("active");
 	});
 
-	document.querySelectorAll(".navbar-collapse").forEach((n) =>
+	hamburger.querySelectorAll(".navbar-collapse").forEach((n) =>
 		n.addEventListener("click", () => {
 			hamburger.classList.remove("active");
 		})
