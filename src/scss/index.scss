@@ -242,7 +242,7 @@ main {
     transform: scale(1.4);
     transition: all .5s;
     height: 115%;
-    padding-bottom: 25px;
+    padding-bottom: 23px;
 }
 
 .card-container {
@@ -927,7 +927,9 @@ input::-webkit-inner-spin-button {
         & .listing {
             height: fit-content;
         }
-       
+        & img {
+            padding-bottom: 12px;
+        }
         & .profile-info p {
             font-size: 0.9em;
         } 
@@ -1002,7 +1004,7 @@ input::-webkit-inner-spin-button {
             max-height: 350px;
         }
         & .carousel {
-            margin-top: 100px; 
+            margin-top: 75px; 
         }
         & .edit-edit {
             left: 0px;
@@ -1020,7 +1022,7 @@ input::-webkit-inner-spin-button {
 
     .details {
         flex-direction: column;
-        margin-top: 50px;
+        margin-top: 35px;
         padding: 0;
 
         & .deadline {
