@@ -22,10 +22,10 @@ export async function showCards(items) {
 			}
 
 			// Media or not media
-			if (items[i].media[0] || items[i].media[1]) {
-				itemMedia = `<img src="${items[i].media[0]}" alt="Auction item" class="fs-6 mx-auto text-center" onerror="this.src='https://img.freepik.com/premium-vector/camera-prohibited-sign-vector_58388-56.jpg?size=626&ext=jpg&ga=GA1.1.933137767.1681841899&semt=ais'">`;
+			if (items[i].media[0]) {
+				itemMedia = `<img src="${items[i].media[0]}" alt="Auction item" class="fs-6 mx-auto text-center" onerror="this.src='https://img.freepik.com/free-vector/flat-design-no-photo-sign_23-2149279003.jpg?size=626&ext=jpg&ga=GA1.1.933137767.1681841899&semt=ais'">`;
 			} else if (!items[i].media || items[i].media.length === 0 || items[i].media === undefined) {
-				itemMedia = `<img src="https://img.freepik.com/premium-vector/camera-prohibited-sign-vector_58388-56.jpg?size=626&ext=jpg&ga=GA1.1.933137767.1681841899&semt=ais" alt="Auction item" class="fs-6 mx-auto text-center">`;
+				itemMedia = `<img src="https://img.freepik.com/free-vector/flat-design-no-photo-sign_23-2149279003.jpg?size=626&ext=jpg&ga=GA1.1.933137767.1681841899&semt=ais" alt="Auction item" class="fs-6 mx-auto text-center">`;
 			}
 
 			// Bids or not bids
