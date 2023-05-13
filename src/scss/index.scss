@@ -2,12 +2,12 @@ body {
     height: 100%;
 }
 
-h1, h2, h3, h4, nav, footer, button, .nav-link, label, .invalid-feedback {
-    font-family: muli, 'consolas', sans-serif!important;
+h1, h2, h3, h4, nav, footer, .dropdown-item, .nav-link, .invalid-feedback {
+    font-family: Trebuchet MS, sans-serif, 'consolas';
 }
 
-p, span, .dropdown-item, .sort {
-    font-family: roboto, arial, helvetica, sans-serif;
+p, span, .dropdown-item, button, label, .sort {
+    font-family: roboto, arial, helvetica, sans-serif!important;
 }
 
 .fa-bullseye-pointer {
@@ -75,6 +75,10 @@ nav .nav-link, footer .nav-link {
 .disabled {
     pointer-events: none;
     opacity: 0.5;
+}
+
+.modal-title {
+    font-weight: bold;
 }
 
 input, .form-control, .delete-url {
@@ -846,12 +850,6 @@ input::-webkit-inner-spin-button {
                 position: relative;
                 bottom: 28px;
             }
-        }
-    }
-
-    main {
-        & h2 {
-            font-size: 1.15em;
         }
     }
 

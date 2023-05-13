@@ -45,9 +45,5 @@ export function setCreateItemFormListener() {
 		if (form.checkValidity()) {
 			createAuctionItem(item);
 		}
-
-		setTimeout(() => {
-			window.location.reload();
-		}, 1000);
 	});
 }

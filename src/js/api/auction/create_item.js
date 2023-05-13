@@ -17,9 +17,8 @@ export async function createAuctionItem(postData) {
 
 	if (response.ok) {
 		alert("You have now put an item on auction. You can view this item at listings on your profile page");
+		window.location.reload();
 	} else {
 		alert("Error! Something went wrong. Please try again.");
 	}
-
-	return await response.json();
 }

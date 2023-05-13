@@ -30,7 +30,7 @@ export async function showCards(items) {
 
 			// Bids or not bids
 			if (items[i]._count) {
-				itemBids = `<div class="btn btn-dark btn-sm py-0 px-2">${items[i]._count.bids}</div>
+				itemBids = `<div class="btn btn-dark btn-sm py-0 px-2 mb-1">${items[i]._count.bids}</div>
 						<p>Total number of bids</p>`;
 			} else {
 				itemBids = "";
