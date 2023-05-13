@@ -41,8 +41,10 @@ export function setCreateItemFormListener() {
 		delete item.media2;
 		delete item.media3;
 
-		// send it to the API
-		createAuctionItem(item);
+		// Send it to the API if form is successful validated
+		if (form.checkValidity()) {
+			createAuctionItem(item);
+		}
 
 		setTimeout(() => {
 			window.location.reload();

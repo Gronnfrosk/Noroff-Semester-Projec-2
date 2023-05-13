@@ -1,6 +1,6 @@
 import { showCards } from "./auction_card_template.js";
 import { getFilterItems } from "./filter_items.js";
-import { getAuctionItems } from "../api/auction/getItem.js";
+import { getAuctionItems } from "../../api/auction/getItem.js";
 import { searchItems } from "./search.js";
 
 const moreLoadBtn = document.querySelector("#moreBtn");
