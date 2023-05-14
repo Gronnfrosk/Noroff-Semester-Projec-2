@@ -1,4 +1,5 @@
 import { editAvatar } from "../api/profile/edit_avatar.js";
+import { deleteUrl } from "../global-modules/delete_url.js";
 
 /**
  * This function triggers by form submit to collect form data and send to API.
@@ -12,21 +13,24 @@ export function editAvatarListener() {
 	const preView = document.querySelector("#pre-view-avatar");
 
 	if (form) {
+		const mediaInput = document.querySelector(".avatar-media-input");
+
 		form.addEventListener("paste", function (e) {
-			preView.innerHTML = "";
 			const contents = e.clipboardData.getData("text");
+			preView.innerHTML = "";
 
 			preView.innerHTML += `
-				<img src="${contents}" alt="Profile image" class="pe-0 avatar">
-				<i class="fa-solid fa-user fs-1"></i>;`;
+				<img src="${contents}" alt="Profile image" class="pe-0 avatar" onerror="this.src='https://img.freepik.com/premium-vector/camera-prohibited-sign-vector_58388-56.jpg?size=626&ext=jpg&ga=GA1.1.933137767.1681841899&semt=ais'">
+				`;
 		});
 
+		deleteUrl();
+
 		form.addEventListener("submit", (event) => {
-			const mediaInput = document.querySelector(".media-input");
 			event.preventDefault();
 
-			// send it to the API
-			if (mediaInput.value !== 0) {
+			// Send it to the API if form is successful validated
+			if (form.checkValidity()) {
 				editAvatar(mediaInput.value);
 			}
 		});

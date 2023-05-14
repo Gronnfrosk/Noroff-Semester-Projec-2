@@ -49,40 +49,41 @@
 							<li class="nav-item">
 								<a class="nav-link" href="https://gronnfrosk.github.io/Noroff-Semester-Project-2">Home</a>
 							</li>
-							<li class="nav-item d-none " id="login">
+							<li class="nav-item" id="login">
 								<a class="nav-link login-nav" href="https://gronnfrosk.github.io/Noroff-Semester-Project-2/html/signin.html">Login</a>
 							</li>
-							<li class="nav-item" id="nav-user">
+							<li class="nav-item d-none" id="nav-user">
 								<a class="nav-link" href="https://gronnfrosk.github.io/Noroff-Semester-Project-2/html/profile.html">Profile</a>
 							</li>
-							<li class="nav-item" id="nav-user">
+							<li class="nav-item d-none" id="nav-user">
 								<a class="nav-link logout-nav" href="" id="logout">Logout</a>
 							</li>
 						</div>
 					</ul>
 					<div class="nav-credit" id="nav-credit"></div>
 					<form class="d-flex search_form" role="search" id="search_form">
-						<input class="form-control me-2" type="search" placeholder="Search the auction" aria-label="Search" id="search_input" />
+						<input class="form-control me-2 rounded-0 bg-white" type="search" placeholder="Search item titles" aria-label="Search" id="search_input" />
+						<button class="btn btn-outline-info text-light me-2 px-2 rounded-0" type="button">Search</button>
 					</form>
 				</div>
 			</div>
 		</nav>
 		<header class="d-flex justify-content-center mx-4">
 			<div>
-				<div>
+				<div class="welcome">
 					<h1>Welcome!</h1>
 					<h1>Join the online auction today</h1>
 					<i class="fa-sharp fa-solid fa-bullseye-pointer"></i>
 				</div>
-				<div class="add-btn d-grid gap-2">
-					<button class="btn btn-info add-item add-desktop" data-bs-toggle="modal" type="button" data-bs-target="#exampleModal">Add item for auction +</button>
-					<button class="btn btn-info add-item add-phone d-none" data-bs-toggle="modal" type="button" data-bs-target="#exampleModal">Add item +</button>
+				<div class="add-btn d-grid gap-2 d-none">
+					<button class="btn btn-info add-item add-desktop" data-bs-toggle="modal" type="button" data-bs-target="#CreateAuctionItemModal">Add item for auction +</button>
+					<button class="btn btn-info add-item add-phone d-none" data-bs-toggle="modal" type="button" data-bs-target="#CreateAuctionItemModal">Add item +</button>
 				</div>
-					<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal fade" id="CreateAuctionItemModal" tabindex="-1" aria-labelledby="CreateAuctionItemModalLabel" aria-hidden="true">
 						<div class="modal-dialog modal-dialog-centered">
 							<div class="modal-content">
 								<div class="modal-header">
-									<h1 class="modal-title fs-5" id="exampleModalLabel">Add auction item</h1>
+									<h1 class="modal-title fs-5" id="CreateAuctionItemModalLabel">Add auction item</h1>
 									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 								</div>
 								<div class="modal-body">
@@ -108,11 +109,11 @@
 						Filter
 					</button>
 					<ul class="dropdown-menu border-1">
-						<li><a class="dropdown-item" href="?filter=">Newest</a></li>
-						<li><a class="dropdown-item" href="?filter=old">Oldest</a></li>
-						<li><a class="dropdown-item" href="?filter=short">Shortest deadline</a></li>
-						<li><a class="dropdown-item" href="?filter=long">Longest deadline</a></li>
-						<li><a class="dropdown-item" href="?filter=bids">Most bids</a></li>
+						<li><a class="dropdown-item active" href="?filter=new" id="newest">Newest</a></li>
+						<li><a class="dropdown-item" href="?filter=old" id="oldest">Oldest</a></li>
+						<li><a class="dropdown-item" href="?filter=short" id="shortest">Shortest deadline</a></li>
+						<li><a class="dropdown-item" href="?filter=long" id="longest">Longest deadline</a></li>
+						<li><a class="dropdown-item" href="?filter=bids" id="bids">Most bids</a></li>
 						
 					</ul>
 				</div>
@@ -129,11 +130,11 @@
 				<i class="fa-sharp fa-solid fa-bullseye-pointer mx-1"></i></i>
 			</a>
 			<ul class="nav col-md-4 justify-content-end">
-				<div class="d-flex member-nav flex-row gap-4">
+				<div class="d-flex member-nav flex-row">
 					<li class="nav-item"><a href="https://gronnfrosk.github.io/Noroff-Semester-Project-2" class="nav-link text-muted">Home</a></li>
-					<li class="nav-item d-none" id="login"><a href="https://gronnfrosk.github.io/Noroff-Semester-Project-2/html/signin.html" class="nav-link text-muted" id="login">login</a></li>
-					<li class="nav-item" id="nav-user"><a href="https://gronnfrosk.github.io/Noroff-Semester-Project-2/html/profile.html" class="nav-link text-muted">Profile</a></li>
-					<li class="nav-item" id="nav-user"><a href="" class="nav-link text-muted" id="logout">logout</a></li>
+					<li class="nav-item" id="login"><a href="https://gronnfrosk.github.io/Noroff-Semester-Project-2/html/signin.html" class="nav-link text-muted" id="login">login</a></li>
+					<li class="nav-item d-none" id="nav-user"><a href="https://gronnfrosk.github.io/Noroff-Semester-Project-2/html/profile.html" class="nav-link text-muted">Profile</a></li>
+					<li class="nav-item d-none" id="nav-user"><a href="" class="nav-link text-muted" id="logout">logout</a></li>
 				</div>
 			</ul>
 		</footer>

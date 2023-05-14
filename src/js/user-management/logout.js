@@ -14,7 +14,7 @@ export function logout() {
 				event.preventDefault();
 				remove("token");
 				remove("profile");
-				window.location.href = "https://gronnfrosk.github.io/Noroff-Semester-Project-2";
+				window.location.reload();
 			});
 	});
 }

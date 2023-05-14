@@ -22,15 +22,15 @@ export async function showCards(items) {
 			}
 
 			// Media or not media
-			if (items[i].media[0] || items[i].media[1]) {
-				itemMedia = `<img src="${items[i].media[0]}" alt="Auction item" class="fs-6 mx-auto text-center">`;
+			if (items[i].media[0]) {
+				itemMedia = `<img src="${items[i].media[0]}" alt="Auction item" class="fs-6 mx-auto text-center" onerror="this.src='https://img.freepik.com/free-vector/flat-design-no-photo-sign_23-2149279003.jpg?size=626&ext=jpg&ga=GA1.1.933137767.1681841899&semt=ais'">`;
 			} else if (!items[i].media || items[i].media.length === 0 || items[i].media === undefined) {
-				itemMedia = `<p class="d-flex align-items-center border border-5 border-danger p-3 m-3 rounded-circle border-opacity-10 fw-bolder">No image available</p>`;
+				itemMedia = `<img src="https://img.freepik.com/free-vector/flat-design-no-photo-sign_23-2149279003.jpg?size=626&ext=jpg&ga=GA1.1.933137767.1681841899&semt=ais" alt="Auction item" class="fs-6 mx-auto text-center">`;
 			}
 
 			// Bids or not bids
 			if (items[i]._count) {
-				itemBids = `<div class="btn btn-dark btn-sm py-0 px-2">${items[i]._count.bids}</div>
+				itemBids = `<div class="btn btn-dark btn-sm py-0 px-2 mb-1">${items[i]._count.bids}</div>
 						<p>Total number of bids</p>`;
 			} else {
 				itemBids = "";

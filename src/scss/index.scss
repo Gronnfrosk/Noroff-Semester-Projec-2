@@ -2,6 +2,14 @@ body {
     height: 100%;
 }
 
+h1, h2, h3, h4, nav, footer, .dropdown-item, .nav-link, .invalid-feedback {
+    font-family: Trebuchet MS, sans-serif, 'consolas';
+}
+
+p, span, .dropdown-item, button, label, .sort {
+    font-family: roboto, arial, helvetica, sans-serif!important;
+}
+
 .fa-bullseye-pointer {
     color: #FB1B1B;
 }
@@ -31,41 +39,54 @@ nav  {
     & button {
         padding: 0!important;
         box-shadow: none!important;
-    }
-    & .bar {
-        display: block;
-        width: 25px;
-        height: 2.8px;
-        margin: 5px auto;
-        transition: all 0.3s ease-in-out;
-        background-color: rgb(192, 191, 191);
-    }
-    & .hamburger {
-        cursor: pointer;
-        display: block;
-        float: right;  
-        padding: 5px 10px;
-    }
-    & .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-    & .hamburger.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-    & .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
+    
+        & .hamburger {
+            cursor: pointer;
+            display: block;
+            float: right;  
+            padding: 5px 10px; 
+            
+            & .bar {
+                display: block;
+                width: 25px;
+                height: 2.8px;
+                margin: 5px auto;
+                transition: all 0.3s ease-in-out;
+                background-color: rgb(192, 191, 191);
+            }
+        }
+        & .hamburger.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+        & .hamburger.active .bar:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        & .hamburger.active .bar:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
     }
 } 
 
 nav .nav-link, footer .nav-link {
-    padding-bottom: 2px;
-    padding-top: 2px;
+    padding: 2px 4px;
     margin: 4px 7px;
 }
 
 .disabled {
     pointer-events: none;
-    opacity: 0.7;
+    opacity: 0.5;
+}
+
+.modal-title {
+    font-weight: bold;
+}
+
+input, .form-control, .delete-url {
+    background-color: #EEF5FB;
+
+    &:focus {
+        background-color: #EEF5FB;
+    }
 }
 
 .btn-outline-info {
@@ -81,7 +102,22 @@ nav .nav-link, footer .nav-link {
     text-align: left;
 
     & .modal-footer {
+        width: 100%;
         padding-top: 23px;
+    }
+    & .delete-url {
+        position: relative;
+        height: 0;
+        padding: 0 12px;
+        float: right;
+        bottom: 41px;
+        left: -14px;
+        border: none;
+        & i {
+            font-size: 1.1em;
+            padding: 6px 10px;
+            background-color: #EEF5FB; 
+        }
     }
 }
 
@@ -100,7 +136,9 @@ nav .nav-link, footer .nav-link {
         height: 15px; 
         margin-bottom: 10px;
         padding-bottom: 15px;
+        padding-right: 27px;
     }
+    
     & .url-upload {
 
         & .number, .media-item {
@@ -152,7 +190,7 @@ footer {
 header {
     padding-top: 200px;
   
-    & i {
+    & .welcome i {
         width: 100%;
         text-align: center;
         position: relative;
@@ -168,10 +206,15 @@ header {
 main {
     & .blue-container {
         background-color: #EEF5FB;
-        min-height: 420px
-        ;
+        min-height: 420px;
+    }
+    & .dropdown-item.active {
+        color: black;
+        background-color: #0dcaf0;
     }
 }
+
+
 
 .modal-body .box {
     margin: auto;
@@ -198,10 +241,12 @@ main {
     background-color: #fff;
 }
 
+
 .cards img { 
     transform: scale(1.4);
     transition: all .5s;
     height: 115%;
+    padding-bottom: 23px;
 }
 
 .card-container {
@@ -215,6 +260,11 @@ main {
         left: 63px;
         width: 70%;
 
+        & .listing-image p {
+            transform: scale(1);
+            transition: all .5s;
+        } 
+
         & a {
             text-decoration: none;
             color: black;
@@ -225,8 +275,9 @@ main {
             text-align: center;
             height: 0;
         }
-        
-        
+        & .listing-image p:hover {
+            transform: scale(1.1);
+        }
         & img:hover {
             transform: scale(1.5);
         }
@@ -257,7 +308,7 @@ main {
     align-items: center;
     flex-direction: column;
     padding-top: 55px;
-    height: 100vh
+    height: 100vh;
 }
 
 .signin-main {
@@ -301,10 +352,29 @@ main {
     & .btn {
         font-size: 1em;
     }
+    & .delete-url {
+        position: absolute;
+        right: 1px;
+        border: none;
+        top: 2px;
+        padding: 15px 12px;
+
+        & i {
+            font-size: 1.15em;
+        }
+    }
+    & input, .form-control, .delete-url {
+        background-color: white;
+    
+        &:focus {
+            background-color: white;
+        }
+    }
 }
 
 .invalid-feedback {
     text-align: left;
+    font-size: 0.8em;
 }
 
 
@@ -329,6 +399,17 @@ main {
         align-items: center; 
         background-color: #EEF5FB;
     }
+    & .delete-url {
+        float: right;
+        position: relative;
+        bottom: 57px;
+        right: 1px;
+        padding: 15px 10px;
+
+        & i {
+            font-size: 1.2em;
+        }
+    }
     & #pre-view-avatar {
         border: 4px solid #FB1B1B;
         
@@ -349,11 +430,15 @@ main {
         transform: scale(1.2);
     }
     & .edit-container {
+        height: 44px;
         position: relative;
         text-align: center;
         margin-left: 203px;
-        bottom: 80px;        
+        bottom: 80px;
         
+        & button {
+            display: none;
+        }
     }
     
     & .pre-view {
@@ -380,11 +465,15 @@ main {
             border-radius: 20px;
             box-shadow: 0 3px 3px rgba(0, 0, 0, 0.103);
         }
+        & .none-user-credit {
+            border: 15px double white;
+        }
     }
 }
 .sort {
     position: relative;
-    top: 88px;
+    z-index: 2;
+    top: 75px;
     margin-right: 20px;
     height: 0;
 }
@@ -403,25 +492,40 @@ main {
 }
 
 .auction-history {
+
+    & .blue-container {
+        position: relative;
+        z-index: 1.2;
+    }
     & .active {
-        font-weight: bold;        
+        position: relative;
+        z-index: 1.1;
+        font-weight: bold;
+        box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.219); 
+        height: 55px;
+        pointer-events: none;
     }
     & .nav-tabs {
-        margin-top: 20px;
+        height: 55px;
+        align-items: end;
 
         & a {
+            height: 42px;
             width: 100px;
-            transition: background-color 0.1s ease-out;
+            transition: height 0.3s ease-out, background-color 0.3s ease-out;
         }
     }
     & .nav-tabs a:hover {
         background-color: #EEF5FB;
         border-bottom-color: #EEF5FB;
+        height: 50px;
+        
     }
     & .nav-link.active {
         background-color: #EEF5FB;
         border-bottom-color: #EEF5FB;
-    }
+        height: 50px;
+    }  
     & .winning-box {
         width: 100%;
         margin-top: 20px;
@@ -530,7 +634,7 @@ main {
         display: flex;
         justify-content: end;
         position: relative;
-        z-index: 2;
+        z-index: 1.1;
         bottom: 407px;
     }
     & .edit-btn {
@@ -563,6 +667,9 @@ main {
         margin-right: 40px;
         max-width: 600px;
         width: 100%;
+    }
+    & .deadline {
+        width: max-content;
     }
 }
 
@@ -662,7 +769,7 @@ main {
     }
 }
 
-.link, .nav-link {
+.link, nav .nav-link, footer .nav-link {
     position: relative;
     
     &::before {
@@ -688,11 +795,6 @@ main {
     pointer-events: none;
 } 
 
-.details-two .deadline {
-    width: max-content;
-
-}
-
 .bid-log::-webkit-scrollbar {
     width: 10px;
 }
@@ -713,10 +815,6 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
-}
-
-input[type=number] {
-  -moz-appearance: textfield;
 }
 
 /*mobile styles*/
@@ -747,16 +845,11 @@ input[type=number] {
             height: 0;
             justify-content: flex-end;
             & p {
+                border-bottom: 3px solid white;
                 margin-bottom: 10px;
                 position: relative;
                 bottom: 28px;
             }
-        }
-    }
-
-    main {
-        & h2 {
-            font-size: 1.15em;
         }
     }
 
@@ -832,7 +925,9 @@ input[type=number] {
         & .listing {
             height: fit-content;
         }
-       
+        & img {
+            padding-bottom: 12px;
+        }
         & .profile-info p {
             font-size: 0.9em;
         } 
@@ -863,7 +958,7 @@ input[type=number] {
         height: 430px;
     }
     .sort {
-        top: 140px;
+        top: 135px;
     }
     .info-box {
         margin: 13px auto 0px auto;
@@ -901,13 +996,13 @@ input[type=number] {
     
     .details-image {
         flex-direction: column;
-        height: 350px;
+        max-height: 350px;
 
-        & .carousel-item .image {
-            height: 350px;
+        & .carousel-item .image, .carousel-item .image img {
+            max-height: 350px;
         }
         & .carousel {
-            margin-top: 100px; 
+            margin-top: 75px; 
         }
         & .edit-edit {
             left: 0px;
@@ -925,7 +1020,7 @@ input[type=number] {
 
     .details {
         flex-direction: column;
-        margin-top: 50px;
+        margin-top: 35px;
         padding: 0;
 
         & .deadline {

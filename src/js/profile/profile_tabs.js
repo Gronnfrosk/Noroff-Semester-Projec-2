@@ -32,8 +32,6 @@ export function profileTabs(listings, bids, wins, box) {
 		tabsListingsProfile.classList.add("active");
 		tabsBidsProfile.classList.remove("active");
 		tabsWinsProfile.classList.remove("active");
-		sortCreate.classList.remove("d-none");
-		sortDeadline.classList.add("d-none");
 
 		if (listings === 0) {
 			noListings.style.display = "block";
@@ -63,8 +61,6 @@ export function profileTabs(listings, bids, wins, box) {
 		tabsBidsProfile.classList.add("active");
 		tabsListingsProfile.classList.remove("active");
 		tabsWinsProfile.classList.remove("active");
-		sortCreate.classList.remove("d-none");
-		sortDeadline.classList.add("d-none");
 
 		if (bids === 0) {
 			noListings.style.display = "block";
@@ -94,8 +90,6 @@ export function profileTabs(listings, bids, wins, box) {
 		tabsWinsProfile.classList.add("active");
 		tabsListingsProfile.classList.remove("active");
 		tabsBidsProfile.classList.remove("active");
-		sortCreate.classList.add("d-none");
-		sortDeadline.classList.remove("d-none");
 
 		if (wins === 0) {
 			noListings.style.display = "block";

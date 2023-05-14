@@ -1,6 +1,6 @@
 import { profileContent } from "./profile_template.js";
 import { getProfileListings, getProfileBids } from "../api/profile/get_profile.js";
-import { showCards } from "../auction/auction_card_template.js";
+import { showCards } from "../auction/all-listings/auction_card_template.js";
 import { anotherProfile } from "./profile_who.js";
 import { profileTabs } from "./profile_tabs.js";
 

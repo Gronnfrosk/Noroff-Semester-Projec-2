@@ -1,0 +1,31 @@
+const containerTwo = document.querySelector(".details-two");
+
+export function displayDeadline(endsAt) {
+	const deadline = new Date(endsAt);
+	const dateFormat = deadline.toLocaleDateString("en-GB");
+	const clockFormat = deadline.toLocaleString("en-US", { hour: "numeric", minute: "numeric", hour12: true });
+	const start = Date.now();
+	const elapsed = deadline - start;
+	var time = "";
+	var closed = "";
+
+	// Deadline passed show red icon
+	if (elapsed < 0) {
+		closed = "text-danger";
+	}
+
+	// if deadline contains time
+	if (clockFormat.length > 4) {
+		time = `<i class="fa-regular fa-clock ${closed}"></i> ${clockFormat}</p>`;
+	}
+
+	// Deadline time and date
+	containerTwo.innerHTML += `
+				<div class="deadline">
+					<p><b>Deadline</b></p>
+					<p class="text-start">
+					${time}
+					<p><i class="fa-regular fa-calendar-days ${closed}"></i> ${dateFormat} </p>
+				</div>
+				`;
+}

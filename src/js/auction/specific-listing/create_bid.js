@@ -1,4 +1,4 @@
-import { createBid } from "../api/auction/create_bid.js";
+import { createBid } from "../../api/auction/create_bid.js";
 
 const addBidForm = document.querySelector("#create-bid");
 const queryString = document.location.search;
@@ -13,7 +13,9 @@ export function setCreateBidFormListener() {
 		const bid = Object.fromEntries(formData.entries());
 		const newBid = parseInt(bid.amount);
 
-		// send it to the API
-		createBid(id, newBid);
+		// Send it to the API if form is successful validated
+		if (addBidForm.checkValidity()) {
+			createBid(id, newBid);
+		}
 	});
 }

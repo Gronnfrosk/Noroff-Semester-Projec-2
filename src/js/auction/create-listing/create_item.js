@@ -1,4 +1,5 @@
-import { createAuctionItem } from "../api/auction/create_item.js";
+import { createAuctionItem } from "../../api/auction/create_item.js";
+
 const formCreate = document.querySelector("#add-item-form");
 
 /**
@@ -40,11 +41,9 @@ export function setCreateItemFormListener() {
 		delete item.media2;
 		delete item.media3;
 
-		// send it to the API
-		createAuctionItem(item);
-
-		setTimeout(() => {
-			window.location.reload();
-		}, 1000);
+		// Send it to the API if form is successful validated
+		if (form.checkValidity()) {
+			createAuctionItem(item);
+		}
 	});
 }

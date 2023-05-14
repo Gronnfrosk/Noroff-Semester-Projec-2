@@ -15,22 +15,24 @@ const userToken = load("profile");
  * @param {string} userToken This is the localStorage key with user profile data value.
  */
 export function checkUser() {
-	if (!token && !userToken) {
-		// Hide logout and profile nav
+	if (token && userToken) {
+		// Hide login nav
 		userNav.forEach((element) => {
-			element.classList.add("d-none");
-		});
-
-		// Show login nav
-		navNew.forEach((element) => {
 			element.classList.remove("d-none");
 		});
 
-		// Hide create auction item button
-		if (addItem) {
-			addItem.classList.add("d-none");
-		}
+		// Show logout and profile nav
+		navNew.forEach((element) => {
+			element.classList.add("d-none");
+		});
 
+		// Show create auction item button
+		if (addItem) {
+			addItem.classList.remove("d-none");
+		}
+	}
+
+	if (userToken === null || token === null) {
 		// Disable profile links
 		if (profileLinks) {
 			profileLinks.classList.add("link-disabled");

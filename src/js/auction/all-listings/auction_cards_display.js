@@ -1,6 +1,6 @@
 import { showCards } from "./auction_card_template.js";
 import { getFilterItems } from "./filter_items.js";
-import { getAuctionItems } from "../api/auction/getItem.js";
+import { getAuctionItems } from "../../api/auction/getItem.js";
 import { searchItems } from "./search.js";
 
 const moreLoadBtn = document.querySelector("#moreBtn");
@@ -12,10 +12,13 @@ export async function displayNumberOfCards() {
 	const filterItems = await getFilterItems(response);
 	const items = filterItems.slice(0, n);
 
+	// Load default number of listings
 	showCards(items);
+
+	// search all
 	searchItems(filterItems);
 
-	// Load more
+	// Load more listings
 	moreLoadBtn.addEventListener("click", (cards) => {
 		auctionCard.innerHTML = ``;
 		n += 15;
