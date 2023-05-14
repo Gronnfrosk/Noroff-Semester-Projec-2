@@ -69,6 +69,6 @@ export async function specificAuctionItem() {
 		displaySeller(seller);
 		setCreateBidFormListener(id);
 	} else {
-		window.location.href = "https://gronnfrosk.github.io/Noroff-Semester-Project-2";
+		window.location.href = "./index.html";
 	}
 }

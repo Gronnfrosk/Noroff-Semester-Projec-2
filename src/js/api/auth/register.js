@@ -21,7 +21,7 @@ export async function register(profile) {
 
 	if (response.ok) {
 		alert("Account successfully created. You may now proceed to login.");
-		window.location.href = "https://gronnfrosk.github.io/Noroff-Semester-Project-2/html/signin.html";
+		window.location.href = "./html/signin.html";
 	} else {
 		alert("Error! Your account was not register.");
 	}

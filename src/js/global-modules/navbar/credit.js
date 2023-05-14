@@ -20,7 +20,7 @@ export async function displayCredits() {
 		creditTotal.innerHTML += `<p class="text-white d-flex align-items-center m-0 pe-3" id="${profileInfo.credits}">Total Credits - ${profileInfo.credits}</p>`;
 
 		return profileInfo.credits;
-	} else {
+	} else if (creditBar !== null) {
 		creditBar.style.height = "0px";
 	}
 }

@@ -47,7 +47,7 @@ export async function showCards(items) {
 			auctionCard.innerHTML += `
 			<div class="box" id="${items[i].id}">
 				<div class="listing d-flex flex-column">
-					<a href="https://gronnfrosk.github.io/Noroff-Semester-Project-2/html/specific_auction_item.html?itemID=${items[i].id}">
+					<a href="./html/specific_auction_item.html?itemID=${items[i].id}">
 						<div class="listing-image">
 							${itemMedia}
 						</div>

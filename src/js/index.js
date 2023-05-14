@@ -14,23 +14,23 @@ const path = location.pathname;
  * This conditional statement controls which function is called at different URL location.
  * @param {string} path This is a string containing the path of the URL for the location
  */
-if (path === "/html/signin.html" || path === "/html/signin.html") {
+if (path === "/html/signin.html") {
 	checkToken.checkUserTokenLogin();
 	user.setLoginFormListener();
-} else if (path === "/html/register.html" || path === "/html/register.html") {
+} else if (path === "/html/register.html") {
 	checkToken.checkUserTokenLogin();
 	user.setRegisterFormListener();
-} else if (path === "/html/profile.html" || path === "/html/profile.html") {
+} else if (path === "/html/profile.html") {
 	checkToken.checkUserToken();
 	displayProfile();
 	editAvatarListener();
 	createForm();
 	setCreateItemFormListener();
 	user.logout();
-} else if (path === "/html/specific_auction_item.html" || path === "/html/specific_auction_item.html") {
+} else if (path === "/html/specific_auction_item.html") {
 	specificAuctionItem();
 	user.logout();
-} else if (path === "/" || path === "/index.html") {
+} else if (path === "/index.html") {
 	displayNumberOfCards();
 	createForm();
 	setCreateItemFormListener();
