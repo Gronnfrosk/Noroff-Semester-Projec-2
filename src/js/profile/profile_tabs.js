@@ -1,8 +1,18 @@
-const sortCreate = document.querySelector(".created");
-const sortDeadline = document.querySelector(".deadline");
 const info = document.querySelector("#info-box");
 const noListings = document.querySelector(".nothing");
 
+/**
+ * This function allows the tab function on profile page to work.
+ * @param {Element} tabsListingsProfile This is a html element of listing tab.
+ * @param {Element} tabsBidsProfile This is a html element of bids tab.
+ * @param {Element} tabsWinsProfile This is a html element of wins tab.
+ * @param {Element} box All the auction item cards.
+ * @param {Number} listings Amount of listings made by target profile.
+ * @param {Number} bids Amount of bids placed by target profile.
+ * @param {Number} wins Amount of wins the target profile have.
+ * @param {Element} noListings The html element containing no listing content.
+ * @param {Element} info The html element containing bids and wins info content.
+ */
 export function profileTabs(listings, bids, wins, box) {
 	const tabsListingsProfile = document.querySelector("#profile-listings");
 	const tabsBidsProfile = document.querySelector("#profile-bids");
@@ -25,7 +35,7 @@ export function profileTabs(listings, bids, wins, box) {
 		}
 	}
 
-	// Listings
+	// Tab: Listings
 	tabsListingsProfile.addEventListener("click", (e) => {
 		e.preventDefault();
 		info.classList.add("d-none");
@@ -54,7 +64,7 @@ export function profileTabs(listings, bids, wins, box) {
 		}
 	});
 
-	// Bids
+	// Tab: Bids
 	tabsBidsProfile.addEventListener("click", (e) => {
 		e.preventDefault();
 		info.classList.remove("d-none");
@@ -83,7 +93,7 @@ export function profileTabs(listings, bids, wins, box) {
 		}
 	});
 
-	// Wins
+	// Tab: Wins
 	tabsWinsProfile.addEventListener("click", (e) => {
 		e.preventDefault();
 		info.classList.remove("d-none");

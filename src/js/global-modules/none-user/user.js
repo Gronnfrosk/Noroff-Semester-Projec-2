@@ -9,19 +9,22 @@ const token = load("token");
 const userToken = load("profile");
 
 /**
- * This function stops none users to visit home page or profile page
- * @param {Element} deleteBtn This is the html location of the element button.
+ * This function allow users functions and prevents none users from other profile links.
  * @param {string} token This is the localStorage key with access token value.
  * @param {string} userToken This is the localStorage key with user profile data value.
+ * @param {Element} userNav The element links for profile and logout links.
+ * @param {Element} navNew The element links for login links.
+ * @param {Element} addItem This is the element button for creating auction item listing.
+ * @param {Element} profileLinks All the bid and seller links on specific item page.
  */
 export function checkUser() {
 	if (token && userToken) {
-		// Hide login nav
+		// Show logout and profile nav
 		userNav.forEach((element) => {
 			element.classList.remove("d-none");
 		});
 
-		// Show logout and profile nav
+		// Hide login nav
 		navNew.forEach((element) => {
 			element.classList.add("d-none");
 		});
@@ -33,7 +36,7 @@ export function checkUser() {
 	}
 
 	if (userToken === null || token === null) {
-		// Disable profile links
+		// Disable profile links on specific
 		if (profileLinks) {
 			profileLinks.classList.add("link-disabled");
 

@@ -2,7 +2,7 @@ import { register } from "../api/auth/register.js";
 import { deleteUrl } from "../global-modules/delete_url.js";
 
 /**
- * This function triggers by form submit to collect form data and send to API.
+ * This function triggers by form submit to collect form data and send to API if form validation is successful.
  * @param {Element} form This is a html element where a form is displayed.
  * @param {Object} formData This is a collection of data to form.
  * @param {Object} profile This is a collection of data by key and value from submit form.

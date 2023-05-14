@@ -5,9 +5,11 @@ const action = "/bids";
 const method = "post";
 
 /**
- * This async function sends an API "POST" request.
- * @param {Object} postData The data that will be sent to the "POST" request.
- * @param {String} updatePostURL This is the url needed for "POST" request.
+ * This async function sends an API "POST" request and informs if not successful.
+ * @param {String} id The id of target listing/item.
+ * @param {Number} newBid The amount of Credits from the new bid.
+ * @param {String} action This endpoint will register a new bid on target listing.
+ * @param {String} bidUrl This is the complete url needed for "POST" request.
  * @param {String} method The HTTP request method.
  */
 export async function createBid(id, newBid) {
@@ -21,13 +23,9 @@ export async function createBid(id, newBid) {
 		body: JSON.stringify({ amount: newBid }),
 	});
 
-	const bidInfo = await response.json();
-
 	if (response.ok) {
-		setTimeout(() => {
-			window.location.reload();
-		}, 500);
+		window.location.reload();
 	} else {
-		alert(`Error! Bid was not placed on auction item: ${bidInfo.title}`);
+		alert(`Error! Bid was not placed on auction item`);
 	}
 }

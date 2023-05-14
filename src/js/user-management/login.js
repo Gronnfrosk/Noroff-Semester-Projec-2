@@ -1,9 +1,9 @@
 import { login } from "../api/auth/login.js";
 
 /**
- * This function triggers by a form submit to collect form data and send to API fpr validation
+ * This function triggers by a form submit to collect form data and send to API if the validation is successful.
  * @param {Element} form This is a html element where a form is displayed.
- * @param {Object} formData This is a collection of data to form.
+ * @param {Object} formData This is a collection of data from form.
  * @param {Object} profile This is a collection of data by key and value from submit form.
  * @function login() This function sends the profile data to an API "POST" method and informs whether the login was successful or not.
  */

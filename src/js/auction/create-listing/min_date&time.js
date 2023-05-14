@@ -1,3 +1,8 @@
+/**
+ * This function formate and get current date and time .
+ * @param {String} today The current time and date.
+ * @param {string} todayTime The formatted current date.
+ */
 export function minDateTime() {
 	const today = new Date();
 	let currentHours = today.getHours();

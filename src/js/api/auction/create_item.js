@@ -4,15 +4,15 @@ import { authFetch } from "../auth_fetch.js";
 const method = "post";
 
 /**
- * This async function sends an API "POST" request.
- * @param {Object} postData The data that will be sent to the "POST" request.
- * @param {String} updatePostURL This is the url needed for "POST" request.
- * @param {String} method The HTTP request method.
+ * This async function sends an API "POST" request and informs if successful or not.
+ * @param {Object} item The data that will be sent to the "POST" request.
+ * @param {String} API_AUCTION_LISTING_URL This is the url needed for "POST" request.
+ * @param {String} method This is the HTTP request method, "POST".
  */
-export async function createAuctionItem(postData) {
+export async function createAuctionItem(item) {
 	const response = await authFetch(API_AUCTION_LISTING_URL, {
 		method,
-		body: JSON.stringify(postData),
+		body: JSON.stringify(item),
 	});
 
 	if (response.ok) {

@@ -2,11 +2,13 @@ import { editAvatar } from "../api/profile/edit_avatar.js";
 import { deleteUrl } from "../global-modules/delete_url.js";
 
 /**
- * This function triggers by form submit to collect form data and send to API.
+ * This function triggers by form submit to collect form data and send to API if form validation is successful.
  * @param {Element} form This is a html element where a form is displayed.
- * @param {Object} formData This is a collection of data to form.
- * @param {Object} profile This is a collection of data by key and value from submit form.
- * @function register() This function sends the profile data to an API "POST" method and informs whether the registration was successful or not.
+ * @param {Element} preView This is a html element where avatar image is displayed.
+ * @param {Object} mediaInput This is where the url input for avatar.
+ * @param {Object} contents The input value of target avatar input.
+ * @function deleteUrl() This function deletes the target input url value.
+ * @function editAvatar() This async function sends an API "PUT" request and informs if not successful.
  */
 export function editAvatarListener() {
 	const form = document.querySelector("#avatar-edit");
