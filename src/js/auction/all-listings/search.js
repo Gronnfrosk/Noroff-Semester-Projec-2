@@ -5,6 +5,14 @@ const input = document.querySelector("#search_input");
 const container = document.querySelector("#card-container");
 const moreLoadBtn = document.querySelector("#moreBtn");
 
+/**
+ * This function uses auction items title to display the search results when keypress enter or search button is clicked.
+ * @param {Element} search This is a html element where search input is displayed.
+ * @param {Element} input This is a html element input.
+ * @param {String} searchInput This is the searched value in lowercase.
+ * @function searchFiltered() It filters out auction items when item title and search value match.
+ * @function showCards() This is a function for displaying auction item cards.
+ */
 export function searchItems(items) {
 	search.addEventListener("click", function (e) {
 		e.preventDefault();

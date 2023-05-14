@@ -1,13 +1,20 @@
-//import { displayNumberOfCards } from "./auction_cards_display.js";
-//import { filterItems } from "./filter_items.js";
-//import { getAuctionItems } from "../api/auction/getItem.js";
-
 const auctionCard = document.querySelector("#card-container");
 
+/**
+ * This function uses items data to display auction item cards in html with and without image.
+ * @param {Object} items The data of auction items.
+ * @param {Element} auctionCard This is a html element where all generated posts data are displayed.
+ * @param {String} dateFormat A format of deadline date.
+ * @param {String} start The current date and time.
+ * @param {String} elapsed The deadline subtracted from the current date and time.
+ * @param {String} closed This is the HTML class content icon.
+ * @param {String} itemMedia This is the HTML content for media in auction item card.
+ * @param {String} itemBids This is the HTML content for bids on auction item.
+ */
 export async function showCards(items) {
 	for (var i = 0; i < items.length; i++) {
 		if (items[i]) {
-			// Time and date formatting now and deadline
+			// Time and date formatting current and deadline
 			const deadline = new Date(items[i].endsAt);
 			const dateFormat = deadline.toLocaleDateString("en-GB");
 			const start = Date.now();
@@ -21,14 +28,14 @@ export async function showCards(items) {
 				closed = "text-danger";
 			}
 
-			// Media or not media
+			// Media
 			if (items[i].media[0]) {
 				itemMedia = `<img src="${items[i].media[0]}" alt="Auction item" class="fs-6 mx-auto text-center" onerror="this.src='https://img.freepik.com/free-vector/flat-design-no-photo-sign_23-2149279003.jpg?size=626&ext=jpg&ga=GA1.1.933137767.1681841899&semt=ais'">`;
 			} else if (!items[i].media || items[i].media.length === 0 || items[i].media === undefined) {
 				itemMedia = `<img src="https://img.freepik.com/free-vector/flat-design-no-photo-sign_23-2149279003.jpg?size=626&ext=jpg&ga=GA1.1.933137767.1681841899&semt=ais" alt="Auction item" class="fs-6 mx-auto text-center">`;
 			}
 
-			// Bids or not bids
+			// Bids
 			if (items[i]._count) {
 				itemBids = `<div class="btn btn-dark btn-sm py-0 px-2 mb-1">${items[i]._count.bids}</div>
 						<p>Total number of bids</p>`;

@@ -1,5 +1,17 @@
 const containerTwo = document.querySelector(".details-two");
 
+/**
+ * This function displays date and time of target auction item deadline and icons change color to red when deadline is passed.
+ * @param {string} endsAt The auction item deadline time and date.
+ * @param {string} deadline The specific string gotten from the itemID querystring.
+ * @param {String} dateFormat A format of deadline date.
+ * @param {string} clockFormat A format of deadline time.
+ * @param {String} start The current date and time.
+ * @param {String} elapsed The deadline subtracted from the current date and time.
+ * @param {string} time The html content to show deadline time.
+ * @param {String} closed This is the HTML class content icon.
+ * @param {Element} containerTwo This is a html element where the auction item deadline details are displayed.
+ */
 export function displayDeadline(endsAt) {
 	const deadline = new Date(endsAt);
 	const dateFormat = deadline.toLocaleDateString("en-GB");

@@ -2,6 +2,17 @@ const bidInputPlace = document.querySelector("#bidding");
 const inputField = document.querySelector("#create-bid");
 const bidInput = document.querySelector("#bid-input");
 
+/**
+ * This function displays bid form with max and min value, but disabled at certain situations and show text explaining why.
+ * @param {number} minCredit The amount of current highest bid plus one gotten from the id of a html element.
+ * @param {string} maxCredit The amount users current total credit gotten from the id of a html element.
+ * @param {Object} profile This is the localStorage key with user profile data.
+ * @param {Object} seller This contains data about target auction item seller.
+ * @param {Element} bidInputPlace This is a html element where the input for placing bid.
+ * @param {Element} inputField This is a html element form for placing bid.
+ * @param {Element} bidInput This is a html element where disabled text show.
+ * @setTimeout Contents load after 0.5 second.
+ */
 export function displayBidForm(profile, seller) {
 	setTimeout(() => {
 		const minCredit = parseInt(document.querySelector(".bid-winner").id) + 1;

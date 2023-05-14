@@ -1,3 +1,8 @@
+/**
+ * This function deletes the target input url value by clicking delete element.
+ * @param {Element} deleteBtn Html elements.
+ * @param {Element} mediaUrl The html element for placing the url inputs.
+ */
 export function deleteUrl() {
 	const deleteBtn = document.querySelectorAll(".delete-url");
 	const mediaUrl = document.querySelectorAll(".media-input");

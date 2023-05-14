@@ -4,6 +4,15 @@ const containerThree = document.querySelector(".bid-history");
 var avatar = "";
 var bidLog = "";
 
+/**
+ * This async function display bid history from target auction item listing.
+ * @param {Object} profile This is the localStorage key with user profile data.
+ * @param {Object} bids This is the data of all the bids on target auction item.
+ * @param {number} _count This is the amount of bids on target auction item.
+ * @param {Element} containerThree This is a html element where the auction item bids details are displayed.
+ * @param {Object} bidDetails This is bids filtered with highest bidder first.
+ * @param {object} bidder This is data from the first bidder from bid details, also the highest bidder on auction item.
+ */
 export async function displayBids(profile, bids, _count) {
 	containerThree.innerHTML = ``;
 	const bidDetails = bids.sort((a, b) => a.amount - b.amount).reverse();

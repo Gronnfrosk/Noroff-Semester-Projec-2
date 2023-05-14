@@ -1,5 +1,10 @@
 const sellerPlace = document.querySelector("#seller");
 
+/**
+ * This function displays seller information as avatar and name.
+ * @param {object} seller The seller data form a target auction item listing.
+ * @param {Element} sellerPlace This is a html element where the seller of auction item is displayed.
+ */
 export function displaySeller(seller) {
 	if (!seller.avatar) {
 		seller.avatar =
