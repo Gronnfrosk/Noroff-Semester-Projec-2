@@ -10,7 +10,7 @@ const auctionCard = document.querySelector("#card-container");
  * @param {String} closed This is the HTML class content icon.
  * @param {String} itemMedia This is the HTML content for media in auction item card.
  * @param {String} itemBids This is the HTML content for bids on auction item.
- * @param {String} home This is the HTML to get correct link for specific auction item on home page.
+ * @param {String} home This is the HTML to get correct link for specific auction item.
  */
 export async function showCards(items) {
 	for (var i = 0; i < items.length; i++) {
@@ -45,12 +45,8 @@ export async function showCards(items) {
 				itemBids = "";
 			}
 
-			//Specific link for home page
-			if (
-				location.pathname !== "/html/profile.html" ||
-				location.pathname === "/Noroff-Semester-Project-2/" ||
-				location.pathname === "/Noroff-Semester-Project-2/html/profile.html"
-			) {
+			//Specific link for auction item cards
+			if (location.pathname !== "/html/profile.html" || location.pathname === "/Noroff-Semester-Project-2/") {
 				home = "html/";
 			}
 
