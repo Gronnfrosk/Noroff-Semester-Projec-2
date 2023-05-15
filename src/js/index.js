@@ -30,7 +30,7 @@ if (path === "/html/signin.html") {
 } else if (path === "/html/specific_auction_item.html") {
 	specificAuctionItem();
 	user.logout();
-} else if (path === "" || path === "/index.html") {
+} else {
 	displayNumberOfCards();
 	createForm();
 	setCreateItemFormListener();
