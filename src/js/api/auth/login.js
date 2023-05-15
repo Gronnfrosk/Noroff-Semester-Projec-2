@@ -28,7 +28,7 @@ export async function login(profile) {
 		save("profile", user);
 
 		alert("You are now logged in at AuctionPoint.");
-		window.location.href = "./index.html";
+		window.location.href = "../index.html";
 	} else {
 		alert("Error! You have entered invalid username or password combination.");
 	}

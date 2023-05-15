@@ -11,7 +11,7 @@ const userToken = load("profile");
 
 export function checkUserToken() {
 	if (!token && !userToken) {
-		window.location.href = "./index.html";
+		window.location.href = "../index.html";
 	}
 }
 
@@ -22,6 +22,6 @@ export function checkUserToken() {
  */
 export function checkUserTokenLogin() {
 	if (token && userToken) {
-		window.location.href = "./index.html";
+		window.location.href = "../index.html";
 	}
 }

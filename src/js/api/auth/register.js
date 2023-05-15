@@ -21,8 +21,8 @@ export async function register(profile) {
 
 	if (response.ok) {
 		alert("Account successfully created. You may now proceed to login.");
-		window.location.href = "./html/signin.html";
+		window.location.href = "signin.html";
 	} else {
-		alert("Error! Your account was not register.");
+		alert("Error! Your account was not register. Maybe username or email are already registered at AuctionPoint");
 	}
 }

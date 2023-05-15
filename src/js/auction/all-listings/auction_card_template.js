@@ -10,6 +10,7 @@ const auctionCard = document.querySelector("#card-container");
  * @param {String} closed This is the HTML class content icon.
  * @param {String} itemMedia This is the HTML content for media in auction item card.
  * @param {String} itemBids This is the HTML content for bids on auction item.
+ * @param {String} home This is the HTML to get correct link for specific auction item on home page.
  */
 export async function showCards(items) {
 	for (var i = 0; i < items.length; i++) {
@@ -22,6 +23,7 @@ export async function showCards(items) {
 			var closed = "";
 			var itemMedia;
 			var itemBids;
+			var home = "";
 
 			// Red clock when deadline passed
 			if (elapsed < 0) {
@@ -43,11 +45,16 @@ export async function showCards(items) {
 				itemBids = "";
 			}
 
+			// Specific link for home page
+			if (location.pathname !== "/html/profile.html") {
+				home = "html/";
+			}
+
 			// Template for auction cards
 			auctionCard.innerHTML += `
 			<div class="box" id="${items[i].id}">
 				<div class="listing d-flex flex-column">
-					<a href="./html/specific_auction_item.html?itemID=${items[i].id}">
+					<a href="${home}specific_auction_item.html?itemID=${items[i].id}">
 						<div class="listing-image">
 							${itemMedia}
 						</div>

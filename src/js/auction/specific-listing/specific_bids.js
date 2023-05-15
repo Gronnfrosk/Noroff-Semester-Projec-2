@@ -30,7 +30,7 @@ export async function displayBids(profile, bids, _count) {
 	bidDetails.forEach((bid) => {
 		bidLog += `
 				<div class="" id="${bid.bidderName}">
-					<a href="./html/profile.html?name=${bid.bidderName}">
+					<a href="profile.html?name=${bid.bidderName}">
 						<p class="link">${bid.amount} credit - ${bid.bidderName}</p>
 					</a>
 				</div>`;
@@ -42,7 +42,7 @@ export async function displayBids(profile, bids, _count) {
 	containerThree.innerHTML = `
             <h2>Highest bid:</h2>
             <div class="highest">
-                <a href="./html/profile.html?name=${bidDetails[0].bidderName}" >
+                <a href="profile.html?name=${bidDetails[0].bidderName}" >
                     <div class="bid-winner" id="${bidDetails[0].amount}">
                         <p class="link">${bidDetails[0].amount} credit - ${bidDetails[0].bidderName}</p>
                     </div>

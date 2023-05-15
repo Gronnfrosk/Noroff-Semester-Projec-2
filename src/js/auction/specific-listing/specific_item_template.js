@@ -69,6 +69,6 @@ export async function specificAuctionItem() {
 		displaySeller(seller);
 		setCreateBidFormListener(id);
 	} else {
-		window.location.href = "./index.html";
+		window.location.href = "../index.html";
 	}
 }
