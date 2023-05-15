@@ -6,7 +6,6 @@ on:
   push:
     branches:
       - main
-      - logout-js
       - main-test
 
   # Allows you to run this workflow manually from the Actions tab
