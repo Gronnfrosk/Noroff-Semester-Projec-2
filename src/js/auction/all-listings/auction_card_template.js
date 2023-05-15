@@ -47,7 +47,7 @@ export async function showCards(items) {
 
 			//Specific link for home page
 			if (location.pathname !== "/html/profile.html" || location.pathname !== "/Noroff-Semester-Project-2/html/profile.html") {
-				home = "/html";
+				home = "html/";
 			}
 
 			// Template for auction cards
