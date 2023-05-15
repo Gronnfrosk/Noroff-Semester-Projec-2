@@ -8,7 +8,7 @@ This is an auction website where users can add items to be bid on and bid on ite
 When a new user joins the website, they are given 1000 credits to use on the site. They can get credits by selling items and use credit by buying items. Non-registered users can search through the listings, but only registered users can make bids on listings and see other users profile.
 
 1.	**Home page**
-      - View active listings that is put up for auction displayed as cards containing an image, title and amount of bids on the item. 
+      - View active listings that is put up for auction and displayed as cards containing an image, title and amount of bids on the item. 
       - It is possiple to sort listings by when they are created, deadline date and most bids.
       - An unregistered user may search through Listings. 
       - Users can add items for auction. There is validation for the create listing form.
