@@ -46,7 +46,7 @@ export async function showCards(items) {
 			}
 
 			//Specific link for auction item cards
-			if (location.pathname === "/index.html" || path !== "/Noroff-Semester-Project-2/html/profile.html") {
+			if (location.pathname === "/index.html" || location.pathname !== "/Noroff-Semester-Project-2/html/profile.html") {
 				home = "html/";
 			}
 
