@@ -11,6 +11,7 @@ const mediaPlace = document.querySelector(".carousel-inner");
 const nextPrevBtn = document.querySelectorAll(".slide-btn");
 const containerOne = document.querySelector(".details-one");
 const containerThree = document.querySelector(".bid-history");
+const titlePage = document.querySelector("title");
 
 /**
  * This async function uses data from API request GET with id to display a post in html with and without image.
@@ -18,6 +19,7 @@ const containerThree = document.querySelector(".bid-history");
  * @param {string} id The specific string gotten from the itemID querystring.
  * @function getItem() This async function sends an API "GET" request with an id and gets data for the target auction item listing.
  * @param {Object} profile This is the localStorage key with user profile data.
+ * @param {Element} titlePage This is a html element for page title.
  * @param {Element} mediaPlace This is a html element where the auction item media gallery is displayed.
  * @param {Element} nextPrevBtn This is a html element where the carousel slide button.
  * @param {Element} containerOne This is a html element where the auction item title and description are displayed.
@@ -36,6 +38,8 @@ export async function specificAuctionItem() {
 	if (id) {
 		const { id_, title, description, tags, media, created, updated, endsAt, seller, bids, _count } = await getItem(id);
 		const profile = load("profile");
+
+		titlePage.innerHTML += ` ${title}`;
 
 		mediaPlace.innerHTML += `
 		<div class="carousel-item active h-100 border">
