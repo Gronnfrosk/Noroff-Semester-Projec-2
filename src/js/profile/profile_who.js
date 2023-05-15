@@ -5,12 +5,19 @@ const editAvatar = document.querySelector(".edit-container button");
 const addItem = document.querySelector(".add-item");
 const sorted = document.querySelector(".sort");
 const blueContainer = document.querySelector(".blue-container");
-const queryString = document.location.search;
-const params = new URLSearchParams(queryString);
+const params = new URLSearchParams(document.location.search);
 const nameOther = params.get("name");
 const profile = load("profile");
 
-// check if profile is myself or other user
+/**
+ * This async function check if it is user profile or another user profile and returns the profile info and credit content.
+ * @param {Object} profileInfo This is the response from API "GET" request with a profile name, the profile data.
+ * @param {String} creditContent The Html content for display of credit.
+ * @param {String} nameOther The specific string gotten from the name querystring.
+ * @param {Object} profile This is the localStorage key with user profile data.
+ * @param {Element} editAvatar This is a html element of edit profile button.
+ * @param {Element} addItem This is a html element of create auction item button.
+ */
 export async function anotherProfile() {
 	let profileInfo;
 	let creditContent;
@@ -26,8 +33,6 @@ export async function anotherProfile() {
 
 		blueContainer.style.padding = "30px 0 48px 0";
 		sorted.style.top = "75px";
-	} else {
-		alert("No name found");
 	}
-	return { profileInfo, creditContent, params };
+	return { profileInfo, creditContent };
 }

@@ -1,3 +1,12 @@
+/**
+ * This function adds displays of media in the create auction item form when pasting urls in media inputs.
+ * @param {Element} mediaUrl The html element of media input.
+ * @param {Element} mediaUrlNext All html element of media inputs.
+ * @param {Element} input All html element of div containing media input and label.
+ * @param {Element} mediaPreview Empty div html elements.
+ * @param {Element} cover Empty div html elements.
+ * @param {string} contents The input value of target media input.
+ */
 export function addItemMedia() {
 	const mediaUrl = document.querySelector("#validationCustom03");
 	const mediaUrlNext = document.querySelectorAll("#add-item-form .media-input");

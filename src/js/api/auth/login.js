@@ -7,7 +7,7 @@ const method = "post";
 /**
  * This async function sends an API "POST" request and informs if successful or not.
  * @param {Object} profile The data that will be sent to the "POST" request.
- * @param {String} loginURL This is the url needed for "POST" request.
+ * @param {String} loginURL This is the complete url needed for "POST" request.
  * @param {String} method The HTTP request method "POST".
  * @param {string} accessToken This is the localStorage access token value.
  * @param {string} user This is the localStorage user profile data value.
@@ -28,7 +28,7 @@ export async function login(profile) {
 		save("profile", user);
 
 		alert("You are now logged in at AuctionPoint.");
-		window.location.href = "https://gronnfrosk.github.io/Noroff-Semester-Project-2";
+		window.location.href = "../index.html";
 	} else {
 		alert("Error! You have entered invalid username or password combination.");
 	}

@@ -5,9 +5,10 @@ const method = "post";
 
 /**
  * This async function sends an API "POST" request and informs if successful or not.
- * @param {Object} profile The data that will be sent to the "POST" request.
- * @param {String} registerURL This is the url needed for "POST" request.
  * @param {String} method The HTTP request method "POST".
+ * @param {String} action This endpoint will register a new user profile.
+ * @param {Object} profile The data that will be sent to the "POST" request.
+ * @param {String} registerURL This is the complete url needed for "POST" request.
  */
 export async function register(profile) {
 	const registerURL = API_AUCTION_URL + action;
@@ -20,8 +21,8 @@ export async function register(profile) {
 
 	if (response.ok) {
 		alert("Account successfully created. You may now proceed to login.");
-		window.location.href = "https://gronnfrosk.github.io/Noroff-Semester-Project-2/html/signin.html";
+		window.location.href = "signin.html";
 	} else {
-		alert("Error! Your account was not register.");
+		alert("Error! Your account was not register. Maybe username or email are already registered at AuctionPoint");
 	}
 }

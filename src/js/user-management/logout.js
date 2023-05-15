@@ -15,6 +15,7 @@ export function logout() {
 				remove("token");
 				remove("profile");
 				window.location.reload();
+				alert("You are now logged out from AuctionPoint.");
 			});
 	});
 }

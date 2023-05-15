@@ -5,30 +5,43 @@ import { displayBidForm } from "./bid_form.js";
 import { displayBids } from "./specific_bids.js";
 import { displaySeller } from "./seller.js";
 import { displayMediaGallery } from "./media_gallery.js";
+import { setCreateBidFormListener } from "./create_bid.js";
 
 const mediaPlace = document.querySelector(".carousel-inner");
 const nextPrevBtn = document.querySelectorAll(".slide-btn");
 const containerOne = document.querySelector(".details-one");
 const containerThree = document.querySelector(".bid-history");
+const titlePage = document.querySelector("title");
 
 /**
- * This function uses data from API request GET to display a post in html with and without image.
- * @param {Object} post The data of one post.
- * @param {Element} container This is a html element where all generated posts data are displayed.
- * @param {String} dateFormat The format of when the post was created.
- * @param {String} postMedia This is the HTML content for post with image.
- * @param {String} editFeature This is the HTML content from edit and delete features.
- * @param {Object} user This is the value of the key profile in the localStorage
+ * This async function uses data from API request GET with id to display a post in html with and without image.
+ * @param {object} params iterate over key/value pairs in the same order as they appear in the query string.
+ * @param {string} id The specific string gotten from the itemID querystring.
+ * @function getItem() This async function sends an API "GET" request with an id and gets data for the target auction item listing.
+ * @param {Object} profile This is the localStorage key with user profile data.
+ * @param {Element} titlePage This is a html element for page title.
+ * @param {Element} mediaPlace This is a html element where the auction item media gallery is displayed.
+ * @param {Element} nextPrevBtn This is a html element where the carousel slide button.
+ * @param {Element} containerOne This is a html element where the auction item title and description are displayed.
+ * @param {Element} containerThree This is a html element where the auction item bid details are displayed.
+ * @function displayMediaGallery() This function display media gallery in a carousel from the auction item media data.
+ * @function displayBids() This async function display bid history from target auction item listing.
+ * @function displayDeadline() This function displays date and time of target auction item deadline and icons change color to red when deadline is passed.
+ * @function displayBidForm() This function displays bid form with max and min value, but disabled at certain situations and show text explaining why.
+ * @function displaySeller() This function displays seller information as avatar and name.
+ * @function setCreateBidFormListener() This function triggers by a form submit to collect form data and send to API if the form validation is successful.
  */
-export async function specificAuctionItem(item) {
-	const queryString = document.location.search;
-	const params = new URLSearchParams(queryString);
+export async function specificAuctionItem() {
+	const params = new URLSearchParams(document.location.search);
 	const id = params.get("itemID");
-	const { id_, title, description, tags, media, created, updated, endsAt, seller, bids, _count } = await getItem(id);
-	const profile = load("profile");
 
-	// Display media and gallery
-	mediaPlace.innerHTML += `
+	if (id) {
+		const { id_, title, description, tags, media, created, updated, endsAt, seller, bids, _count } = await getItem(id);
+		const profile = load("profile");
+
+		titlePage.innerHTML += ` ${title}`;
+
+		mediaPlace.innerHTML += `
 		<div class="carousel-item active h-100 border">
 			<div class="image h-50 justify-content-center align-items-center h-100">
 				<img src="https://img.freepik.com/free-vector/flat-design-no-photo-sign_23-2149279003.jpg?size=626&ext=jpg&ga=GA1.1.933137767.1681841899&semt=ais" alt="Auction item" class="bd-placeholder-img bd-placeholder-img-lg d-block p-1">
@@ -36,32 +49,30 @@ export async function specificAuctionItem(item) {
 		</div>
 		`;
 
-	nextPrevBtn.forEach((element) => {
-		element.classList.add("opacity-0");
-	});
+		containerOne.innerHTML = `
+				<h1>${title}</h1>
+				<p>${description}</p>
+				`;
 
-	if (media.length > 0) {
-		displayMediaGallery(media);
+		containerThree.innerHTML = `<h2 class="bid-winner" id="0">No bid yet</h2>`;
+
+		nextPrevBtn.forEach((element) => {
+			element.classList.add("opacity-0");
+		});
+
+		if (media.length > 0) {
+			displayMediaGallery(media);
+		}
+
+		if (bids[0]) {
+			displayBids(profile, bids, _count.bids);
+		}
+
+		displayDeadline(endsAt);
+		displayBidForm(profile, seller);
+		displaySeller(seller);
+		setCreateBidFormListener(id);
+	} else {
+		window.location.href = "../index.html";
 	}
-
-	// Basic item info title, description and deadline
-	containerOne.innerHTML = `
-                    <h1>${title}</h1>
-                    <p>${description}</p>
-                    `;
-
-	displayDeadline(endsAt);
-
-	//Bid history
-	containerThree.innerHTML = `<h2 class="bid-winner" id="0">No bid yet</h2>`;
-
-	if (bids[0]) {
-		displayBids(profile, bids, _count.bids);
-	}
-
-	// Bid input with min and max bid
-	displayBidForm(profile, seller);
-
-	// Seller of item
-	displaySeller(seller);
 }

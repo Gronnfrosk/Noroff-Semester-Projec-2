@@ -6,29 +6,31 @@ import { editAvatarListener } from "./profile/edit_avatar.js";
 import { specificAuctionItem } from "./auction/specific-listing/specific_item_template.js";
 import { setCreateItemFormListener } from "./auction/create-listing/create_item.js";
 import { createForm } from "./auction/create-listing/create_form_template.js";
-import { setCreateBidFormListener } from "./auction/specific-listing/create_bid.js";
 import { displayNumberOfCards } from "./auction/all-listings/auction_cards_display.js";
 
 const path = location.pathname;
 
-if (path === "/Noroff-Semester-Project-2/html/signin.html" || path === "/html/signin.html") {
+/**
+ * This conditional statement controls which function is called at different URL location.
+ * @param {string} path This is a string containing the path of the URL for the location
+ */
+if (path === "/html/signin.html" || path === "/Noroff-Semester-Project-2/html/signin.html") {
 	checkToken.checkUserTokenLogin();
 	user.setLoginFormListener();
-} else if (path === "/Noroff-Semester-Project-2/html/register.html" || path === "/html/register.html") {
+} else if (path === "/html/register.html" || path === "/Noroff-Semester-Project-2/html/register.html") {
 	checkToken.checkUserTokenLogin();
 	user.setRegisterFormListener();
-} else if (path === "/Noroff-Semester-Project-2/html/profile.html" || path === "/html/profile.html") {
+} else if (path === "/html/profile.html" || path === "/Noroff-Semester-Project-2/html/profile.html") {
 	checkToken.checkUserToken();
 	displayProfile();
 	editAvatarListener();
 	createForm();
 	setCreateItemFormListener();
 	user.logout();
-} else if (path === "/Noroff-Semester-Project-2/html/specific_auction_item.html" || path === "/html/specific_auction_item.html") {
+} else if (path === "/html/specific_auction_item.html" || path === "/Noroff-Semester-Project-2/html/specific_auction_item.html") {
 	specificAuctionItem();
-	setCreateBidFormListener();
 	user.logout();
-} else if (path === "/Noroff-Semester-Project-2/" || path === "/index.html") {
+} else if (path === "/index.html" || path === "/Noroff-Semester-Project-2/" || path === "/Noroff-Semester-Project-2/index.html") {
 	displayNumberOfCards();
 	createForm();
 	setCreateItemFormListener();

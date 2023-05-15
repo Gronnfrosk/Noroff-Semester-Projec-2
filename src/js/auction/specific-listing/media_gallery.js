@@ -2,6 +2,15 @@ const mediaPlace = document.querySelector(".carousel-inner");
 const mediaButton = document.querySelector(".carousel-indicators");
 const nextPrevBtn = document.querySelectorAll(".slide-btn");
 
+/**
+ * This function display media gallery in a carousel from the auction item media data.
+ * @param {Object} media The url strings of the target auction items.
+ * @param {Element} mediaPlace This is a html element for display of image.
+ * @param {Element} mediaButton This is a html element for carousel bottom nav button.
+ * @param {Element} active This is the first html element for carousel bottom nav button.
+ * @param {Element} activeOne This is the first html element div containing image in the carousel.
+ * @param {Element} nextPrevBtn This is a html element carousel buttons for next and previous.
+ */
 export function displayMediaGallery(media) {
 	mediaPlace.innerHTML = "";
 
@@ -19,7 +28,6 @@ export function displayMediaGallery(media) {
         `;
 	}
 
-	//Carousel function
 	const active = document.querySelector(".mediaIndicator");
 	const activeOne = document.querySelector(".carousel-item");
 
