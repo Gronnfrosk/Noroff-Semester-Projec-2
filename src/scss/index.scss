@@ -314,7 +314,7 @@ main {
 }
 
 .signin-main {
-    margin-top: 200px;
+    margin: auto;
     max-width: 500px;
     padding: 15px;
     
@@ -944,13 +944,12 @@ input::-webkit-inner-spin-button {
 
     /* Signin page */
     .signin-main {
-        margin-top: 200px;
         max-width: 330px;
         padding: 15px;
         
         & form {
             border: 25px solid white;
-            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.37);
+            box-shadow: none;
             
         }
     }
