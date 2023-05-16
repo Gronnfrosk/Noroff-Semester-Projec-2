@@ -214,7 +214,9 @@ main {
     }
 }
 
-
+.home h2 {
+    margin-left: 3rem;
+}
 
 .modal-body .box {
     margin: auto;
@@ -877,6 +879,9 @@ input::-webkit-inner-spin-button {
             right: 25px;
             top: 285px;
         }
+        & .welcome i {
+            bottom: 92px;
+        }
         & .add-item {
             width: 126px;
             top: -37px;
@@ -892,7 +897,7 @@ input::-webkit-inner-spin-button {
     }
     
     .home h2 {
-        margin-left: 25px;
+        margin-left: 20px;
     }
 
     .box {
