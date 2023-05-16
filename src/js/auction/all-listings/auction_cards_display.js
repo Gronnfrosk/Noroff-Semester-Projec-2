@@ -5,7 +5,7 @@ import { searchItems } from "./search.js";
 
 const moreLoadBtn = document.querySelector("#moreBtn");
 const auctionCard = document.querySelector("#card-container");
-var n = 15;
+var n = 12;
 
 /**
  * This async function uses data from API request GET to filter and display 15 auction item cards in html and add 15 more when more button is clicked. Also display search auction item cards.
@@ -27,7 +27,7 @@ export async function displayNumberOfCards() {
 
 	moreLoadBtn.addEventListener("click", (cards) => {
 		auctionCard.innerHTML = ``;
-		n += 15;
+		n += 12;
 		const items = filterItems.slice(0, n);
 
 		if (items.length > 99) {

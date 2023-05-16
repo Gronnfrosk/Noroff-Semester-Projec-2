@@ -3,7 +3,7 @@ body {
 }
 
 h1, h2, h3, h4, nav, footer, .dropdown-item, .nav-link, .invalid-feedback {
-    font-family: Trebuchet MS, sans-serif, 'consolas';
+    font-family: 'PT Sans', Trebuchet MS, sans-serif;
 }
 
 p, span, .dropdown-item, button, label, .sort {
@@ -98,13 +98,14 @@ input, .form-control, .delete-url {
     font-size: 1.25em;
 }
 
+#CreateAuctionItemModal .modal-body {
+    padding-bottom: 0px;
+}
+
 .add-item-form {
     text-align: left;
 
-    & .modal-footer {
-        width: 100%;
-        padding-top: 23px;
-    }
+   
     & .delete-url {
         position: relative;
         height: 0;
@@ -155,7 +156,7 @@ input, .form-control, .delete-url {
         }
         & img { 
             max-height: 40px;
-            max-width: 50px;
+            max-width: 44px;
             margin-top: 5px;
         }
         & .number {
@@ -188,7 +189,7 @@ footer {
 /* Home page */
 
 header {
-    padding-top: 200px;
+    padding-top: 175px;
   
     & .welcome i {
         width: 100%;
@@ -208,11 +209,20 @@ main {
         background-color: #EEF5FB;
         min-height: 420px;
     }
+    & .home-listings {
+        margin: 1.5rem
+    } 
     & .dropdown-item.active {
         color: black;
         background-color: #0dcaf0;
     }
+    
 }
+
+.modal-footer button {
+    height: 38px;
+}
+    
 
 .home h2 {
     margin-left: 3rem;
@@ -253,10 +263,7 @@ main {
 
 .card-container {
     text-align: center;
-    
-    & .gap-5 {
-        gap: 4rem!important;
-    }
+
     & .cards {
         position: relative;
         left: 63px;
@@ -876,7 +883,7 @@ input::-webkit-inner-spin-button {
     header {
         & .gap-2 {
             position: absolute;
-            right: 25px;
+            right: 15px;
             top: 285px;
         }
         & .welcome i {
@@ -909,6 +916,10 @@ input::-webkit-inner-spin-button {
     .listing-image { 
         height: 155px;
     }
+
+    .home-listings  {
+        margin: 10px 1rem;
+    } 
 
     .one::placeholder, .two::placeholder, .three::placeholder {
         display: block!important;

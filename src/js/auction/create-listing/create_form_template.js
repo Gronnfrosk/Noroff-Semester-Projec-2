@@ -111,10 +111,11 @@ export function createForm() {
                 <div class="number">
                 </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-info" data-bs-target="#add-item-form">Start item auction</button>	
-            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-info" data-bs-target="#add-item-form">Start item auction</button>	
+        </div>
         `;
 
 	addItemMedia();
