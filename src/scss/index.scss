@@ -2,11 +2,12 @@ body {
     height: 100%;
 }
 
-h1, h2, h3, h4, nav, footer, .dropdown-item, .nav-link, .invalid-feedback {
+h1, h2, h3, h4, footer, .nav-link  {
     font-family: 'PT Sans', Trebuchet MS, sans-serif;
+    font-weight: bold;
 }
 
-p, span, .dropdown-item, button, label, .sort {
+p, span, .dropdown-item, button, label, .sort, .invalid-feedback {
     font-family: roboto, arial, helvetica, sans-serif!important;
 }
 
@@ -24,6 +25,7 @@ nav  {
         font-size: 1.5em;
     }
     & .nav-link {
+        width: fit-content;
         color: white;
     }
     & .nav-credit {
@@ -384,6 +386,7 @@ main {
 .invalid-feedback {
     text-align: left;
     font-size: 0.8em;
+    font-weight: bold;
 }
 
 
@@ -412,7 +415,7 @@ main {
         float: right;
         position: relative;
         bottom: 57px;
-        right: 1px;
+        right: 30px;
         padding: 15px 10px;
 
         & i {
