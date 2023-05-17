@@ -1,7 +1,7 @@
 import { load } from "../../localstorage/save_load_remove.js";
 
-const userNav = document.querySelectorAll("#nav-user");
-const navNew = document.querySelectorAll("#login");
+const userNav = document.querySelectorAll(".nav-user");
+const navNew = document.querySelectorAll(".login");
 const addItem = document.querySelector(".add-btn");
 const profileLinks = document.querySelector(".details-bid");
 

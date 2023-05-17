@@ -17,11 +17,11 @@
 			integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
 			crossorigin="anonymous"
 		></script>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Lora&family=Oswald&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Lora&family=Oswald&display=swap" rel="stylesheet" />
 		<link rel="stylesheet" href="./dist/css/index.css" />
-		<script type="module" src="./src/js/index.js" defer></script>
+		<script type="module" src="./src/js/index.js"></script>
 		<title>AuctionPoint | Home page</title>
 	</head>
 	<body>
@@ -40,29 +40,29 @@
 					aria-expanded="false"
 					aria-label="Toggle navigation"
 				>
-					<div class="hamburger">
+					<span class="hamburger">
 						<span class="bar"></span>
 						<span class="bar"></span>
 						<span class="bar"></span>
-					</div>
+					</span>
 				</button>
 				<div class="collapse navbar-collapse mx-2" id="navbarSupportedContent">
-					<ul class="nav navbar-nav me-auto mb-2 mb-lg-0">
-						<div class="member-nav nav navbar-nav me-auto mb-2 mb-lg-0">
+					<div class="nav navbar-nav me-auto mb-2 mb-lg-0">
+						<ul class="member-nav nav navbar-nav me-auto mb-2 mb-lg-0">
 							<li class="nav-item">
 								<a class="nav-link" href="index.html">Home</a>
 							</li>
-							<li class="nav-item" id="login">
+							<li class="nav-item login">
 								<a class="nav-link login-nav" href="html/signin.html">Login</a>
 							</li>
-							<li class="nav-item d-none" id="nav-user">
+							<li class="nav-item d-none nav-user">
 								<a class="nav-link" href="html/profile.html">Profile</a>
 							</li>
-							<li class="nav-item d-none" id="nav-user">
-								<a class="nav-link logout-nav" href="" id="logout">Logout</a>
+							<li class="nav-item d-none nav-user">
+								<a class="nav-link logout-nav logout" href="">Logout</a>
 							</li>
-						</div>
-					</ul>
+						</ul>
+					</div>
 					<div class="nav-credit" id="nav-credit"></div>
 					<form class="d-flex search_form" role="search" id="search_form">
 						<input class="form-control me-2 rounded-0 bg-white" type="search" placeholder="Search item titles" aria-label="Search" id="search_input" />
@@ -79,24 +79,26 @@
 					<i class="fa-sharp fa-solid fa-bullseye-pointer"></i>
 				</div>
 				<div class="add-btn d-grid gap-2 d-none">
-					<button class="btn btn-info add-item add-desktop" data-bs-toggle="modal" type="button" data-bs-target="#CreateAuctionItemModal">Add item for auction +</button>
-					<button class="btn btn-info add-item add-phone d-none" data-bs-toggle="modal" type="button" data-bs-target="#CreateAuctionItemModal">Add item +</button>
+					<button class="btn btn-info add-item add-desktop" data-bs-toggle="modal" type="button" data-bs-target="#CreateAuctionItemModal">
+						Add item for auction +
+					</button>
+					<button class="btn btn-info add-item add-phone d-none" data-bs-toggle="modal" type="button" data-bs-target="#CreateAuctionItemModal">
+						Add item +
+					</button>
 				</div>
-					<div class="modal fade" id="CreateAuctionItemModal" tabindex="-1" aria-labelledby="CreateAuctionItemModalLabel" aria-hidden="true">
-						<div class="modal-dialog modal-dialog-centered">
-							<div class="modal-content">
-								<div class="modal-header">
-									<h1 class="modal-title fs-5" id="CreateAuctionItemModalLabel">Add auction item</h1>
-									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-								</div>
-								<div class="modal-body">
-									<form id="add-item-form" class="needs-validation add-item-form" novalidate>
-									</form>
-								</div>
+				<div class="modal fade" id="CreateAuctionItemModal" tabindex="-1" aria-labelledby="CreateAuctionItemModalLabel" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h1 class="modal-title fs-5" id="CreateAuctionItemModalLabel">Add auction item</h1>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+								<form id="add-item-form" class="needs-validation add-item-form" novalidate></form>
 							</div>
 						</div>
 					</div>
-				</div>	
+				</div>
 			</div>
 		</header>
 		<main class="home">
@@ -117,29 +119,27 @@
 						<li><a class="dropdown-item" href="?filter=short" id="shortest">Shortest deadline</a></li>
 						<li><a class="dropdown-item" href="?filter=long" id="longest">Longest deadline</a></li>
 						<li><a class="dropdown-item" href="?filter=bids" id="bids">Most bids</a></li>
-						
 					</ul>
 				</div>
-				<section class="card-container pt-5">
-					<div class="cards mx-auto d-flex flex-wrap justify-content-center gap-5 pt-4" id="card-container">
-                    </div>
+				<div class="card-container pt-5">
+					<div class="cards mx-auto d-flex flex-wrap justify-content-center gap-5 pt-4" id="card-container"></div>
 					<button id="moreBtn" class="w-100 btn btn-lg btn-info moreBtn" type="button">More</button>
-				</section>
+				</div>
 			</div>
 		</main>
 		<footer class="home d-flex flex-wrap justify-content-between align-items-center pt-3">
 			<p class="col-md-4 mb-0 text-muted p-2">&copy; 2023 AuctionPoint, Inc</p>
 			<a href="index.html" class="col-md-4 d-flex align-items-center justify-content-center mb-md-0 me-md-auto link-dark text-decoration-none">
-				<i class="fa-sharp fa-solid fa-bullseye-pointer mx-1"></i></i>
+				<i class="fa-sharp fa-solid fa-bullseye-pointer mx-1"></i>
 			</a>
-			<ul class="nav col-md-4 justify-content-end">
-				<div class="d-flex member-nav flex-row">
+			<div class="nav col-md-4 justify-content-end">
+				<ul class="d-flex member-nav flex-row nav">
 					<li class="nav-item"><a href="index.html" class="nav-link text-muted">Home</a></li>
-					<li class="nav-item" id="login"><a href="html/signin.html" class="nav-link text-muted" id="login">login</a></li>
-					<li class="nav-item d-none" id="nav-user"><a href="html/profile.html" class="nav-link text-muted">Profile</a></li>
-					<li class="nav-item d-none" id="nav-user"><a href="" class="nav-link text-muted" id="logout">logout</a></li>
-				</div>
-			</ul>
+					<li class="nav-item login"><a href="html/signin.html" class="nav-link text-muted login">login</a></li>
+					<li class="nav-item d-none nav-user"><a href="html/profile.html" class="nav-link text-muted">Profile</a></li>
+					<li class="nav-item d-none nav-user"><a href="" class="nav-link text-muted logout">logout</a></li>
+				</ul>
+			</div>
 		</footer>
 	</body>
 </html>

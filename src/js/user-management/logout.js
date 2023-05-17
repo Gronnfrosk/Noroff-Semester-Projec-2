@@ -1,6 +1,6 @@
 import { remove } from "../localstorage/save_load_remove.js";
 
-const logoutButtons = document.querySelectorAll("#logout");
+const logoutButtons = document.querySelectorAll(".logout");
 
 /**
  * This function initiate when logout button is clicked and the user logs out by removing JSON Web Tokens.
