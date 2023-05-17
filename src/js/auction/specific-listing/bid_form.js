@@ -25,12 +25,12 @@ export function displayBidForm(profile, seller) {
 		bidInputPlace.innerHTML = `
                 <div class="col-auto mb-1">
                 	<span id="recent-bid" class="form-text">
-                	Lowest acceptable bid:
+                		Lowest acceptable bid:
                 	</span>
                 </div>
                 <input id="validationCustom00" value="${minCredit}" type="number" class="form-control" required name="amount" min="${minCredit}" max="${maxCredit}"/>
                 <div class="invalid-feedback mb-3">The bid must be above highest</div>
-                <label for="validationCustom00 form-label">Credit</label>
+                <label for="validationCustom00" class="form-label">Credit</label>
 				<div class="mx-auto my-2">
 					<button class="btn btn-info add-item px-5">Confirm bid</button>
 				</div>
