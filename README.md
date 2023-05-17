@@ -1,6 +1,6 @@
 # Auction site - Semester Project 2
 
-![homepage1](https://github.com/Gronnfrosk/Noroff-Semester-Project-2/assets/91615712/60b09dd2-8118-418a-b0ee-79c50561f87d)
+![homepage1](https://github.com/Gronnfrosk/Noroff-Semester-Project-2/assets/91615712/9662f0b5-b6cb-4c4a-b848-d75b123a683d)
 
 ## Description
 This is an auction website where users can add items to be bid on and bid on items other users have put up for auction.
