@@ -27,7 +27,7 @@ export function createForm() {
                 name="title"
             />
             <div class="invalid-feedback mb-3">Auction item must have a title</div>
-            <label for="validationCustom00 form-label">Title </label>
+            <label for="validationCustom00" class="form-label">Title </label>
         </div>
         <div class="form-floating">
             <textarea
@@ -41,7 +41,7 @@ export function createForm() {
             <label for="validationCustom01 form-label">Description </label>
         </div>
         <div class="form-floating deadline-input">
-            <label for="validationCustom02 form-label" class="p-0 ps-2">Deadline</label>
+            <label for="validationCustom02" class="form-label p-0 ps-2">Deadline</label>
             <input
                 type="datetime-local"
                 class="form-control date-input"
@@ -54,7 +54,7 @@ export function createForm() {
             />
             <div class="invalid-feedback mb-3 text-center">Requires a time and date for auction deadline</div>
         </div>
-        <label class="col-form-label">Media URL (min 1, max 4):</label>
+        <label for="validationCustom03" class="col-form-label">Media URL (min 1, max 4):</label>
         <div class="form-floating media-url">
             <input
                 type="url"
@@ -66,7 +66,7 @@ export function createForm() {
             />
             <div class="btn delete-url delete-cover"><i class="fa-solid fa-delete-left"></i></div>
             <div class="invalid-feedback mb-3">Must have at least one image.<br />- Example: http://www.example.com</div>
-            <label for="validationCustom03 form-label" class="form-label">Paste for preview</label>
+            <label for="validationCustom03" class="form-label">Paste for preview</label>
             <div class="box cards" id="cover-img"></div>
             <div class="form-floating media-url d-none">
                 <input
@@ -77,7 +77,7 @@ export function createForm() {
                     name="media1"
                 />
                 <div class="btn delete-url"><i class="fa-solid fa-delete-left"></i></div>
-                <label for="validationCustom04 form-label" class="form-label">Image nr. 2</label>
+                <label for="validationCustom04" class="form-label">Image nr. 2</label>
             </div>
             <div class="form-floating media-url d-none">
                 <input
@@ -88,7 +88,7 @@ export function createForm() {
                     name="media2"
                 />
                 <div class="btn delete-url"><i class="fa-solid fa-delete-left"></i></div>
-                <label for="validationCustom05 form-label" class="form-label">Image nr. 3</label>
+                <label for="validationCustom05" class="form-label">Image nr. 3</label>
             </div>
             <div class="form-floating media-url d-none">
                 <input
@@ -99,7 +99,7 @@ export function createForm() {
                     name="media3"
                 />
                 <div class="btn delete-url"><i class="fa-solid fa-delete-left"></i></div>
-                <label for="validationCustom06 form-label" class="form-label">Image nr. 4</label>
+                <label for="validationCustom06" class="form-label">Image nr. 4</label>
             </div>
             <div class="url-upload">
                 <div class="media-item">
