@@ -10,7 +10,7 @@ When a new user joins the website, they are given 1000 credits to use on the sit
 1.	**Home page**
       - View active listings that is put up for auction and displayed as cards containing an image, title and amount of bids on the item. 
       - It is possiple to sort listings by when they are created, deadline date and most bids.
-      - An unregistered user may search through Listings. 
+      - An unregistered user may search and sort through Listings. 
       - Users can add items for auction. There is validation for the create listing form.
       - Users can see total Credit in top navigation bar. Users can also logout from the top navigation bar.
 3.	**Profile page**
