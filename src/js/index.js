@@ -6,7 +6,8 @@ import { editAvatarListener } from "./profile/edit_avatar.js";
 import { specificAuctionItem } from "./auction/specific-listing/specific_item_template.js";
 import { setCreateItemFormListener } from "./auction/create-listing/create_item.js";
 import { createForm } from "./auction/create-listing/create_form_template.js";
-import { displayNumberOfCards } from "./auction/all-listings/auction_cards_display.js";
+import { getAuctionItems } from "./api/auction/getItem.js";
+
 
 const path = location.pathname;
 
@@ -31,7 +32,7 @@ if (path === "/html/signin.html" || path === "/Noroff-Semester-Project-2/html/si
 	specificAuctionItem();
 	user.logout();
 } else if (path === "/index.html" || path === "/Noroff-Semester-Project-2/" || path === "/Noroff-Semester-Project-2/index.html") {
-	displayNumberOfCards();
+	getAuctionItems()
 	createForm();
 	setCreateItemFormListener();
 	user.logout();

@@ -1,15 +1,22 @@
 import { API_AUCTION_LISTING_URL, API_AUCTION_LISTING_URL_ACTIVE } from "../constants.js";
 import { authFetch } from "../auth_fetch.js";
+import { getFilterItems } from "./../../auction/all-listings/filter_items.js";
+import { searchItems } from "./../../auction/all-listings/search.js";
 
 const action = "?_bids=true&_seller=true";
 
 /**
  * This async function sends an API "Get" request.
  * @param {String} API_AUCTION_LISTING_URL_ACTIVE This is the complete url needed for "GET" request.
+ * @function getFilterItems() This function filters the array of auction items based on query string parameters and adds active class to target filter.
+ * @function searchItems() This function uses auction items title to display the search results when keypress enter or search button is clicked.
  */
 export async function getAuctionItems() {
 	const response = await authFetch(API_AUCTION_LISTING_URL_ACTIVE);
-	return await response.json();
+	const result = await response.json();
+
+	getFilterItems(result);
+	searchItems(result);
 }
 
 /**
