@@ -70,7 +70,7 @@ export async function showCards(items) {
 							<p><i class="fa-regular fa-clock ${closed}"></i> ${dateFormat}</p>
 						</div>
 						<div class="listing-info">
-							<h4>${items[i].title}</h4>
+							<h3>${items[i].title}</h3>
 							<div class="bid-info text-center gap-1 ">
 								${itemBids}
 							</div>
