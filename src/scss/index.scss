@@ -359,6 +359,10 @@ main {
     flex-direction: column;
     padding-top: 55px;
     height: 100vh;
+
+    & h1 {
+        font-size: 2em;
+    }
 }
 
 .signin-main {
@@ -612,6 +616,7 @@ main {
         background-color: #EEF5FB;
         border-bottom-color: #EEF5FB;
         height: 50px;
+        color: #212529;
     }
 
     & .winning-box {
@@ -1078,11 +1083,17 @@ input::-webkit-inner-spin-button {
         max-width: 330px;
         padding: 15px;
 
+
+
         & form {
             border: 25px solid white;
             box-shadow: none;
 
         }
+    }
+
+    .signin-body h1 {
+        font-size: 1.3rem;
     }
 
     /* Profile page */
