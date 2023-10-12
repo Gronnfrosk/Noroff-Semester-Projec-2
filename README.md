@@ -13,13 +13,13 @@ When a new user joins the website, they are given 1000 credits to use on the sit
       - An unregistered user may search and sort through Listings. 
       - Users can add items for auction. There is validation for the create listing form.
       - Users can see total Credit in top navigation bar. Users can also logout from the top navigation bar.
-3.	**Profile page**
+2.	**Profile page**
       - Profile information (Avatar, username, email, listings, bids and wins). 
       - A user can update their avatar and see their total Credit on their own profile page.
       - Users can add items for auction on their own profile page. 
       - There is validation for the create listing and edit avatar form.
       - Users can see total Credit in top navigation bar. Users can also logout from the top navigation bar.
-5.	**specific auction item pages** 
+3.	**Specific auction item pages** 
       - Dynamically built based on which auction item one has been clicked. 
       - Media gallery carousel displaying images of auction item. 
       - Basic information such as title, description and deadline.
@@ -27,7 +27,7 @@ When a new user joins the website, they are given 1000 credits to use on the sit
       - Users can see total Credit in top navigation bar. Users can also logout from the top navigation bar.
 4.	**Login page** 
       - Registered users may login. There is validation for login form.
-6.	**Register page** 
+5.	**Register page** 
       - One can registrate a new user with a stud.noroff.no email. There is validation for register form.
 
 Project is hosted by GitHub Pages: https://gronnfrosk.github.io/Noroff-Semester-Project-2/
