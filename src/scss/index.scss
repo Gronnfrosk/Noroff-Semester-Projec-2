@@ -23,6 +23,8 @@ label,
 }
 
 .fa-bullseye-pointer {
+    width: 35px;
+    height: 25px;
     color: #FB1B1B;
 }
 
@@ -139,9 +141,13 @@ input,
         left: -14px;
         border: none;
 
-        & i {
+        & svg {
+            position: relative;
+            right: -20px;
+            width: 30px;
+            height: 30px;
             font-size: 1.1em;
-            padding: 6px 10px;
+            padding: 3px 5px;
             background-color: #EEF5FB;
         }
     }
@@ -221,7 +227,8 @@ footer {
 header {
     padding-top: 175px;
 
-    & .welcome i {
+    & .welcome svg {
+        height: 50px;
         width: 100%;
         text-align: center;
         position: relative;
@@ -748,7 +755,9 @@ main {
 .nothing {
     display: none;
 
-    & i {
+    & svg {
+        width: 250px;
+        height: 250px;
         font-size: 17em;
         margin-top: 40px;
         color: white;

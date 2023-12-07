@@ -64,7 +64,9 @@ export function createForm() {
                 required
                 name="media0"
             />
-            <div class="btn delete-url delete-cover"><i class="fa-solid fa-delete-left"></i></div>
+            <div class="btn delete-url delete-cover"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+            <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+          </svg></i></div>
             <div class="invalid-feedback mb-3">Must have at least one image.<br />- Example: http://www.example.com</div>
             <label for="validationCustom03" class="form-label">Paste for preview</label>
             <div class="box cards" id="cover-img"></div>
@@ -76,7 +78,9 @@ export function createForm() {
                     placeholder="Media URL 2"
                     name="media1"
                 />
-                <div class="btn delete-url"><i class="fa-solid fa-delete-left"></i></div>
+                <div class="btn delete-url"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+              </svg></i></div>
                 <label for="validationCustom04" class="form-label">Image nr. 2</label>
             </div>
             <div class="form-floating media-url d-none">
@@ -87,7 +91,9 @@ export function createForm() {
                     placeholder="Media URL 3"
                     name="media2"
                 />
-                <div class="btn delete-url"><i class="fa-solid fa-delete-left"></i></div>
+                <div class="btn delete-url"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+              </svg></i></div>
                 <label for="validationCustom05" class="form-label">Image nr. 3</label>
             </div>
             <div class="form-floating media-url d-none">
@@ -98,7 +104,9 @@ export function createForm() {
                     placeholder="Media URL 4"
                     name="media3"
                 />
-                <div class="btn delete-url"><i class="fa-solid fa-delete-left"></i></div>
+                <div class="btn delete-url"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+              </svg></div>
                 <label for="validationCustom06" class="form-label">Image nr. 4</label>
             </div>
             <div class="url-upload">
