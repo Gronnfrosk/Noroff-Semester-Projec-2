@@ -31,7 +31,7 @@ if (path === "/html/signin.html" || path === "/Noroff-Semester-Project-2/html/si
 } else if (path === "/html/specific_auction_item.html" || path === "/Noroff-Semester-Project-2/html/specific_auction_item.html") {
 	specificAuctionItem();
 	user.logout();
-} else if (path === "/index.html" || path === "/Noroff-Semester-Project-2/" || path === "/Noroff-Semester-Project-2/index.html") {
+} else if (path === "/" || path === "/index.html" || path === "/Noroff-Semester-Project-2/" || path === "/Noroff-Semester-Project-2/index.html") {
 	getAuctionItems()
 	createForm();
 	setCreateItemFormListener();
