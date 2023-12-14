@@ -1,6 +1,7 @@
 # AuctionPoint - Auction site
 
 ![auction-point](https://github.com/Gronnfrosk/Noroff-Semester-Project-2/assets/91615712/364b5d73-fb9b-492f-b9f5-d83a4155ba87)
+This online auction site was made for educational purpose. No actual products or services are won or sold. 
 
 ## Description
 Discover a dynamic auction platform where members can both list and bid on a diverse range of items. Each new member is welcomed with 1,000 credits, fueling their initial bids or purchases. Earn more credits through successful sales and use them for future acquisitions. While browsing is open to all, only registered users have the privilege to bid and access detailed user profiles. While logged in users can find total credit in navigation bar.
